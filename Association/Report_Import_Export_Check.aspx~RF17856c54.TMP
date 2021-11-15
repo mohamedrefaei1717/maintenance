@@ -1,0 +1,105 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AssocMaster.Master" AutoEventWireup="true" CodeBehind="Report_Import_Export_Check.aspx.cs" Inherits="Association.Report_Import_Export_Check" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .panel-login {
+            margin: 10px auto;
+            max-width: 400px;
+        }
+
+        .alert-text {
+            color: #a94442;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <%--  <form id="form1" runat="server" role="form">--%>
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <ContentTemplate>
+            <asp:ValidationSummary runat="server" ID="ValidationSummary1"
+                DisplayMode="BulletList"
+                ShowMessageBox="False" ShowSummary="True" CssClass="alert alert-danger" />
+
+            <div class="row">
+
+                    <div class="row">
+
+                <fieldset>
+                    <legend>تاريخ الاشتراك</legend>
+
+                    <div class="col-md-3">
+                        <div class="input-group date">
+                            <label for="txtOperation_Date1">من </label>
+                            <asp:TextBox ID="txtCheck_DateFrom" runat="server" placeholder="من" CssClass="form-control" ReadOnly="true" Style="background-color: white"></asp:TextBox>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                        </div>
+
+                        <div class="input-group date">
+                            <label for="txtOperation_Date1">الي </label>
+                            <asp:TextBox ID="txtCheck_DateTo" runat="server" placeholder="إلي" CssClass="form-control" ReadOnly="true" Style="background-color: white"></asp:TextBox>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                        </div>
+                    </div>
+
+
+                </fieldset>
+
+            </div>
+                </div>
+
+
+
+            <div class="form-group">
+                <asp:Label ID="lblMsg" runat="server" CssClass="text-success center-block" Style="font-size: Medium; font-weight: bold; text-align: center"></asp:Label>
+            </div>
+            <br />
+            <div class="form-group text-center">
+                <div class="form-group">
+                    <asp:Button ID="btnSearch" runat="server" Text="تقرير" CssClass="btn btn-primary" OnClick="btnSearch_Click" />
+                    <asp:Button ID="btnPrint" runat="server" Text="طباعة" class="btn btn-primary" CausesValidation="false"/>
+                    <asp:Button ID="btnClear" runat="server" Text="مسح" CausesValidation="false" CssClass="btn btn-primary" OnClick="btnClear_Click" />
+                </div>
+
+                <div class="form-group" style="margin: 0,auto">
+                    <%--<asp:Label ID="lblMsg_success" runat="server" CssClass="label label-success Success" Font-Bold="true" Font-Size="Medium"></asp:Label>
+                    <asp:Label ID="lblMsg_failed" runat="server" CssClass="label label-danger Failed" Font-Bold="true" Font-Size="Medium"></asp:Label>--%>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <asp:GridView ID="gvCheck" runat="server" DataKeyNames="Rs_Acc_Transaction_ID" CssClass="table table-striped table-condensed table-bordered table-hover" AutoGenerateColumns="false" PagerStyle-CssClass="paging"
+                        AllowPaging="true" PageSize="20" OnRowDataBound="gvCheck_RowDataBound" OnRowCommand="gvCheck_RowCommand">
+                    <Columns>
+                        <asp:BoundField DataField="RS_Acc_Transaction_Date" HeaderText="التاريخ" DataFormatString="{0:dd-M-yyyy}" />
+                        <asp:BoundField DataField="Rs_Acc_Transaction_Check_No" HeaderText="رقم الشيك" />
+                        <asp:BoundField DataField="Rs_Acc_Transaction_Value" HeaderText="القيمة" />
+                        <asp:BoundField DataField="Account_Name" HeaderText="نوع الحساب" />
+                        <asp:BoundField DataField="Acc_TypeOfType_Name" HeaderText="العملية" />
+                        <asp:BoundField DataField="Memb_Name" HeaderText="اسم الموظف " />
+                        <asp:BoundField DataField="Rs_Acc_Transaction_Notes" HeaderText="ملاحظات " />
+                                                                       
+                        <asp:TemplateField HeaderText="الاجراءت" ItemStyle-CssClass="controls_table">
+                            <ItemTemplate>
+                                <asp:LinkButton ID="LnkCheckEdit" runat="server" class="btn btn-info btn-mini" CommandName="CheckEdit" CommandArgument="<%# Container.DataItemIndex %>">تعديل <i class="icon-white icon-asterisk"></i></asp:LinkButton>
+                                <%--<asp:HyperLink ID="LnkLtrView" runat="server" class="btn btn-info btn-mini" Target="_blank" NavigateUrl='<%# Eval("Ltr_Path","~/OpenPDF.aspx?FN={0}") %>'> الخطاب <i class="icon-white icon-file"></i></asp:HyperLink>--%>
+                                <%--                                <asp:LinkButton ID="LnkLtrDetails" runat="server" class="btn btn-info btn-mini" CommandName="LtrDetails" CommandArgument="<%# Container.DataItemIndex %>">التفاصيل <i class="icon-white icon-list-alt"></i></asp:LinkButton>--%>
+                                <asp:LinkButton ID="LnkMemberDelete" runat="server" class="btn btn-info btn-mini" OnClientClick="return confirm('هل تريد تأكيد الحذف؟')" CommandName="MemberDelete" CommandArgument="<%# Container.DataItemIndex %>">حذف <i class="icon-white icon-trash"></i></asp:LinkButton>
+                            </ItemTemplate>
+
+                        </asp:TemplateField>
+                    </Columns>
+                </asp:GridView>
+            </div>
+
+
+
+        </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="btnPrint" />
+        </Triggers>
+
+    </asp:UpdatePanel>
+    <%--</form>--%>
+
+</asp:Content>

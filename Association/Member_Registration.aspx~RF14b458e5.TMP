@@ -1,0 +1,306 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AssocMaster.Master" AutoEventWireup="true" CodeBehind="Member_Registration.aspx.cs" Inherits="Association.WebForm1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <%-- <style type="text/css">
+        .datepicker {
+            z-index: 99999;
+            background-color: white !important;
+        }
+       #ui-datepicker-div{
+             z-index: 99999;
+        }
+    </style>--%>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+    <asp:UpdatePanel ID="upInfo" runat="server">
+        <ContentTemplate>
+            <asp:ValidationSummary runat="server" ID="ValidationSummary1"
+                DisplayMode="BulletList"
+                ShowMessageBox="False" ShowSummary="True" CssClass="alert alert-danger" />
+
+            <%--            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <asp:Panel ID="pnlUpload" runat="server">
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <span class="btn btn-default btn-file"><span class="fileinput-new">إختر ملف</span><span class="fileinput-exists">Change</span>
+                                    <asp:FileUpload ID="FUImage" runat="server" name="..." />
+                                </span>
+                                <span class="fileinput-filename"></span>
+                                <a href="#" class="close fileinput-exists" data-dismiss="fileinput" style="float: none">&times;</a>
+                            </div>
+                        </asp:Panel>
+
+
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ForeColor="Red"
+                            ControlToValidate="FUImage" ErrorMessage="لم تقم بإخيار الملف ">
+                        </asp:RequiredFieldValidator>
+
+
+                    </div>
+                </div>
+            </div>--%>
+
+
+
+
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="txtMemb_ID">رقم العضوية</label>
+                        <asp:TextBox ID="txtMemb_ID" runat="server" placeholder="الرقم النقابي" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtMemb_ID"
+                            Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ErrorMessage="من فضلك أدخل رقم العضوية ." CssClass="text-error">*</asp:RequiredFieldValidator>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="txtMemb_EmpID">الرقم الوظيفي</label>
+                        <asp:TextBox ID="txtMemb_EmpID" runat="server" placeholder="الرقم الوظيفي" CssClass="form-control"></asp:TextBox>
+                        <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtMemb_EmpID"
+                            Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ErrorMessage="من فضلك أدخل الرقم الوظيفي." CssClass="text-error">*</asp:RequiredFieldValidator>--%>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="txtMemb_Name">اسم العضو</label>
+                        <asp:TextBox ID="txtMemb_Name" runat="server" placeholder="اسم الموظف" CssClass="form-control"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtMemb_Name"
+                            Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ErrorMessage="من فضلك أدخل اسم العضو." CssClass="text-error">*</asp:RequiredFieldValidator>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <label for="txtMemb_Date">تاريخ الانضمام</label>
+                    <div class="input-group date">
+                        <asp:TextBox ID="txtMemb_Date" runat="server" placeholder="تاريخ الانضمام" CssClass="form-control" ReadOnly="true" Style="background-color: white"></asp:TextBox>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtMemb_Date"
+                            Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ErrorMessage="من فضلك أدخل تاريخ الانضمام في النقابة." CssClass="text-error">*</asp:RequiredFieldValidator>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label for="ddlMemb_Gender_ID">النوع</label>
+                        <asp:DropDownList ID="ddlMemb_Gender_ID" runat="server" CssClass="form-control"></asp:DropDownList>
+
+                        <asp:RequiredFieldValidator ID="rfvddlGender" runat="server" ControlToValidate="ddlMemb_Gender_ID"
+                            ForeColor="Red" SetFocusOnError="true" ErrorMessage="من فضلك أدخل النوع." CssClass="text-error" InitialValue="0">*</asp:RequiredFieldValidator>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <%--<div class="col-md-3">
+                    <div class="form-group">
+                        <label for="txtJob">المسمى الوظيفي</label>
+                        <asp:TextBox ID="txtJob" runat="server" placeholder="المسمى الوظيفي" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>--%>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="ddl_Manag_ID">مكان الموظف</label>
+                        <asp:DropDownList ID="ddl_Manag_ID" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_Manag_ID_SelectedIndexChanged" CssClass="form-control"></asp:DropDownList>
+
+                        <asp:RequiredFieldValidator ID="rfvddlOrg" runat="server" ControlToValidate="ddl_Manag_ID"
+                            ForeColor="Red" SetFocusOnError="true" ErrorMessage="من فضلك أدخل المكان الذي به الموظف." CssClass="text-error" InitialValue="0">*</asp:RequiredFieldValidator>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="ddlDept_ID">الإدارة التابع لها</label>
+                        <asp:DropDownList ID="ddlDept_ID" runat="server" CssClass="form-control"></asp:DropDownList>
+
+                        <asp:RequiredFieldValidator ID="rfvddlSubOrg" runat="server" ControlToValidate="ddlDept_ID"
+                            ForeColor="Red" SetFocusOnError="true" ErrorMessage="من فضلك أدخل الإدارة الفرعية." CssClass="text-error" InitialValue="0">*</asp:RequiredFieldValidator>
+                    </div>
+                </div>
+
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="ddlMemb_Social_ID">الحالة الإجتماعية</label>
+                        <asp:DropDownList ID="ddlMemb_Social_ID" runat="server" CssClass="form-control" OnSelectedIndexChanged="ddlMemb_Social_ID_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="rfvDDlSocial" runat="server" ControlToValidate="ddlMemb_Social_ID"
+                            ForeColor="Red" SetFocusOnError="true" ErrorMessage="من فضلك أدخل الحالة الإجتماعية" CssClass="text-error" InitialValue="0">*</asp:RequiredFieldValidator>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="txtMobil">تليفون المحمول</label>
+                        <asp:TextBox ID="txtMobil" runat="server" placeholder="تليفون المحمول " CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="txtNationalID">الرقم القومي</label>
+                        <asp:TextBox ID="txtNationalID" runat="server" placeholder="الرقم القومي" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+
+                <%-- <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="txtNationalID_Home">جهة صدورها</label>
+                        <asp:TextBox ID="txtNationalID_Home" runat="server" placeholder="جهة صدورها" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>--%>
+
+                <%--<div class="col-md-3">
+                    <div class="form-group">
+                        <label for="txtBirthHome">محل الميلاد</label>
+                        <asp:TextBox ID="txtBirthHome" runat="server" placeholder="محل الميلاد" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>--%>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="txtWorkPhone">تليفون العمل</label>
+                        <asp:TextBox ID="txtWorkPhone" runat="server" placeholder="تليفون العمل" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>
+                <%--<div class="col-md-2">
+                    <div class="form-group">
+                        <label for="txtMemb_Children_Number">عدد الأولاد</label>
+                        <asp:TextBox ID="txtMemb_Children_Number" runat="server" placeholder="عدد الأولاد" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>--%>
+            </div>
+
+            <div class="row">
+
+
+
+                <div class="col-md-3">
+                    <label for="txtMemb_Birthdate">تاريخ الميلاد</label>
+                    <div class="input-group date">
+                        <asp:TextBox ID="txtMemb_Birthdate" runat="server" placeholder="تاريخ ميلاد" CssClass="form-control" ReadOnly="true" Style="background-color: white"></asp:TextBox>
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtMemb_Birthdate"
+                            Display="Dynamic" ForeColor="Red" SetFocusOnError="true" ErrorMessage="من فضلك أدخل تاريخ الميلاد." CssClass="text-error">*</asp:RequiredFieldValidator>
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="txtAddress">العنوان</label>
+                        <asp:TextBox ID="txtAddress" runat="server" placeholder="العنوان" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
+                    </div>
+                </div>
+
+
+                <%--<div class="col-md-2">
+                    <div class="form-group">
+                        <label for="txtHomePhone">تليفون المنزل</label>
+                        <asp:TextBox ID="txtHomePhone" runat="server" placeholder="تليفون المنزل" CssClass="form-control"></asp:TextBox>
+                    </div>
+                </div>--%>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
+                            <div>
+                                <span class="btn btn-default btn-file"><span class="fileinput-new">إختر الصورة</span>
+                                    <span class="fileinput-exists">تغيير</span>
+                                    <%--<input type="file" name="...">--%>
+                                    <asp:FileUpload ID="FUImage" runat="server" name="..." />
+                                </span>
+                                <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">إزالـة</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            </div>
+
+             <div class="row">
+                 <div class="col-md-3">
+                     <div class="form-group">
+                         <asp:Image ID="MembImg" runat="server" />
+                     </div>
+                 </div> 
+             </div>
+
+
+            <div class="row">
+
+
+
+
+
+
+
+
+                <asp:Panel ID="pnlMembStatus" runat="server" Visible="false">
+                    <fieldset>
+                        <legend>الحالة</legend>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+
+                                    <label for="ddlMembStatus">الحالة</label>
+                                    <asp:DropDownList ID="ddlMembStatus" runat="server" CssClass="form-control"></asp:DropDownList>
+                                    <asp:HiddenField ID="hdMembStatus" runat="server" />
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="ddlReason">السبب</label>
+                                    <asp:DropDownList ID="ddlReason" runat="server" CssClass="form-control"></asp:DropDownList>
+                                    <asp:HiddenField ID="hdReason" runat="server" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </asp:Panel>
+            </div>
+            <div class="row">
+                <div class="form-group text-center">
+                    <asp:Button ID="InsertNewMemb" runat="server" Text="حفظ التغيرات" OnClick="InsertNewMemb_Click" CssClass="btn btn-primary" />
+                    <asp:Button ID="btnClear" runat="server" Text="مسح" OnClick="btnClear_Click" CausesValidation="false" CssClass="btn btn-primary" />
+                    <asp:LinkButton ID="btnUpdate" runat="server" Text="تعديل" class="btn btn-primary btn-large  " Visible="False" OnClick="btnUpdate_Click"> تعديل  <i class="icon-white icon-ok"></i></asp:LinkButton>
+                    <asp:HiddenField ID="hdMemID" runat="server" />
+                </div>
+            </div>
+
+            <div class="form-group" style="margin: 0,auto">
+                <asp:Label ID="lblMsg_success" runat="server" CssClass="label label-success Success" Font-Bold="true" Font-Size="Medium"></asp:Label>
+                <asp:Label ID="lblMsg_failed" runat="server" CssClass="label label-danger Failed" Font-Bold="true" Font-Size="Medium"></asp:Label>
+            </div>
+
+        </ContentTemplate>
+        <Triggers>
+            <asp:PostBackTrigger ControlID="InsertNewMemb" />
+            <asp:PostBackTrigger ControlID="btnUpdate" />
+        </Triggers>
+    </asp:UpdatePanel>
+
+</asp:Content>

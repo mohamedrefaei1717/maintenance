@@ -1,0 +1,1655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AssociationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="RS_Acc_Trans_TypeOfType">
+    <Key>
+      <PropertyRef Name="RS_Acc_Trans_TypeOfType_ID" />
+    </Key>
+    <Property Name="RS_Acc_Trans_TypeOfType_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Acc_TypeOfType_ID" Type="Int32" Nullable="false" />
+    <Property Name="Account_ID" Type="Int32" Nullable="false" />
+    <Property Name="Trans_Type_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tbl_Acc_TypeOfType" Relationship="Self.FK_RS_Acc_Trans_TypeOfType_Tbl_Acc_TypeOfType" FromRole="RS_Acc_Trans_TypeOfType" ToRole="Tbl_Acc_TypeOfType" />
+    <NavigationProperty Name="Tbl_Account" Relationship="Self.FK_RS_Acc_Trans_TypeOfType_Tbl_Account" FromRole="RS_Acc_Trans_TypeOfType" ToRole="Tbl_Account" />
+    <NavigationProperty Name="Tbl_TransactionType" Relationship="Self.FK_RS_Acc_Trans_TypeOfType_Tbl_TransactionType" FromRole="RS_Acc_Trans_TypeOfType" ToRole="Tbl_TransactionType" />
+    <NavigationProperty Name="Rs_Acc_Transaction" Relationship="Self.FK_Rs_Acc_Transaction_RS_Acc_Trans_TypeOfType" FromRole="RS_Acc_Trans_TypeOfType" ToRole="Rs_Acc_Transaction" />
+  </EntityType>
+  <EntityType Name="Rs_Acc_Transaction">
+    <Key>
+      <PropertyRef Name="Rs_Acc_Transaction_ID" />
+    </Key>
+    <Property Name="Rs_Acc_Transaction_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RS_Acc_Transaction_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RS_Acc_Trans_TypeOfType_ID" Type="Int32" Nullable="false" />
+    <Property Name="Rs_Acc_Transaction_Value" Type="Int32" Nullable="false" />
+    <Property Name="Rs_Acc_Transaction_Check_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Rs_Acc_Transaction_Member_ID" Type="Int32" />
+    <Property Name="Rs_Acc_Transaction_Notes" Type="String" MaxLength="3500" FixedLength="false" Unicode="true" />
+    <Property Name="Rs_Acc_Transaction_Image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RS_Acc_Trans_TypeOfType" Relationship="Self.FK_Rs_Acc_Transaction_RS_Acc_Trans_TypeOfType" FromRole="Rs_Acc_Transaction" ToRole="RS_Acc_Trans_TypeOfType" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Rs_Acc_Transaction_Tbl_Member_Registration" FromRole="Rs_Acc_Transaction" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="RS_Memb_Transaction">
+    <Key>
+      <PropertyRef Name="Transaction_ID" />
+    </Key>
+    <Property Name="Transaction_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Memb_ID" Type="Int32" />
+    <Property Name="TransDate" Type="DateTime" Precision="3" />
+    <Property Name="Distion_No" Type="Int32" />
+    <Property Name="MembStatus_ID" Type="Int32" />
+    <Property Name="Reason_ID" Type="Int32" />
+    <Property Name="Status_Date_From" Type="DateTime" Precision="3" />
+    <Property Name="Status_Date_To" Type="DateTime" Precision="3" />
+    <Property Name="Status_Note" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Trans_Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_RS_Transaction_Tbl_Member_Registration" FromRole="RS_Memb_Transaction" ToRole="Tbl_Member_Registration" />
+    <NavigationProperty Name="Tbl_MembStatus" Relationship="Self.FK_RS_Transaction_Tbl_MembStatus" FromRole="RS_Memb_Transaction" ToRole="Tbl_MembStatus" />
+    <NavigationProperty Name="Tbl_Reason_Type" Relationship="Self.FK_RS_Transaction_Tbl_Reason_Type" FromRole="RS_Memb_Transaction" ToRole="Tbl_Reason_Type" />
+  </EntityType>
+  <EntityType Name="RS_Traning_Process">
+    <Key>
+      <PropertyRef Name="Tr_Proc_ID" />
+    </Key>
+    <Property Name="Tr_Proc_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Memb_EmpID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Course_ID" Type="Int32" />
+    <Property Name="Course_Typy_ID" Type="Int32" />
+    <Property Name="Course_Start_Date" Type="DateTime" Precision="3" />
+    <Property Name="Course_End_Date" Type="DateTime" Precision="3" />
+    <Property Name="Course_Funder_ID" Type="Int32" />
+    <Property Name="Training_Place_ID" Type="Int32" />
+    <Property Name="Course_Status_ID" Type="Int32" />
+    <Property Name="Course_Certificate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Course_Rank" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Course_Cost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Course_Exam_ID" Type="Int32" />
+    <Property Name="Course_GPA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Course_PhaseNo_ID" Type="Int32" />
+    <Property Name="Course_Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_Course_Exam" Relationship="Self.FK_RS_Traning_Process_Tbl_Course_Exam" FromRole="RS_Traning_Process" ToRole="Tbl_Course_Exam" />
+    <NavigationProperty Name="Tbl_Course_Phase" Relationship="Self.FK_RS_Traning_Process_Tbl_Course_Phase" FromRole="RS_Traning_Process" ToRole="Tbl_Course_Phase" />
+    <NavigationProperty Name="Tbl_Courses" Relationship="Self.FK_RS_Traning_Process_Tbl_Courses" FromRole="RS_Traning_Process" ToRole="Tbl_Courses" />
+    <NavigationProperty Name="Tbl_Courses_Status" Relationship="Self.FK_RS_Traning_Process_Tbl_Courses__Status" FromRole="RS_Traning_Process" ToRole="Tbl_Courses_Status" />
+    <NavigationProperty Name="Tbl_Courses_Funders" Relationship="Self.FK_RS_Traning_Process_Tbl_Courses_Funders" FromRole="RS_Traning_Process" ToRole="Tbl_Courses_Funders" />
+    <NavigationProperty Name="Tbl_Courses_Type" Relationship="Self.FK_RS_Traning_Process_Tbl_Courses_Type" FromRole="RS_Traning_Process" ToRole="Tbl_Courses_Type" />
+    <NavigationProperty Name="Tbl_Training_Place" Relationship="Self.FK_RS_Traning_Process_Tbl_Training_Place" FromRole="RS_Traning_Process" ToRole="Tbl_Training_Place" />
+    <NavigationProperty Name="Tbl_Trining_Process_History" Relationship="Self.FK_Tbl_Trining_Process_History_RS_Traning_Process1" FromRole="RS_Traning_Process" ToRole="Tbl_Trining_Process_History" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Acc_TypeOfType">
+    <Key>
+      <PropertyRef Name="Acc_TypeOfType_ID" />
+    </Key>
+    <Property Name="Acc_TypeOfType_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Acc_TypeOfType_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="RS_Acc_Trans_TypeOfType" Relationship="Self.FK_RS_Acc_Trans_TypeOfType_Tbl_Acc_TypeOfType" FromRole="Tbl_Acc_TypeOfType" ToRole="RS_Acc_Trans_TypeOfType" />
+  </EntityType>
+  <EntityType Name="Tbl_Account">
+    <Key>
+      <PropertyRef Name="Account_ID" />
+    </Key>
+    <Property Name="Account_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Account_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="RS_Acc_Trans_TypeOfType" Relationship="Self.FK_RS_Acc_Trans_TypeOfType_Tbl_Account" FromRole="Tbl_Account" ToRole="RS_Acc_Trans_TypeOfType" />
+  </EntityType>
+  <EntityType Name="Tbl_Appraisail_Rate">
+    <Key>
+      <PropertyRef Name="Rate_ID" />
+    </Key>
+    <Property Name="Rate_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rate_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_Old_Appraisal" Relationship="Self.FK_Tbl_Old_Appraisal_Appraisail_Rate" FromRole="Tbl_Appraisail_Rate" ToRole="Tbl_Old_Appraisal" />
+  </EntityType>
+  <EntityType Name="Tbl_Audit_Login">
+    <Key>
+      <PropertyRef Name="Audit_ID" />
+    </Key>
+    <Property Name="Audit_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Audit_IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Audit_DateTime" Type="DateTime" Precision="3" />
+    <Property Name="Audit_UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Audit_Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Audit_Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Tbl_Central_Departments">
+    <Key>
+      <PropertyRef Name="Cent_Dept_ID" />
+    </Key>
+    <Property Name="Cent_Dept_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cent_Dept_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Sect_ID" Type="Int32" />
+    <NavigationProperty Name="Tbl_Sectors" Relationship="Self.FK_Tbl_Central_Departments_Tbl_Sectors" FromRole="Tbl_Central_Departments" ToRole="Tbl_Sectors" />
+    <NavigationProperty Name="Tbl_Public_Departments" Relationship="Self.FK_Tbl_Public_Departments_Tbl_Central_Departments" FromRole="Tbl_Central_Departments" ToRole="Tbl_Public_Departments" />
+  </EntityType>
+  <EntityType Name="Tbl_Course_Exam">
+    <Key>
+      <PropertyRef Name="Exam_ID" />
+    </Key>
+    <Property Name="Exam_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Exam_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RS_Traning_Process" Relationship="Self.FK_RS_Traning_Process_Tbl_Course_Exam" FromRole="Tbl_Course_Exam" ToRole="RS_Traning_Process" />
+  </EntityType>
+  <EntityType Name="Tbl_Course_Phase">
+    <Key>
+      <PropertyRef Name="Phase_ID" />
+    </Key>
+    <Property Name="Phase_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Phase_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RS_Traning_Process" Relationship="Self.FK_RS_Traning_Process_Tbl_Course_Phase" FromRole="Tbl_Course_Phase" ToRole="RS_Traning_Process" />
+  </EntityType>
+  <EntityType Name="Tbl_Courses">
+    <Key>
+      <PropertyRef Name="Course_ID" />
+    </Key>
+    <Property Name="Course_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Coures_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Course_TypeID" Type="Int32" />
+    <NavigationProperty Name="RS_Traning_Process" Relationship="Self.FK_RS_Traning_Process_Tbl_Courses" FromRole="Tbl_Courses" ToRole="RS_Traning_Process" />
+  </EntityType>
+  <EntityType Name="Tbl_Courses_Funders">
+    <Key>
+      <PropertyRef Name="Course_Funder_ID" />
+    </Key>
+    <Property Name="Course_Funder_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Course_Funder_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RS_Traning_Process" Relationship="Self.FK_RS_Traning_Process_Tbl_Courses_Funders" FromRole="Tbl_Courses_Funders" ToRole="RS_Traning_Process" />
+  </EntityType>
+  <EntityType Name="Tbl_Courses_Status">
+    <Key>
+      <PropertyRef Name="Course_Status_ID" />
+    </Key>
+    <Property Name="Course_Status_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Course_Status_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RS_Traning_Process" Relationship="Self.FK_RS_Traning_Process_Tbl_Courses__Status" FromRole="Tbl_Courses_Status" ToRole="RS_Traning_Process" />
+  </EntityType>
+  <EntityType Name="Tbl_Courses_Type">
+    <Key>
+      <PropertyRef Name="Course_Type_ID" />
+    </Key>
+    <Property Name="Course_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Course_Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RS_Traning_Process" Relationship="Self.FK_RS_Traning_Process_Tbl_Courses_Type" FromRole="Tbl_Courses_Type" ToRole="RS_Traning_Process" />
+  </EntityType>
+  <EntityType Name="Tbl_Departments">
+    <Key>
+      <PropertyRef Name="Dept_ID" />
+    </Key>
+    <Property Name="Dept_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Dept_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Pub_Dept_ID" Type="Int32" />
+    <NavigationProperty Name="Tbl_Public_Departments" Relationship="Self.FK_Tbl_Departments_Tbl_Public_Departments" FromRole="Tbl_Departments" ToRole="Tbl_Public_Departments" />
+  </EntityType>
+  <EntityType Name="Tbl_Education_Qualification">
+    <Key>
+      <PropertyRef Name="Edu_Qualification_ID" />
+    </Key>
+    <Property Name="Edu_Qualification_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Edu_Qualification_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Education_Qualification" FromRole="Tbl_Education_Qualification" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="TBL_Exception">
+    <Key>
+      <PropertyRef Name="Excep_ID" />
+    </Key>
+    <Property Name="Excep_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Excep_ErrorNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Excep_ErrorCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Excep_Type" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Excep_Message" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Excep_DateTime" Type="DateTime" Precision="3" />
+    <Property Name="EntityMess" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tbl_Funational_Group">
+    <Key>
+      <PropertyRef Name="Functional_ID" />
+    </Key>
+    <Property Name="Functional_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Functional_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Funational_Group" FromRole="Tbl_Funational_Group" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_Gender_Type">
+    <Key>
+      <PropertyRef Name="Gender_ID" />
+    </Key>
+    <Property Name="Gender_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Gender_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Gender_Type" FromRole="Tbl_Gender_Type" ToRole="Tbl_Member_Registration" />
+    <NavigationProperty Name="Tbl_Relation" Relationship="Self.FK_Tbl_Relation_Tbl_Gender_Type" FromRole="Tbl_Gender_Type" ToRole="Tbl_Relation" />
+  </EntityType>
+  <EntityType Name="Tbl_Illegal_Earning">
+    <Key>
+      <PropertyRef Name="Illegal_ID" />
+    </Key>
+    <Property Name="Illegal_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Memb_ID" Type="Int32" />
+    <Property Name="Illegal_Date" Type="DateTime" Precision="3" />
+    <Property Name="Illegal_Note" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="Illegal_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Illegal_Earning_Tbl_Member_Registration" FromRole="Tbl_Illegal_Earning" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_Insurance_Subscripe">
+    <Key>
+      <PropertyRef Name="Insur_ID" />
+      <PropertyRef Name="Insur_Sub_Date" />
+    </Key>
+    <Property Name="Insur_ID" Type="Int32" Nullable="false" />
+    <Property Name="Insur_Sub_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mem_ID" Type="Int32" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Insurance_Subscripe_Tbl_Member_Registration" FromRole="Tbl_Insurance_Subscripe" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_Insurance_Type">
+    <Key>
+      <PropertyRef Name="Insurance_ID" />
+    </Key>
+    <Property Name="Insurance_ID" Type="Int32" Nullable="false" />
+    <Property Name="Insurance_Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_Member_Insurance" Relationship="Self.FK_Tbl_Member_Insurance_Tbl_insurance_Type" FromRole="Tbl_Insurance_Type" ToRole="Tbl_Member_Insurance" />
+  </EntityType>
+  <EntityType Name="Tbl_IPS">
+    <Key>
+      <PropertyRef Name="IPS_ID" />
+    </Key>
+    <Property Name="IPS_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IPS_Usr_ID" Type="Int32" />
+    <Property Name="IPS_Usr_IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_SysUsers" Relationship="Self.FK_Tbl_IPS_TBL_SysUsers" FromRole="Tbl_IPS" ToRole="TBL_SysUsers" />
+  </EntityType>
+  <EntityType Name="Tbl_Jobs_Titles">
+    <Key>
+      <PropertyRef Name="Job_Title_ID" />
+    </Key>
+    <Property Name="Job_Title_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Job_Title_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Jobs_Titles" FromRole="Tbl_Jobs_Titles" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_kinshipType">
+    <Key>
+      <PropertyRef Name="kinship_ID" />
+    </Key>
+    <Property Name="kinship_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kinship_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tbl_Relation" Relationship="Self.FK_Tbl_Relation_Tbl_kinshipType" FromRole="Tbl_kinshipType" ToRole="Tbl_Relation" />
+  </EntityType>
+  <EntityType Name="Tbl_Memb_Sub_Over">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Memb_EmpId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Memb_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Tbl_Member_Insurance">
+    <Key>
+      <PropertyRef Name="Inssur_ID" />
+    </Key>
+    <Property Name="Inssur_ID" Type="Int32" Nullable="false" />
+    <Property Name="Memb_ID" Type="Int32" />
+    <Property Name="insur_Date" Type="DateTime" Precision="3" />
+    <Property Name="insurance_Type_ID" Type="Int32" />
+    <Property Name="Insur_Value" Type="Int32" />
+    <NavigationProperty Name="Tbl_Insurance_Type" Relationship="Self.FK_Tbl_Member_Insurance_Tbl_insurance_Type" FromRole="Tbl_Member_Insurance" ToRole="Tbl_Insurance_Type" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Member_Insurance_Tbl_Member_Registration" FromRole="Tbl_Member_Insurance" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_Member_Registration">
+    <Key>
+      <PropertyRef Name="Memb_ID" />
+    </Key>
+    <Property Name="Memb_ID" Type="Int32" Nullable="false" />
+    <Property Name="National_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Memb_SysDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Memb_Date" Type="DateTime" Precision="3" />
+    <Property Name="Memb_EmpID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Memb_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Memb_Birthdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Memb_Social_ID" Type="Int32" Nullable="false" />
+    <Property Name="Memb_Children_Number" Type="Int32" />
+    <Property Name="Memb_Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Memb_Gender_ID" Type="Int32" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="3500" FixedLength="false" Unicode="true" />
+    <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HomePhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WorkPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NationalID_Home" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BirthHome" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Insurance_Number" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Folder_Number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Emp_Appointment_Date" Type="DateTime" Precision="3" />
+    <Property Name="Sect_ID" Type="Int32" />
+    <Property Name="Cent_Dept_ID" Type="Int32" />
+    <Property Name="Pub_Dept_ID" Type="Int32" />
+    <Property Name="Dept_ID" Type="Int32" />
+    <Property Name="Edu_Qualification_ID" Type="Int32" />
+    <Property Name="Work_Degree_ID" Type="Int32" />
+    <Property Name="Military_Serv_ID" Type="Int32" />
+    <Property Name="Job_Title_ID" Type="Int32" />
+    <Property Name="Qualitative_ID" Type="Int32" />
+    <Property Name="Functional_ID" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Rs_Acc_Transaction" Relationship="Self.FK_Rs_Acc_Transaction_Tbl_Member_Registration" FromRole="Tbl_Member_Registration" ToRole="Rs_Acc_Transaction" />
+    <NavigationProperty Name="RS_Memb_Transaction" Relationship="Self.FK_RS_Transaction_Tbl_Member_Registration" FromRole="Tbl_Member_Registration" ToRole="RS_Memb_Transaction" />
+    <NavigationProperty Name="Tbl_Education_Qualification" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Education_Qualification" FromRole="Tbl_Member_Registration" ToRole="Tbl_Education_Qualification" />
+    <NavigationProperty Name="Tbl_Funational_Group" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Funational_Group" FromRole="Tbl_Member_Registration" ToRole="Tbl_Funational_Group" />
+    <NavigationProperty Name="Tbl_Gender_Type" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Gender_Type" FromRole="Tbl_Member_Registration" ToRole="Tbl_Gender_Type" />
+    <NavigationProperty Name="Tbl_Illegal_Earning" Relationship="Self.FK_Tbl_Illegal_Earning_Tbl_Member_Registration" FromRole="Tbl_Member_Registration" ToRole="Tbl_Illegal_Earning" />
+    <NavigationProperty Name="Tbl_Insurance_Subscripe" Relationship="Self.FK_Tbl_Insurance_Subscripe_Tbl_Member_Registration" FromRole="Tbl_Member_Registration" ToRole="Tbl_Insurance_Subscripe" />
+    <NavigationProperty Name="Tbl_Jobs_Titles" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Jobs_Titles" FromRole="Tbl_Member_Registration" ToRole="Tbl_Jobs_Titles" />
+    <NavigationProperty Name="Tbl_Member_Insurance" Relationship="Self.FK_Tbl_Member_Insurance_Tbl_Member_Registration" FromRole="Tbl_Member_Registration" ToRole="Tbl_Member_Insurance" />
+    <NavigationProperty Name="Tbl_Qualitative_Group" Relationship="Self.FK_Tbl_Member_Registration_Qualitative_Group" FromRole="Tbl_Member_Registration" ToRole="Tbl_Qualitative_Group" />
+    <NavigationProperty Name="Tbl_Military_Service" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Military_Service" FromRole="Tbl_Member_Registration" ToRole="Tbl_Military_Service" />
+    <NavigationProperty Name="Tbl_Social" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Social" FromRole="Tbl_Member_Registration" ToRole="Tbl_Social" />
+    <NavigationProperty Name="Tbl_Work_Degree" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Work_Degree" FromRole="Tbl_Member_Registration" ToRole="Tbl_Work_Degree" />
+    <NavigationProperty Name="Tbl_Old_Appraisal" Relationship="Self.FK_Tbl_Old_Appraisal_Tbl_Member_Registration" FromRole="Tbl_Member_Registration" ToRole="Tbl_Old_Appraisal" />
+    <NavigationProperty Name="Tbl_Relation" Relationship="Self.FK_Tbl_Relation_Tbl_Member_Registration" FromRole="Tbl_Member_Registration" ToRole="Tbl_Relation" />
+    <NavigationProperty Name="Tbl_Subscribes" Relationship="Self.FK_Tbl_Subscribes_Tbl_Member_Registration" FromRole="Tbl_Member_Registration" ToRole="Tbl_Subscribes" />
+  </EntityType>
+  <EntityType Name="Tbl_MembStatus">
+    <Key>
+      <PropertyRef Name="MembStatus_ID" />
+    </Key>
+    <Property Name="MembStatus_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MembStatus_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RS_Memb_Transaction" Relationship="Self.FK_RS_Transaction_Tbl_MembStatus" FromRole="Tbl_MembStatus" ToRole="RS_Memb_Transaction" />
+  </EntityType>
+  <EntityType Name="Tbl_Military_Service">
+    <Key>
+      <PropertyRef Name="Military_Serv_ID" />
+    </Key>
+    <Property Name="Military_Serv_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Military_Serv_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Military_Service" FromRole="Tbl_Military_Service" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_Old_Appraisal">
+    <Key>
+      <PropertyRef Name="Appraisal_ID" />
+    </Key>
+    <Property Name="Appraisal_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Memb_ID" Type="Int32" />
+    <Property Name="Appraisal_Degree" Type="Int32" />
+    <Property Name="Appraisal_Rate_ID" Type="Int32" />
+    <Property Name="Appraisal_Year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Appraisal_Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_Appraisail_Rate" Relationship="Self.FK_Tbl_Old_Appraisal_Appraisail_Rate" FromRole="Tbl_Old_Appraisal" ToRole="Tbl_Appraisail_Rate" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Old_Appraisal_Tbl_Member_Registration" FromRole="Tbl_Old_Appraisal" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_Public_Departments">
+    <Key>
+      <PropertyRef Name="Pub_Dept_ID" />
+    </Key>
+    <Property Name="Pub_Dept_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pub_Dept_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Cent_Dept_ID" Type="Int32" />
+    <NavigationProperty Name="Tbl_Central_Departments" Relationship="Self.FK_Tbl_Public_Departments_Tbl_Central_Departments" FromRole="Tbl_Public_Departments" ToRole="Tbl_Central_Departments" />
+    <NavigationProperty Name="Tbl_Departments" Relationship="Self.FK_Tbl_Departments_Tbl_Public_Departments" FromRole="Tbl_Public_Departments" ToRole="Tbl_Departments" />
+  </EntityType>
+  <EntityType Name="Tbl_Qualitative_Group">
+    <Key>
+      <PropertyRef Name="Qualitative_ID" />
+    </Key>
+    <Property Name="Qualitative_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Qualitative_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Member_Registration_Qualitative_Group" FromRole="Tbl_Qualitative_Group" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_Reason_Type">
+    <Key>
+      <PropertyRef Name="Reason_ID" />
+    </Key>
+    <Property Name="Reason_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Reason_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MembStatus_ID" Type="Int32" />
+    <NavigationProperty Name="RS_Memb_Transaction" Relationship="Self.FK_RS_Transaction_Tbl_Reason_Type" FromRole="Tbl_Reason_Type" ToRole="RS_Memb_Transaction" />
+  </EntityType>
+  <EntityType Name="Tbl_Relation">
+    <Key>
+      <PropertyRef Name="Relation_ID" />
+    </Key>
+    <Property Name="Relation_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Relation_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mem_ID" Type="Int32" Nullable="false" />
+    <Property Name="Relation_Birthdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Gender_ID" Type="Int32" Nullable="false" />
+    <Property Name="kinship_ID" Type="Int32" Nullable="false" />
+    <Property Name="Relation_Image" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tbl_Gender_Type" Relationship="Self.FK_Tbl_Relation_Tbl_Gender_Type" FromRole="Tbl_Relation" ToRole="Tbl_Gender_Type" />
+    <NavigationProperty Name="Tbl_kinshipType" Relationship="Self.FK_Tbl_Relation_Tbl_kinshipType" FromRole="Tbl_Relation" ToRole="Tbl_kinshipType" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Relation_Tbl_Member_Registration" FromRole="Tbl_Relation" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_Sectors">
+    <Key>
+      <PropertyRef Name="Sect_ID" />
+    </Key>
+    <Property Name="Sect_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sect_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_Central_Departments" Relationship="Self.FK_Tbl_Central_Departments_Tbl_Sectors" FromRole="Tbl_Sectors" ToRole="Tbl_Central_Departments" />
+  </EntityType>
+  <EntityType Name="Tbl_Social">
+    <Key>
+      <PropertyRef Name="Social_ID" />
+    </Key>
+    <Property Name="Social_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Social_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Social" FromRole="Tbl_Social" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_Subscribes">
+    <Key>
+      <PropertyRef Name="Sub_Year" />
+      <PropertyRef Name="Mem_ID" />
+    </Key>
+    <Property Name="Sub_Year" Type="Int32" Nullable="false" />
+    <Property Name="Mem_ID" Type="Int32" Nullable="false" />
+    <Property Name="Jan" Type="Boolean" />
+    <Property Name="Feb" Type="Boolean" />
+    <Property Name="Mar" Type="Boolean" />
+    <Property Name="Apr" Type="Boolean" />
+    <Property Name="May" Type="Boolean" />
+    <Property Name="June" Type="Boolean" />
+    <Property Name="July" Type="Boolean" />
+    <Property Name="August" Type="Boolean" />
+    <Property Name="Sep" Type="Boolean" />
+    <Property Name="Oct" Type="Boolean" />
+    <Property Name="Nov" Type="Boolean" />
+    <Property Name="Dec" Type="Boolean" />
+    <Property Name="Sub_Paied" Type="Int32" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Subscribes_Tbl_Member_Registration" FromRole="Tbl_Subscribes" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="TBL_SysModules">
+    <Key>
+      <PropertyRef Name="Mod_ID" />
+    </Key>
+    <Property Name="Mod_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Module_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Module_English_Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_SysUsers" Relationship="Self.FK_TBL_SysUsers_TBL_SysModules" FromRole="TBL_SysModules" ToRole="TBL_SysUsers" />
+  </EntityType>
+  <EntityType Name="TBL_SysUsers">
+    <Key>
+      <PropertyRef Name="Usr_ID" />
+    </Key>
+    <Property Name="Usr_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usr_firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Usr_familyname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Usr_IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Usr_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Usr_mobnum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Usr_address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Usr_img" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Usr_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Usr_Pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Usr_ModID" Type="Int32" Nullable="false" />
+    <Property Name="Usr_IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="DateAdded" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Tbl_IPS" Relationship="Self.FK_Tbl_IPS_TBL_SysUsers" FromRole="TBL_SysUsers" ToRole="Tbl_IPS" />
+    <NavigationProperty Name="TBL_SysModules" Relationship="Self.FK_TBL_SysUsers_TBL_SysModules" FromRole="TBL_SysUsers" ToRole="TBL_SysModules" />
+  </EntityType>
+  <EntityType Name="Tbl_Training_Place">
+    <Key>
+      <PropertyRef Name="Training_Place_ID" />
+    </Key>
+    <Property Name="Training_Place_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Training_Place_Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="RS_Traning_Process" Relationship="Self.FK_RS_Traning_Process_Tbl_Training_Place" FromRole="Tbl_Training_Place" ToRole="RS_Traning_Process" />
+  </EntityType>
+  <EntityType Name="Tbl_TransactionType">
+    <Key>
+      <PropertyRef Name="Trans_Type_ID" />
+    </Key>
+    <Property Name="Trans_Type_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Trans_Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="RS_Acc_Trans_TypeOfType" Relationship="Self.FK_RS_Acc_Trans_TypeOfType_Tbl_TransactionType" FromRole="Tbl_TransactionType" ToRole="RS_Acc_Trans_TypeOfType" />
+  </EntityType>
+  <EntityType Name="Tbl_Trining_Process_History">
+    <Key>
+      <PropertyRef Name="Tr_Proc_History_ID" />
+    </Key>
+    <Property Name="Tr_Proc_History_ID" Type="Int32" Nullable="false" />
+    <Property Name="Tr_Proc_ID" Type="Int32" />
+    <Property Name="Tr_Proc_History_Type_ID" Type="Int32" />
+    <Property Name="Memb_EmpID" Type="Int32" />
+    <NavigationProperty Name="RS_Traning_Process" Relationship="Self.FK_Tbl_Trining_Process_History_RS_Traning_Process1" FromRole="Tbl_Trining_Process_History" ToRole="RS_Traning_Process" />
+    <NavigationProperty Name="Tbl_Trining_Process_History_Type" Relationship="Self.FK_Tbl_Trining_Process_History_Tbl_Trining_Process_History_Type" FromRole="Tbl_Trining_Process_History" ToRole="Tbl_Trining_Process_History_Type" />
+  </EntityType>
+  <EntityType Name="Tbl_Trining_Process_History_Type">
+    <Key>
+      <PropertyRef Name="Tr_Proc_History_Type_ID" />
+    </Key>
+    <Property Name="Tr_Proc_History_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="Tr_Proc_History_Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tbl_Trining_Process_History" Relationship="Self.FK_Tbl_Trining_Process_History_Tbl_Trining_Process_History_Type" FromRole="Tbl_Trining_Process_History_Type" ToRole="Tbl_Trining_Process_History" />
+  </EntityType>
+  <EntityType Name="Tbl_Work_Degree">
+    <Key>
+      <PropertyRef Name="Work_Degree_ID" />
+    </Key>
+    <Property Name="Work_Degree_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Work_Degree_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="Self.FK_Tbl_Member_Registration_Tbl_Work_Degree" FromRole="Tbl_Work_Degree" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="test">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id_n" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_1">
+    <Key>
+      <PropertyRef Name="Memb_ID" />
+      <PropertyRef Name="Memb_SysDate" />
+      <PropertyRef Name="Memb_EmpID" />
+      <PropertyRef Name="Memb_Name" />
+      <PropertyRef Name="Memb_Birthdate" />
+      <PropertyRef Name="Memb_Social_ID" />
+      <PropertyRef Name="Memb_Gender_ID" />
+      <PropertyRef Name="Reason_Name" />
+      <PropertyRef Name="Reason_ID" />
+      <PropertyRef Name="MembStatus_ID" />
+      <PropertyRef Name="Social_ID" />
+      <PropertyRef Name="Social_Name" />
+    </Key>
+    <Property Name="Memb_ID" Type="Int32" Nullable="false" />
+    <Property Name="Memb_SysDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Memb_Date" Type="DateTime" Precision="3" />
+    <Property Name="Memb_EmpID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Memb_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Memb_Birthdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Memb_Social_ID" Type="Int32" Nullable="false" />
+    <Property Name="Memb_Children_Number" Type="Int32" />
+    <Property Name="Memb_Image" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Memb_Gender_ID" Type="Int32" Nullable="false" />
+    <Property Name="Dept_ID" Type="Int32" />
+    <Property Name="Reason_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TransDate" Type="DateTime" Precision="3" />
+    <Property Name="MembStatus_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reason_ID" Type="Int32" Nullable="false" />
+    <Property Name="MembStatus_ID" Type="Int32" Nullable="false" />
+    <Property Name="Social_ID" Type="Int32" Nullable="false" />
+    <Property Name="Social_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_2">
+    <Key>
+      <PropertyRef Name="Trans_Type_Name" />
+      <PropertyRef Name="Account_Name" />
+      <PropertyRef Name="Acc_TypeOfType_Name" />
+      <PropertyRef Name="Account_ID" />
+      <PropertyRef Name="Trans_Type_ID" />
+      <PropertyRef Name="Acc_TypeOfType_ID" />
+    </Key>
+    <Property Name="Trans_Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Account_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Acc_TypeOfType_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Account_ID" Type="Int32" Nullable="false" />
+    <Property Name="Trans_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="Acc_TypeOfType_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="View_3">
+    <Key>
+      <PropertyRef Name="Acc_TypeOfType_ID" />
+      <PropertyRef Name="Acc_TypeOfType_Name" />
+      <PropertyRef Name="Account_ID" />
+      <PropertyRef Name="Account_Name" />
+      <PropertyRef Name="Trans_Type_ID" />
+      <PropertyRef Name="Trans_Type_Name" />
+    </Key>
+    <Property Name="Acc_TypeOfType_ID" Type="Int32" Nullable="false" />
+    <Property Name="Acc_TypeOfType_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Account_ID" Type="Int32" Nullable="false" />
+    <Property Name="Account_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Trans_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="Trans_Type_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_RS_Acc_Trans_TypeOfType_Tbl_Acc_TypeOfType">
+    <End Role="Tbl_Acc_TypeOfType" Type="Self.Tbl_Acc_TypeOfType" Multiplicity="1" />
+    <End Role="RS_Acc_Trans_TypeOfType" Type="Self.RS_Acc_Trans_TypeOfType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Acc_TypeOfType">
+        <PropertyRef Name="Acc_TypeOfType_ID" />
+      </Principal>
+      <Dependent Role="RS_Acc_Trans_TypeOfType">
+        <PropertyRef Name="Acc_TypeOfType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Acc_Trans_TypeOfType_Tbl_Account">
+    <End Role="Tbl_Account" Type="Self.Tbl_Account" Multiplicity="1" />
+    <End Role="RS_Acc_Trans_TypeOfType" Type="Self.RS_Acc_Trans_TypeOfType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Account">
+        <PropertyRef Name="Account_ID" />
+      </Principal>
+      <Dependent Role="RS_Acc_Trans_TypeOfType">
+        <PropertyRef Name="Account_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Acc_Trans_TypeOfType_Tbl_TransactionType">
+    <End Role="Tbl_TransactionType" Type="Self.Tbl_TransactionType" Multiplicity="1" />
+    <End Role="RS_Acc_Trans_TypeOfType" Type="Self.RS_Acc_Trans_TypeOfType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_TransactionType">
+        <PropertyRef Name="Trans_Type_ID" />
+      </Principal>
+      <Dependent Role="RS_Acc_Trans_TypeOfType">
+        <PropertyRef Name="Trans_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rs_Acc_Transaction_RS_Acc_Trans_TypeOfType">
+    <End Role="RS_Acc_Trans_TypeOfType" Type="Self.RS_Acc_Trans_TypeOfType" Multiplicity="1" />
+    <End Role="Rs_Acc_Transaction" Type="Self.Rs_Acc_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RS_Acc_Trans_TypeOfType">
+        <PropertyRef Name="RS_Acc_Trans_TypeOfType_ID" />
+      </Principal>
+      <Dependent Role="Rs_Acc_Transaction">
+        <PropertyRef Name="RS_Acc_Trans_TypeOfType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rs_Acc_Transaction_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="0..1" />
+    <End Role="Rs_Acc_Transaction" Type="Self.Rs_Acc_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="Rs_Acc_Transaction">
+        <PropertyRef Name="Rs_Acc_Transaction_Member_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Transaction_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="0..1" />
+    <End Role="RS_Memb_Transaction" Type="Self.RS_Memb_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="RS_Memb_Transaction">
+        <PropertyRef Name="Memb_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Transaction_Tbl_MembStatus">
+    <End Role="Tbl_MembStatus" Type="Self.Tbl_MembStatus" Multiplicity="0..1" />
+    <End Role="RS_Memb_Transaction" Type="Self.RS_Memb_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_MembStatus">
+        <PropertyRef Name="MembStatus_ID" />
+      </Principal>
+      <Dependent Role="RS_Memb_Transaction">
+        <PropertyRef Name="MembStatus_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Transaction_Tbl_Reason_Type">
+    <End Role="Tbl_Reason_Type" Type="Self.Tbl_Reason_Type" Multiplicity="0..1" />
+    <End Role="RS_Memb_Transaction" Type="Self.RS_Memb_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Reason_Type">
+        <PropertyRef Name="Reason_ID" />
+      </Principal>
+      <Dependent Role="RS_Memb_Transaction">
+        <PropertyRef Name="Reason_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Traning_Process_Tbl_Course_Exam">
+    <End Role="Tbl_Course_Exam" Type="Self.Tbl_Course_Exam" Multiplicity="0..1" />
+    <End Role="RS_Traning_Process" Type="Self.RS_Traning_Process" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Course_Exam">
+        <PropertyRef Name="Exam_ID" />
+      </Principal>
+      <Dependent Role="RS_Traning_Process">
+        <PropertyRef Name="Course_Exam_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Traning_Process_Tbl_Course_Phase">
+    <End Role="Tbl_Course_Phase" Type="Self.Tbl_Course_Phase" Multiplicity="0..1" />
+    <End Role="RS_Traning_Process" Type="Self.RS_Traning_Process" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Course_Phase">
+        <PropertyRef Name="Phase_ID" />
+      </Principal>
+      <Dependent Role="RS_Traning_Process">
+        <PropertyRef Name="Course_PhaseNo_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Traning_Process_Tbl_Courses">
+    <End Role="Tbl_Courses" Type="Self.Tbl_Courses" Multiplicity="0..1" />
+    <End Role="RS_Traning_Process" Type="Self.RS_Traning_Process" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Courses">
+        <PropertyRef Name="Course_ID" />
+      </Principal>
+      <Dependent Role="RS_Traning_Process">
+        <PropertyRef Name="Course_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Traning_Process_Tbl_Courses__Status">
+    <End Role="Tbl_Courses_Status" Type="Self.Tbl_Courses_Status" Multiplicity="0..1" />
+    <End Role="RS_Traning_Process" Type="Self.RS_Traning_Process" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Courses_Status">
+        <PropertyRef Name="Course_Status_ID" />
+      </Principal>
+      <Dependent Role="RS_Traning_Process">
+        <PropertyRef Name="Course_Status_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Traning_Process_Tbl_Courses_Funders">
+    <End Role="Tbl_Courses_Funders" Type="Self.Tbl_Courses_Funders" Multiplicity="0..1" />
+    <End Role="RS_Traning_Process" Type="Self.RS_Traning_Process" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Courses_Funders">
+        <PropertyRef Name="Course_Funder_ID" />
+      </Principal>
+      <Dependent Role="RS_Traning_Process">
+        <PropertyRef Name="Course_Funder_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Traning_Process_Tbl_Courses_Type">
+    <End Role="Tbl_Courses_Type" Type="Self.Tbl_Courses_Type" Multiplicity="0..1" />
+    <End Role="RS_Traning_Process" Type="Self.RS_Traning_Process" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Courses_Type">
+        <PropertyRef Name="Course_Type_ID" />
+      </Principal>
+      <Dependent Role="RS_Traning_Process">
+        <PropertyRef Name="Course_Typy_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Traning_Process_Tbl_Training_Place">
+    <End Role="Tbl_Training_Place" Type="Self.Tbl_Training_Place" Multiplicity="0..1" />
+    <End Role="RS_Traning_Process" Type="Self.RS_Traning_Process" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Training_Place">
+        <PropertyRef Name="Training_Place_ID" />
+      </Principal>
+      <Dependent Role="RS_Traning_Process">
+        <PropertyRef Name="Training_Place_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Trining_Process_History_RS_Traning_Process1">
+    <End Role="RS_Traning_Process" Type="Self.RS_Traning_Process" Multiplicity="0..1" />
+    <End Role="Tbl_Trining_Process_History" Type="Self.Tbl_Trining_Process_History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RS_Traning_Process">
+        <PropertyRef Name="Tr_Proc_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Trining_Process_History">
+        <PropertyRef Name="Tr_Proc_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Old_Appraisal_Appraisail_Rate">
+    <End Role="Tbl_Appraisail_Rate" Type="Self.Tbl_Appraisail_Rate" Multiplicity="0..1" />
+    <End Role="Tbl_Old_Appraisal" Type="Self.Tbl_Old_Appraisal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Appraisail_Rate">
+        <PropertyRef Name="Rate_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Old_Appraisal">
+        <PropertyRef Name="Appraisal_Rate_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Central_Departments_Tbl_Sectors">
+    <End Role="Tbl_Sectors" Type="Self.Tbl_Sectors" Multiplicity="0..1" />
+    <End Role="Tbl_Central_Departments" Type="Self.Tbl_Central_Departments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Sectors">
+        <PropertyRef Name="Sect_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Central_Departments">
+        <PropertyRef Name="Sect_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Public_Departments_Tbl_Central_Departments">
+    <End Role="Tbl_Central_Departments" Type="Self.Tbl_Central_Departments" Multiplicity="0..1" />
+    <End Role="Tbl_Public_Departments" Type="Self.Tbl_Public_Departments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Central_Departments">
+        <PropertyRef Name="Cent_Dept_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Public_Departments">
+        <PropertyRef Name="Cent_Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Departments_Tbl_Public_Departments">
+    <End Role="Tbl_Public_Departments" Type="Self.Tbl_Public_Departments" Multiplicity="0..1" />
+    <End Role="Tbl_Departments" Type="Self.Tbl_Departments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Public_Departments">
+        <PropertyRef Name="Pub_Dept_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Departments">
+        <PropertyRef Name="Pub_Dept_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Education_Qualification">
+    <End Role="Tbl_Education_Qualification" Type="Self.Tbl_Education_Qualification" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Education_Qualification">
+        <PropertyRef Name="Edu_Qualification_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Edu_Qualification_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Funational_Group">
+    <End Role="Tbl_Funational_Group" Type="Self.Tbl_Funational_Group" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Funational_Group">
+        <PropertyRef Name="Functional_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Functional_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Gender_Type">
+    <End Role="Tbl_Gender_Type" Type="Self.Tbl_Gender_Type" Multiplicity="1" />
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Gender_Type">
+        <PropertyRef Name="Gender_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_Gender_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Relation_Tbl_Gender_Type">
+    <End Role="Tbl_Gender_Type" Type="Self.Tbl_Gender_Type" Multiplicity="1" />
+    <End Role="Tbl_Relation" Type="Self.Tbl_Relation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Gender_Type">
+        <PropertyRef Name="Gender_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Relation">
+        <PropertyRef Name="Gender_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Illegal_Earning_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="0..1" />
+    <End Role="Tbl_Illegal_Earning" Type="Self.Tbl_Illegal_Earning" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Illegal_Earning">
+        <PropertyRef Name="Memb_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Insurance_Subscripe_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="0..1" />
+    <End Role="Tbl_Insurance_Subscripe" Type="Self.Tbl_Insurance_Subscripe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Insurance_Subscripe">
+        <PropertyRef Name="Mem_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Insurance_Tbl_insurance_Type">
+    <End Role="Tbl_Insurance_Type" Type="Self.Tbl_Insurance_Type" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Insurance" Type="Self.Tbl_Member_Insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Insurance_Type">
+        <PropertyRef Name="Insurance_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Insurance">
+        <PropertyRef Name="insurance_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_IPS_TBL_SysUsers">
+    <End Role="TBL_SysUsers" Type="Self.TBL_SysUsers" Multiplicity="0..1" />
+    <End Role="Tbl_IPS" Type="Self.Tbl_IPS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_SysUsers">
+        <PropertyRef Name="Usr_ID" />
+      </Principal>
+      <Dependent Role="Tbl_IPS">
+        <PropertyRef Name="IPS_Usr_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Jobs_Titles">
+    <End Role="Tbl_Jobs_Titles" Type="Self.Tbl_Jobs_Titles" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Jobs_Titles">
+        <PropertyRef Name="Job_Title_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Job_Title_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Relation_Tbl_kinshipType">
+    <End Role="Tbl_kinshipType" Type="Self.Tbl_kinshipType" Multiplicity="1" />
+    <End Role="Tbl_Relation" Type="Self.Tbl_Relation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_kinshipType">
+        <PropertyRef Name="kinship_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Relation">
+        <PropertyRef Name="kinship_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Insurance_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Insurance" Type="Self.Tbl_Member_Insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Insurance">
+        <PropertyRef Name="Memb_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Qualitative_Group">
+    <End Role="Tbl_Qualitative_Group" Type="Self.Tbl_Qualitative_Group" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Qualitative_Group">
+        <PropertyRef Name="Qualitative_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Qualitative_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Military_Service">
+    <End Role="Tbl_Military_Service" Type="Self.Tbl_Military_Service" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Military_Service">
+        <PropertyRef Name="Military_Serv_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Military_Serv_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Social">
+    <End Role="Tbl_Social" Type="Self.Tbl_Social" Multiplicity="1" />
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Social">
+        <PropertyRef Name="Social_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_Social_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Work_Degree">
+    <End Role="Tbl_Work_Degree" Type="Self.Tbl_Work_Degree" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Work_Degree">
+        <PropertyRef Name="Work_Degree_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Work_Degree_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Old_Appraisal_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="0..1" />
+    <End Role="Tbl_Old_Appraisal" Type="Self.Tbl_Old_Appraisal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Old_Appraisal">
+        <PropertyRef Name="Memb_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Relation_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="1" />
+    <End Role="Tbl_Relation" Type="Self.Tbl_Relation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Relation">
+        <PropertyRef Name="Mem_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Subscribes_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="Self.Tbl_Member_Registration" Multiplicity="1" />
+    <End Role="Tbl_Subscribes" Type="Self.Tbl_Subscribes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Subscribes">
+        <PropertyRef Name="Mem_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_SysUsers_TBL_SysModules">
+    <End Role="TBL_SysModules" Type="Self.TBL_SysModules" Multiplicity="1" />
+    <End Role="TBL_SysUsers" Type="Self.TBL_SysUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_SysModules">
+        <PropertyRef Name="Mod_ID" />
+      </Principal>
+      <Dependent Role="TBL_SysUsers">
+        <PropertyRef Name="Usr_ModID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Trining_Process_History_Tbl_Trining_Process_History_Type">
+    <End Role="Tbl_Trining_Process_History_Type" Type="Self.Tbl_Trining_Process_History_Type" Multiplicity="0..1" />
+    <End Role="Tbl_Trining_Process_History" Type="Self.Tbl_Trining_Process_History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Trining_Process_History_Type">
+        <PropertyRef Name="Tr_Proc_History_Type_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Trining_Process_History">
+        <PropertyRef Name="Tr_Proc_History_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AssociationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="RS_Acc_Trans_TypeOfType" EntityType="Self.RS_Acc_Trans_TypeOfType" />
+    <EntitySet Name="Rs_Acc_Transaction" EntityType="Self.Rs_Acc_Transaction" />
+    <EntitySet Name="RS_Memb_Transaction" EntityType="Self.RS_Memb_Transaction" />
+    <EntitySet Name="RS_Traning_Process" EntityType="Self.RS_Traning_Process" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Tbl_Acc_TypeOfType" EntityType="Self.Tbl_Acc_TypeOfType" />
+    <EntitySet Name="Tbl_Account" EntityType="Self.Tbl_Account" />
+    <EntitySet Name="Tbl_Appraisail_Rate" EntityType="Self.Tbl_Appraisail_Rate" />
+    <EntitySet Name="Tbl_Audit_Login" EntityType="Self.Tbl_Audit_Login" />
+    <EntitySet Name="Tbl_Central_Departments" EntityType="Self.Tbl_Central_Departments" />
+    <EntitySet Name="Tbl_Course_Exam" EntityType="Self.Tbl_Course_Exam" />
+    <EntitySet Name="Tbl_Course_Phase" EntityType="Self.Tbl_Course_Phase" />
+    <EntitySet Name="Tbl_Courses" EntityType="Self.Tbl_Courses" />
+    <EntitySet Name="Tbl_Courses_Funders" EntityType="Self.Tbl_Courses_Funders" />
+    <EntitySet Name="Tbl_Courses_Status" EntityType="Self.Tbl_Courses_Status" />
+    <EntitySet Name="Tbl_Courses_Type" EntityType="Self.Tbl_Courses_Type" />
+    <EntitySet Name="Tbl_Departments" EntityType="Self.Tbl_Departments" />
+    <EntitySet Name="Tbl_Education_Qualification" EntityType="Self.Tbl_Education_Qualification" />
+    <EntitySet Name="TBL_Exception" EntityType="Self.TBL_Exception" />
+    <EntitySet Name="Tbl_Funational_Group" EntityType="Self.Tbl_Funational_Group" />
+    <EntitySet Name="Tbl_Gender_Type" EntityType="Self.Tbl_Gender_Type" />
+    <EntitySet Name="Tbl_Illegal_Earning" EntityType="Self.Tbl_Illegal_Earning" />
+    <EntitySet Name="Tbl_Insurance_Subscripe" EntityType="Self.Tbl_Insurance_Subscripe" />
+    <EntitySet Name="Tbl_Insurance_Type" EntityType="Self.Tbl_Insurance_Type" />
+    <EntitySet Name="Tbl_IPS" EntityType="Self.Tbl_IPS" />
+    <EntitySet Name="Tbl_Jobs_Titles" EntityType="Self.Tbl_Jobs_Titles" />
+    <EntitySet Name="Tbl_kinshipType" EntityType="Self.Tbl_kinshipType" />
+    <EntitySet Name="Tbl_Memb_Sub_Over" EntityType="Self.Tbl_Memb_Sub_Over" />
+    <EntitySet Name="Tbl_Member_Insurance" EntityType="Self.Tbl_Member_Insurance" />
+    <EntitySet Name="Tbl_Member_Registration" EntityType="Self.Tbl_Member_Registration" />
+    <EntitySet Name="Tbl_MembStatus" EntityType="Self.Tbl_MembStatus" />
+    <EntitySet Name="Tbl_Military_Service" EntityType="Self.Tbl_Military_Service" />
+    <EntitySet Name="Tbl_Old_Appraisal" EntityType="Self.Tbl_Old_Appraisal" />
+    <EntitySet Name="Tbl_Public_Departments" EntityType="Self.Tbl_Public_Departments" />
+    <EntitySet Name="Tbl_Qualitative_Group" EntityType="Self.Tbl_Qualitative_Group" />
+    <EntitySet Name="Tbl_Reason_Type" EntityType="Self.Tbl_Reason_Type" />
+    <EntitySet Name="Tbl_Relation" EntityType="Self.Tbl_Relation" />
+    <EntitySet Name="Tbl_Sectors" EntityType="Self.Tbl_Sectors" />
+    <EntitySet Name="Tbl_Social" EntityType="Self.Tbl_Social" />
+    <EntitySet Name="Tbl_Subscribes" EntityType="Self.Tbl_Subscribes" />
+    <EntitySet Name="TBL_SysModules" EntityType="Self.TBL_SysModules" />
+    <EntitySet Name="TBL_SysUsers" EntityType="Self.TBL_SysUsers" />
+    <EntitySet Name="Tbl_Training_Place" EntityType="Self.Tbl_Training_Place" />
+    <EntitySet Name="Tbl_TransactionType" EntityType="Self.Tbl_TransactionType" />
+    <EntitySet Name="Tbl_Trining_Process_History" EntityType="Self.Tbl_Trining_Process_History" />
+    <EntitySet Name="Tbl_Trining_Process_History_Type" EntityType="Self.Tbl_Trining_Process_History_Type" />
+    <EntitySet Name="Tbl_Work_Degree" EntityType="Self.Tbl_Work_Degree" />
+    <EntitySet Name="tests" EntityType="Self.test" />
+    <EntitySet Name="View_1" EntityType="Self.View_1" />
+    <EntitySet Name="View_2" EntityType="Self.View_2" />
+    <EntitySet Name="View_3" EntityType="Self.View_3" />
+    <AssociationSet Name="FK_RS_Acc_Trans_TypeOfType_Tbl_Acc_TypeOfType" Association="Self.FK_RS_Acc_Trans_TypeOfType_Tbl_Acc_TypeOfType">
+      <End Role="Tbl_Acc_TypeOfType" EntitySet="Tbl_Acc_TypeOfType" />
+      <End Role="RS_Acc_Trans_TypeOfType" EntitySet="RS_Acc_Trans_TypeOfType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Acc_Trans_TypeOfType_Tbl_Account" Association="Self.FK_RS_Acc_Trans_TypeOfType_Tbl_Account">
+      <End Role="Tbl_Account" EntitySet="Tbl_Account" />
+      <End Role="RS_Acc_Trans_TypeOfType" EntitySet="RS_Acc_Trans_TypeOfType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Acc_Trans_TypeOfType_Tbl_TransactionType" Association="Self.FK_RS_Acc_Trans_TypeOfType_Tbl_TransactionType">
+      <End Role="Tbl_TransactionType" EntitySet="Tbl_TransactionType" />
+      <End Role="RS_Acc_Trans_TypeOfType" EntitySet="RS_Acc_Trans_TypeOfType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rs_Acc_Transaction_RS_Acc_Trans_TypeOfType" Association="Self.FK_Rs_Acc_Transaction_RS_Acc_Trans_TypeOfType">
+      <End Role="RS_Acc_Trans_TypeOfType" EntitySet="RS_Acc_Trans_TypeOfType" />
+      <End Role="Rs_Acc_Transaction" EntitySet="Rs_Acc_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rs_Acc_Transaction_Tbl_Member_Registration" Association="Self.FK_Rs_Acc_Transaction_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="Rs_Acc_Transaction" EntitySet="Rs_Acc_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Transaction_Tbl_Member_Registration" Association="Self.FK_RS_Transaction_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="RS_Memb_Transaction" EntitySet="RS_Memb_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Transaction_Tbl_MembStatus" Association="Self.FK_RS_Transaction_Tbl_MembStatus">
+      <End Role="Tbl_MembStatus" EntitySet="Tbl_MembStatus" />
+      <End Role="RS_Memb_Transaction" EntitySet="RS_Memb_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Transaction_Tbl_Reason_Type" Association="Self.FK_RS_Transaction_Tbl_Reason_Type">
+      <End Role="Tbl_Reason_Type" EntitySet="Tbl_Reason_Type" />
+      <End Role="RS_Memb_Transaction" EntitySet="RS_Memb_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Traning_Process_Tbl_Course_Exam" Association="Self.FK_RS_Traning_Process_Tbl_Course_Exam">
+      <End Role="Tbl_Course_Exam" EntitySet="Tbl_Course_Exam" />
+      <End Role="RS_Traning_Process" EntitySet="RS_Traning_Process" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Traning_Process_Tbl_Course_Phase" Association="Self.FK_RS_Traning_Process_Tbl_Course_Phase">
+      <End Role="Tbl_Course_Phase" EntitySet="Tbl_Course_Phase" />
+      <End Role="RS_Traning_Process" EntitySet="RS_Traning_Process" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Traning_Process_Tbl_Courses" Association="Self.FK_RS_Traning_Process_Tbl_Courses">
+      <End Role="Tbl_Courses" EntitySet="Tbl_Courses" />
+      <End Role="RS_Traning_Process" EntitySet="RS_Traning_Process" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Traning_Process_Tbl_Courses__Status" Association="Self.FK_RS_Traning_Process_Tbl_Courses__Status">
+      <End Role="Tbl_Courses_Status" EntitySet="Tbl_Courses_Status" />
+      <End Role="RS_Traning_Process" EntitySet="RS_Traning_Process" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Traning_Process_Tbl_Courses_Funders" Association="Self.FK_RS_Traning_Process_Tbl_Courses_Funders">
+      <End Role="Tbl_Courses_Funders" EntitySet="Tbl_Courses_Funders" />
+      <End Role="RS_Traning_Process" EntitySet="RS_Traning_Process" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Traning_Process_Tbl_Courses_Type" Association="Self.FK_RS_Traning_Process_Tbl_Courses_Type">
+      <End Role="Tbl_Courses_Type" EntitySet="Tbl_Courses_Type" />
+      <End Role="RS_Traning_Process" EntitySet="RS_Traning_Process" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Traning_Process_Tbl_Training_Place" Association="Self.FK_RS_Traning_Process_Tbl_Training_Place">
+      <End Role="Tbl_Training_Place" EntitySet="Tbl_Training_Place" />
+      <End Role="RS_Traning_Process" EntitySet="RS_Traning_Process" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Trining_Process_History_RS_Traning_Process1" Association="Self.FK_Tbl_Trining_Process_History_RS_Traning_Process1">
+      <End Role="RS_Traning_Process" EntitySet="RS_Traning_Process" />
+      <End Role="Tbl_Trining_Process_History" EntitySet="Tbl_Trining_Process_History" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Old_Appraisal_Appraisail_Rate" Association="Self.FK_Tbl_Old_Appraisal_Appraisail_Rate">
+      <End Role="Tbl_Appraisail_Rate" EntitySet="Tbl_Appraisail_Rate" />
+      <End Role="Tbl_Old_Appraisal" EntitySet="Tbl_Old_Appraisal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Central_Departments_Tbl_Sectors" Association="Self.FK_Tbl_Central_Departments_Tbl_Sectors">
+      <End Role="Tbl_Sectors" EntitySet="Tbl_Sectors" />
+      <End Role="Tbl_Central_Departments" EntitySet="Tbl_Central_Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Public_Departments_Tbl_Central_Departments" Association="Self.FK_Tbl_Public_Departments_Tbl_Central_Departments">
+      <End Role="Tbl_Central_Departments" EntitySet="Tbl_Central_Departments" />
+      <End Role="Tbl_Public_Departments" EntitySet="Tbl_Public_Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Departments_Tbl_Public_Departments" Association="Self.FK_Tbl_Departments_Tbl_Public_Departments">
+      <End Role="Tbl_Public_Departments" EntitySet="Tbl_Public_Departments" />
+      <End Role="Tbl_Departments" EntitySet="Tbl_Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Education_Qualification" Association="Self.FK_Tbl_Member_Registration_Tbl_Education_Qualification">
+      <End Role="Tbl_Education_Qualification" EntitySet="Tbl_Education_Qualification" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Funational_Group" Association="Self.FK_Tbl_Member_Registration_Tbl_Funational_Group">
+      <End Role="Tbl_Funational_Group" EntitySet="Tbl_Funational_Group" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Gender_Type" Association="Self.FK_Tbl_Member_Registration_Tbl_Gender_Type">
+      <End Role="Tbl_Gender_Type" EntitySet="Tbl_Gender_Type" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Relation_Tbl_Gender_Type" Association="Self.FK_Tbl_Relation_Tbl_Gender_Type">
+      <End Role="Tbl_Gender_Type" EntitySet="Tbl_Gender_Type" />
+      <End Role="Tbl_Relation" EntitySet="Tbl_Relation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Illegal_Earning_Tbl_Member_Registration" Association="Self.FK_Tbl_Illegal_Earning_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="Tbl_Illegal_Earning" EntitySet="Tbl_Illegal_Earning" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Insurance_Subscripe_Tbl_Member_Registration" Association="Self.FK_Tbl_Insurance_Subscripe_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="Tbl_Insurance_Subscripe" EntitySet="Tbl_Insurance_Subscripe" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Insurance_Tbl_insurance_Type" Association="Self.FK_Tbl_Member_Insurance_Tbl_insurance_Type">
+      <End Role="Tbl_Insurance_Type" EntitySet="Tbl_Insurance_Type" />
+      <End Role="Tbl_Member_Insurance" EntitySet="Tbl_Member_Insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_IPS_TBL_SysUsers" Association="Self.FK_Tbl_IPS_TBL_SysUsers">
+      <End Role="TBL_SysUsers" EntitySet="TBL_SysUsers" />
+      <End Role="Tbl_IPS" EntitySet="Tbl_IPS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Jobs_Titles" Association="Self.FK_Tbl_Member_Registration_Tbl_Jobs_Titles">
+      <End Role="Tbl_Jobs_Titles" EntitySet="Tbl_Jobs_Titles" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Relation_Tbl_kinshipType" Association="Self.FK_Tbl_Relation_Tbl_kinshipType">
+      <End Role="Tbl_kinshipType" EntitySet="Tbl_kinshipType" />
+      <End Role="Tbl_Relation" EntitySet="Tbl_Relation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Insurance_Tbl_Member_Registration" Association="Self.FK_Tbl_Member_Insurance_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="Tbl_Member_Insurance" EntitySet="Tbl_Member_Insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Qualitative_Group" Association="Self.FK_Tbl_Member_Registration_Qualitative_Group">
+      <End Role="Tbl_Qualitative_Group" EntitySet="Tbl_Qualitative_Group" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Military_Service" Association="Self.FK_Tbl_Member_Registration_Tbl_Military_Service">
+      <End Role="Tbl_Military_Service" EntitySet="Tbl_Military_Service" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Social" Association="Self.FK_Tbl_Member_Registration_Tbl_Social">
+      <End Role="Tbl_Social" EntitySet="Tbl_Social" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Work_Degree" Association="Self.FK_Tbl_Member_Registration_Tbl_Work_Degree">
+      <End Role="Tbl_Work_Degree" EntitySet="Tbl_Work_Degree" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Old_Appraisal_Tbl_Member_Registration" Association="Self.FK_Tbl_Old_Appraisal_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="Tbl_Old_Appraisal" EntitySet="Tbl_Old_Appraisal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Relation_Tbl_Member_Registration" Association="Self.FK_Tbl_Relation_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="Tbl_Relation" EntitySet="Tbl_Relation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Subscribes_Tbl_Member_Registration" Association="Self.FK_Tbl_Subscribes_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="Tbl_Subscribes" EntitySet="Tbl_Subscribes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_SysUsers_TBL_SysModules" Association="Self.FK_TBL_SysUsers_TBL_SysModules">
+      <End Role="TBL_SysModules" EntitySet="TBL_SysModules" />
+      <End Role="TBL_SysUsers" EntitySet="TBL_SysUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Trining_Process_History_Tbl_Trining_Process_History_Type" Association="Self.FK_Tbl_Trining_Process_History_Tbl_Trining_Process_History_Type">
+      <End Role="Tbl_Trining_Process_History_Type" EntitySet="Tbl_Trining_Process_History_Type" />
+      <End Role="Tbl_Trining_Process_History" EntitySet="Tbl_Trining_Process_History" />
+    </AssociationSet>
+    <FunctionImport Name="Get_Login_Info" ReturnType="Collection(AssociationModel.Get_Login_Info_Result)">
+      <Parameter Name="Usr_Name" Mode="In" Type="String" />
+      <Parameter Name="Usr_Pass" Mode="In" Type="String" />
+      <Parameter Name="Usr_IP" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SelectAll_Illegal_Earning_For_MemberID" ReturnType="Collection(AssociationModel.SelectAll_Illegal_Earning_For_MemberID_Result)">
+      <Parameter Name="MembID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SelectAll_TBL_SysUsers_Tbl_IPS" ReturnType="Collection(AssociationModel.SelectAll_TBL_SysUsers_Tbl_IPS_Result)" />
+    <FunctionImport Name="SelectAll_Trans_For_MemberID" ReturnType="Collection(AssociationModel.SelectAll_Trans_For_MemberID_Result)">
+      <Parameter Name="MembID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SelectAllCheck" ReturnType="Collection(AssociationModel.SelectAllCheck_Result)" />
+    <FunctionImport Name="SelectAllCourses" ReturnType="Collection(AssociationModel.SelectAllCourses_Result)" />
+    <FunctionImport Name="SelectAllCourses_By_MembID" ReturnType="Collection(AssociationModel.SelectAllCourses_By_MembID_Result)">
+      <Parameter Name="MembID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SelectAllMembers" ReturnType="Collection(AssociationModel.SelectAllMembers_Result)" />
+    <FunctionImport Name="SelectAllMembers_with_Last_Transaction_By_MembId" ReturnType="Collection(AssociationModel.SelectAllMembers_with_Last_Transaction_By_MembId_Result)" />
+    <FunctionImport Name="SelectAllMembers_With_Status" ReturnType="Collection(AssociationModel.SelectAllMembers_With_Status_Result)" />
+    <FunctionImport Name="SelectAllMembersWith_AllCourses" ReturnType="Collection(AssociationModel.SelectAllMembersWith_AllCourses_Result)" />
+    <FunctionImport Name="SelectAllMembersWithStatusAndReason" ReturnType="Collection(AssociationModel.SelectAllMembersWithStatusAndReason_Result)" />
+    <FunctionImport Name="SelectMember_Agaza_Count" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="SelectMember_Count" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="SelectMember_Working_Count" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(AssociationModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(AssociationModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="Get_Login_Info_Result">
+    <Property Type="String" Name="Usr_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Usr_Pass" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Usr_ModID" Nullable="false" />
+    <Property Type="Boolean" Name="Usr_IsActive" Nullable="false" />
+    <Property Type="String" Name="IPS_Usr_IP" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SelectAll_Illegal_Earning_For_MemberID_Result">
+    <Property Type="Int32" Name="Illegal_ID" Nullable="false" />
+    <Property Type="Int32" Name="Memb_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Illegal_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Illegal_Note" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="Illegal_Image" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SelectAll_TBL_SysUsers_Tbl_IPS_Result">
+    <Property Type="String" Name="Usr_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Usr_Pass" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Usr_ModID" Nullable="false" />
+    <Property Type="Boolean" Name="Usr_IsActive" Nullable="false" />
+    <Property Type="String" Name="IPS_Usr_IP" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Usr_ID" Nullable="false" />
+    <Property Type="String" Name="Usr_firstname" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Usr_familyname" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Mod_ID" Nullable="false" />
+    <Property Type="String" Name="Module_Name" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="IPS_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SelectAll_Trans_For_MemberID_Result">
+    <Property Type="String" Name="Reason_Name" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="TransDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MembStatus_Name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Reason_ID" Nullable="false" />
+    <Property Type="Int32" Name="MembStatus_ID" Nullable="false" />
+    <Property Type="Int32" Name="Transaction_ID" Nullable="false" />
+    <Property Type="Int32" Name="Distion_No" Nullable="true" />
+    <Property Type="DateTime" Name="Status_Date_From" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Status_Date_To" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Status_Note" Nullable="true" MaxLength="4000" />
+  </ComplexType>
+  <ComplexType Name="SelectAllCheck_Result">
+    <Property Type="Int32" Name="Rs_Acc_Transaction_ID" Nullable="false" />
+    <Property Type="DateTime" Name="RS_Acc_Transaction_Date" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="RS_Acc_Trans_TypeOfType_ID" Nullable="false" />
+    <Property Type="Int32" Name="Rs_Acc_Transaction_Value" Nullable="false" />
+    <Property Type="String" Name="Rs_Acc_Transaction_Check_No" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Rs_Acc_Transaction_Member_ID" Nullable="true" />
+    <Property Type="String" Name="Rs_Acc_Transaction_Notes" Nullable="true" MaxLength="3500" />
+    <Property Type="String" Name="Rs_Acc_Transaction_Image" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Acc_TypeOfType_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Account_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Trans_Type_Name" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Trans_Type_ID" Nullable="false" />
+    <Property Type="Int32" Name="Account_ID" Nullable="false" />
+    <Property Type="Int32" Name="Acc_TypeOfType_ID" Nullable="false" />
+    <Property Type="String" Name="Memb_Name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SelectAllCourses_Result">
+    <Property Type="Int32" Name="Tr_Proc_ID" Nullable="false" />
+    <Property Type="String" Name="Memb_EmpID" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Course_ID" Nullable="true" />
+    <Property Type="Int32" Name="Course_Typy_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Course_Start_Date" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Course_End_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Course_Funder_ID" Nullable="true" />
+    <Property Type="Int32" Name="Training_Place_ID" Nullable="true" />
+    <Property Type="Int32" Name="Course_Status_ID" Nullable="true" />
+    <Property Type="String" Name="Course_Rank" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Course_Cost" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Course_Exam_ID" Nullable="true" />
+    <Property Type="String" Name="Course_GPA" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Course_PhaseNo_ID" Nullable="true" />
+    <Property Type="String" Name="Course_Image" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Memb_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Coures_Name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Course_Type_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Course_Funder_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Training_Place_Name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Course_Status_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Exam_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Phase_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="National_ID" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Memb_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SelectAllCourses_By_MembID_Result">
+    <Property Type="Int32" Name="Tr_Proc_ID" Nullable="false" />
+    <Property Type="String" Name="Memb_EmpID" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Course_ID" Nullable="true" />
+    <Property Type="Int32" Name="Course_Typy_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Course_Start_Date" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Course_End_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Course_Funder_ID" Nullable="true" />
+    <Property Type="Int32" Name="Training_Place_ID" Nullable="true" />
+    <Property Type="Int32" Name="Course_Status_ID" Nullable="true" />
+    <Property Type="String" Name="Course_Rank" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Course_Cost" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Course_Exam_ID" Nullable="true" />
+    <Property Type="String" Name="Course_GPA" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Course_PhaseNo_ID" Nullable="true" />
+    <Property Type="String" Name="Course_Image" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Memb_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Coures_Name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Course_Type_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Course_Funder_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Training_Place_Name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Course_Status_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Exam_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Phase_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="National_ID" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Memb_ID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SelectAllMembers_Result">
+    <Property Type="Int32" Name="Memb_ID" Nullable="false" />
+    <Property Type="DateTime" Name="Memb_SysDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="National_ID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Memb_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Memb_EmpID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Emp_Appointment_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Memb_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="3500" />
+    <Property Type="DateTime" Name="Memb_Birthdate" Nullable="false" />
+    <Property Type="Int32" Name="Memb_Social_ID" Nullable="false" />
+    <Property Type="Int32" Name="Memb_Children_Number" Nullable="true" />
+    <Property Type="String" Name="Memb_Image" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Memb_Gender_ID" Nullable="false" />
+    <Property Type="Int32" Name="Dept_ID" Nullable="true" />
+    <Property Type="Int32" Name="Social_ID" Nullable="false" />
+    <Property Type="String" Name="Social_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gender_Type" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Dept_Name" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="Pub_Dept_Name" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Cent_Dept_Name" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Sect_Name" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Edu_Qualification_ID" Nullable="true" />
+    <Property Type="String" Name="Edu_Qualification_Name" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="Work_Degree_ID" Nullable="true" />
+    <Property Type="String" Name="Work_Degree_Name" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="Functional_ID" Nullable="true" />
+    <Property Type="String" Name="Functional_Name" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Qualitative_ID" Nullable="true" />
+    <Property Type="String" Name="Qualitative_Name" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="Job_Title_ID" Nullable="true" />
+    <Property Type="String" Name="Job_Title_Name" Nullable="false" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SelectAllMembers_with_Last_Transaction_By_MembId_Result">
+    <Property Type="Int32" Name="Memb_ID" Nullable="false" />
+    <Property Type="DateTime" Name="Memb_SysDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="National_ID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Memb_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Memb_EmpID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Emp_Appointment_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Memb_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="3500" />
+    <Property Type="DateTime" Name="Memb_Birthdate" Nullable="false" />
+    <Property Type="Int32" Name="Memb_Social_ID" Nullable="false" />
+    <Property Type="Int32" Name="Memb_Children_Number" Nullable="true" />
+    <Property Type="String" Name="Memb_Image" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Memb_Gender_ID" Nullable="false" />
+    <Property Type="Int32" Name="Dept_ID" Nullable="true" />
+    <Property Type="Int32" Name="Social_ID" Nullable="false" />
+    <Property Type="String" Name="Social_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gender_Type" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Dept_Name" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="Pub_Dept_Name" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Cent_Dept_Name" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Sect_Name" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Edu_Qualification_ID" Nullable="true" />
+    <Property Type="String" Name="Edu_Qualification_Name" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="Work_Degree_ID" Nullable="true" />
+    <Property Type="String" Name="Work_Degree_Name" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="Functional_ID" Nullable="true" />
+    <Property Type="String" Name="Functional_Name" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Qualitative_ID" Nullable="true" />
+    <Property Type="String" Name="Qualitative_Name" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="Job_Title_ID" Nullable="true" />
+    <Property Type="String" Name="Job_Title_Name" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="Transaction_ID" Nullable="true" />
+    <Property Type="Int32" Name="MembStatus_ID" Nullable="true" />
+    <Property Type="Int32" Name="Reason_ID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SelectAllMembers_With_Status_Result">
+    <Property Type="Int32" Name="Memb_ID" Nullable="false" />
+    <Property Type="DateTime" Name="Memb_SysDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="National_ID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Memb_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Memb_EmpID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Emp_Appointment_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Memb_Name" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Memb_Birthdate" Nullable="false" />
+    <Property Type="Int32" Name="Memb_Social_ID" Nullable="false" />
+    <Property Type="Int32" Name="Memb_Children_Number" Nullable="true" />
+    <Property Type="String" Name="Memb_Image" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Memb_Gender_ID" Nullable="false" />
+    <Property Type="Int32" Name="Dept_ID" Nullable="true" />
+    <Property Type="Int32" Name="Social_ID" Nullable="false" />
+    <Property Type="String" Name="Social_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gender_Type" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Dept_Name" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="Pub_Dept_Name" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Cent_Dept_Name" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Sect_Name" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Edu_Qualification_ID" Nullable="true" />
+    <Property Type="String" Name="Edu_Qualification_Name" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="Work_Degree_ID" Nullable="true" />
+    <Property Type="String" Name="Work_Degree_Name" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="Functional_ID" Nullable="true" />
+    <Property Type="String" Name="Functional_Name" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Qualitative_ID" Nullable="true" />
+    <Property Type="String" Name="Qualitative_Name" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="Job_Title_ID" Nullable="true" />
+    <Property Type="String" Name="Job_Title_Name" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="Transaction_ID" Nullable="false" />
+    <Property Type="Int32" Name="Tr_memb_ID" Nullable="true" />
+    <Property Type="DateTime" Name="TransDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Distion_No" Nullable="true" />
+    <Property Type="DateTime" Name="Status_Date_From" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Status_Date_To" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Status_Note" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="MembStatus_ID" Nullable="false" />
+    <Property Type="String" Name="MembStatus_Name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Reason_ID" Nullable="false" />
+    <Property Type="String" Name="Reason_Name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SelectAllMembersWith_AllCourses_Result">
+    <Property Type="Int32" Name="Memb_ID" Nullable="false" />
+    <Property Type="DateTime" Name="Memb_SysDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="National_ID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Memb_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Memb_EmpID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Emp_Appointment_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Memb_Name" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Memb_Birthdate" Nullable="false" />
+    <Property Type="Int32" Name="Memb_Social_ID" Nullable="false" />
+    <Property Type="Int32" Name="Memb_Children_Number" Nullable="true" />
+    <Property Type="String" Name="Memb_Image" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Memb_Gender_ID" Nullable="false" />
+    <Property Type="Int32" Name="Dept_ID" Nullable="true" />
+    <Property Type="Int32" Name="Social_ID" Nullable="false" />
+    <Property Type="String" Name="Social_Name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Gender_Type" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Dept_Name" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="Pub_Dept_Name" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Cent_Dept_Name" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Sect_Name" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Tr_Proc_ID" Nullable="false" />
+    <Property Type="Int32" Name="Course_ID" Nullable="true" />
+    <Property Type="Int32" Name="Course_Typy_ID" Nullable="true" />
+    <Property Type="DateTime" Name="Course_Start_Date" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="Course_End_Date" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="Course_Funder_ID" Nullable="true" />
+    <Property Type="Int32" Name="Training_Place_ID" Nullable="true" />
+    <Property Type="Int32" Name="Course_Status_ID" Nullable="true" />
+    <Property Type="String" Name="Course_Rank" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Course_Cost" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Course_Exam_ID" Nullable="true" />
+    <Property Type="String" Name="Course_GPA" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Course_PhaseNo_ID" Nullable="true" />
+    <Property Type="String" Name="Course_Image" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Coures_Name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Course_Type_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Course_Funder_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Training_Place_Name" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Course_Status_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Exam_Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Phase_Name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SelectAllMembersWithStatusAndReason_Result">
+    <Property Type="Int32" Name="Memb_ID" Nullable="false" />
+    <Property Type="DateTime" Name="Memb_SysDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="Memb_Date" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Memb_EmpID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Memb_Name" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="Memb_Birthdate" Nullable="false" />
+    <Property Type="Int32" Name="Memb_Social_ID" Nullable="false" />
+    <Property Type="Int32" Name="Memb_Children_Number" Nullable="true" />
+    <Property Type="String" Name="Memb_Image" Nullable="true" MaxLength="500" />
+    <Property Type="Int32" Name="Memb_Gender_ID" Nullable="false" />
+    <Property Type="Int32" Name="Dept_ID" Nullable="true" />
+    <Property Type="String" Name="Reason_Name" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="TransDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="MembStatus_Name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Reason_ID" Nullable="true" />
+    <Property Type="Int32" Name="MembStatus_ID" Nullable="true" />
+    <Property Type="Int32" Name="Social_ID" Nullable="false" />
+    <Property Type="String" Name="Social_Name" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

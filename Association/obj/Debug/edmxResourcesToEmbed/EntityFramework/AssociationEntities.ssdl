@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AssociationModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AssociationModelStoreContainer">
+    <EntitySet Name="RS_Transaction" EntityType="AssociationModel.Store.RS_Transaction" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_CheckType" EntityType="AssociationModel.Store.Tbl_CheckType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TBL_Exception" EntityType="AssociationModel.Store.TBL_Exception" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_ExpCheck" EntityType="AssociationModel.Store.Tbl_ExpCheck" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_ExpCheck_Type" EntityType="AssociationModel.Store.Tbl_ExpCheck_Type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_ExpCheck_Type_Value" EntityType="AssociationModel.Store.Tbl_ExpCheck_Type_Value" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Gender_Type" EntityType="AssociationModel.Store.Tbl_Gender_Type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Import_Check" EntityType="AssociationModel.Store.Tbl_Import_Check" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Insurance_Subscripe" EntityType="AssociationModel.Store.Tbl_Insurance_Subscripe" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Insurance_Type" EntityType="AssociationModel.Store.Tbl_Insurance_Type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_kinshipType" EntityType="AssociationModel.Store.Tbl_kinshipType" store:Type="Tables" store:Schema="dbo" store:Name="Tbl_kinshipType">
+      <DefiningQuery>SELECT 
+      [Tbl_kinshipType].[kinship_ID] AS [kinship_ID], 
+      [Tbl_kinshipType].[kinship_Type] AS [kinship_Type]
+      FROM [dbo].[Tbl_kinshipType] AS [Tbl_kinshipType]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_Member_Insurance" EntityType="AssociationModel.Store.Tbl_Member_Insurance" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Member_Registration" EntityType="AssociationModel.Store.Tbl_Member_Registration" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_MembStatus" EntityType="AssociationModel.Store.Tbl_MembStatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Organization" EntityType="AssociationModel.Store.Tbl_Organization" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Reason_Type" EntityType="AssociationModel.Store.Tbl_Reason_Type" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Relation" EntityType="AssociationModel.Store.Tbl_Relation" store:Type="Tables" store:Schema="dbo" store:Name="Tbl_Relation">
+      <DefiningQuery>SELECT 
+      [Tbl_Relation].[Relation_ID] AS [Relation_ID], 
+      [Tbl_Relation].[Relation_Name] AS [Relation_Name], 
+      [Tbl_Relation].[Mem_ID] AS [Mem_ID], 
+      [Tbl_Relation].[Relation_Birthdate] AS [Relation_Birthdate], 
+      [Tbl_Relation].[Sex_ID] AS [Sex_ID], 
+      [Tbl_Relation].[kinship_ID] AS [kinship_ID], 
+      [Tbl_Relation].[Relation_Image] AS [Relation_Image]
+      FROM [dbo].[Tbl_Relation] AS [Tbl_Relation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Tbl_Social" EntityType="AssociationModel.Store.Tbl_Social" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_SubOrg" EntityType="AssociationModel.Store.Tbl_SubOrg" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Subscribes" EntityType="AssociationModel.Store.Tbl_Subscribes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_RS_Transaction_Tbl_Member_Registration" Association="AssociationModel.Store.FK_RS_Transaction_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="RS_Transaction" EntitySet="RS_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Transaction_Tbl_MembStatus" Association="AssociationModel.Store.FK_RS_Transaction_Tbl_MembStatus">
+      <End Role="Tbl_MembStatus" EntitySet="Tbl_MembStatus" />
+      <End Role="RS_Transaction" EntitySet="RS_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Transaction_Tbl_Reason_Type" Association="AssociationModel.Store.FK_RS_Transaction_Tbl_Reason_Type">
+      <End Role="Tbl_Reason_Type" EntitySet="Tbl_Reason_Type" />
+      <End Role="RS_Transaction" EntitySet="RS_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ExpCheck_Tbl_ExpCheck_Type_Value" Association="AssociationModel.Store.FK_Tbl_ExpCheck_Tbl_ExpCheck_Type_Value">
+      <End Role="Tbl_ExpCheck_Type_Value" EntitySet="Tbl_ExpCheck_Type_Value" />
+      <End Role="Tbl_ExpCheck" EntitySet="Tbl_ExpCheck" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ExpCheck_Type_Tbl_CheckType" Association="AssociationModel.Store.FK_Tbl_ExpCheck_Type_Tbl_CheckType">
+      <End Role="Tbl_CheckType" EntitySet="Tbl_CheckType" />
+      <End Role="Tbl_ExpCheck_Type" EntitySet="Tbl_ExpCheck_Type" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ExpCheck_Type_Value_Tbl_ExpCheck_Type" Association="AssociationModel.Store.FK_Tbl_ExpCheck_Type_Value_Tbl_ExpCheck_Type">
+      <End Role="Tbl_ExpCheck_Type" EntitySet="Tbl_ExpCheck_Type" />
+      <End Role="Tbl_ExpCheck_Type_Value" EntitySet="Tbl_ExpCheck_Type_Value" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Import_Check_Tbl_CheckType" Association="AssociationModel.Store.FK_Tbl_Import_Check_Tbl_CheckType">
+      <End Role="Tbl_CheckType" EntitySet="Tbl_CheckType" />
+      <End Role="Tbl_Import_Check" EntitySet="Tbl_Import_Check" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Insurance_Tbl_insurance_Type" Association="AssociationModel.Store.FK_Tbl_Member_Insurance_Tbl_insurance_Type">
+      <End Role="Tbl_Insurance_Type" EntitySet="Tbl_Insurance_Type" />
+      <End Role="Tbl_Member_Insurance" EntitySet="Tbl_Member_Insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Insurance_Tbl_Member_Registration" Association="AssociationModel.Store.FK_Tbl_Member_Insurance_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="Tbl_Member_Insurance" EntitySet="Tbl_Member_Insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Gender_Type" Association="AssociationModel.Store.FK_Tbl_Member_Registration_Tbl_Gender_Type">
+      <End Role="Tbl_Gender_Type" EntitySet="Tbl_Gender_Type" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Organization" Association="AssociationModel.Store.FK_Tbl_Member_Registration_Tbl_Organization">
+      <End Role="Tbl_Organization" EntitySet="Tbl_Organization" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Social" Association="AssociationModel.Store.FK_Tbl_Member_Registration_Tbl_Social">
+      <End Role="Tbl_Social" EntitySet="Tbl_Social" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_SubOrg" Association="AssociationModel.Store.FK_Tbl_Member_Registration_Tbl_SubOrg">
+      <End Role="Tbl_SubOrg" EntitySet="Tbl_SubOrg" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_SubOrg_Tbl_Organization" Association="AssociationModel.Store.FK_Tbl_SubOrg_Tbl_Organization">
+      <End Role="Tbl_Organization" EntitySet="Tbl_Organization" />
+      <End Role="Tbl_SubOrg" EntitySet="Tbl_SubOrg" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Subscribes_Tbl_Member_Registration" Association="AssociationModel.Store.FK_Tbl_Subscribes_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="Tbl_Subscribes" EntitySet="Tbl_Subscribes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="RS_Transaction">
+    <Key>
+      <PropertyRef Name="Transaction_ID" />
+    </Key>
+    <Property Name="Transaction_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Memb_ID" Type="int" />
+    <Property Name="TransDate" Type="datetime" />
+    <Property Name="MembStatus_ID" Type="int" />
+    <Property Name="Reason_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_CheckType">
+    <Key>
+      <PropertyRef Name="Check_TypeID" />
+    </Key>
+    <Property Name="Check_TypeID" Type="int" Nullable="false" />
+    <Property Name="Check_TypeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBL_Exception">
+    <Key>
+      <PropertyRef Name="Excep_ID" />
+    </Key>
+    <Property Name="Excep_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Excep_ErrorNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Excep_ErrorCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Excep_Type" Type="nvarchar" />
+    <Property Name="Excep_Message" Type="nvarchar" />
+    <Property Name="Excep_DateTime" Type="datetime" />
+    <Property Name="EntityMess" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_ExpCheck">
+    <Key>
+      <PropertyRef Name="ExpCheck_ID" />
+    </Key>
+    <Property Name="ExpCheck_ID" Type="int" Nullable="false" />
+    <Property Name="ExpCheck_Num" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpCheck_Type_ID" Type="int" />
+    <Property Name="ExpCheck_Type_Date_Value" Type="datetime" />
+    <Property Name="ExpCheck_Pdf" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpCheck_Date" Type="datetime" />
+    <Property Name="Mem_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_ExpCheck_Type">
+    <Key>
+      <PropertyRef Name="ExpCheck_Type_ID" />
+    </Key>
+    <Property Name="ExpCheck_Type_ID" Type="int" Nullable="false" />
+    <Property Name="ExpCheck_Type_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Check_Type_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_ExpCheck_Type_Value">
+    <Key>
+      <PropertyRef Name="ExpCheck_Type_ID" />
+      <PropertyRef Name="ExpCheck_Type_Date_Value" />
+    </Key>
+    <Property Name="ExpCheck_Type_ID" Type="int" Nullable="false" />
+    <Property Name="ExpCheck_Type_Date_Value" Type="datetime" Nullable="false" />
+    <Property Name="ExpCheck_Value" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Gender_Type">
+    <Key>
+      <PropertyRef Name="Gender_ID" />
+    </Key>
+    <Property Name="Gender_ID" Type="int" Nullable="false" />
+    <Property Name="Gender_Type" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Import_Check">
+    <Key>
+      <PropertyRef Name="ImpCheck_ID" />
+    </Key>
+    <Property Name="ImpCheck_ID" Type="int" Nullable="false" />
+    <Property Name="ImpCheck_Num" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ImpCheck_Type_ID" Type="int" Nullable="false" />
+    <Property Name="ImpCheck_Money" Type="int" Nullable="false" />
+    <Property Name="ImpCheck_Date" Type="datetime" />
+    <Property Name="ImpCheck_Pdf" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Insurance_Subscripe">
+    <Key>
+      <PropertyRef Name="Insur_ID" />
+      <PropertyRef Name="Insur_Sub_Date" />
+    </Key>
+    <Property Name="Insur_ID" Type="int" Nullable="false" />
+    <Property Name="Mem_ID" Type="int" />
+    <Property Name="Insur_Sub_Date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Insurance_Type">
+    <Key>
+      <PropertyRef Name="Insurance_ID" />
+    </Key>
+    <Property Name="Insurance_ID" Type="int" Nullable="false" />
+    <Property Name="Insurance_Type_Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Association.dbo.Tbl_kinshipType' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Tbl_kinshipType">
+    <Key>
+      <PropertyRef Name="kinship_Type" />
+    </Key>
+    <Property Name="kinship_ID" Type="int" />
+    <Property Name="kinship_Type" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Member_Insurance">
+    <Key>
+      <PropertyRef Name="Inssur_ID" />
+    </Key>
+    <Property Name="Inssur_ID" Type="int" Nullable="false" />
+    <Property Name="Memb_ID" Type="int" />
+    <Property Name="insur_Date" Type="datetime" />
+    <Property Name="insurance_Type_ID" Type="int" />
+    <Property Name="Insur_Value" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_Member_Registration">
+    <Key>
+      <PropertyRef Name="Memb_ID" />
+    </Key>
+    <Property Name="Memb_ID" Type="int" Nullable="false" />
+    <Property Name="Memb_EmpID" Type="int" Nullable="false" />
+    <Property Name="Memb_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Memb_Date" Type="datetime" Nullable="false" />
+    <Property Name="Memb_Birthdate" Type="date" Nullable="false" />
+    <Property Name="Memb_Social_ID" Type="int" Nullable="false" />
+    <Property Name="Memb_Children_Number" Type="int" Nullable="false" />
+    <Property Name="Memb_Imge" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Memb_Gender_ID" Type="int" />
+    <Property Name="Memb_Org_ID" Type="int" />
+    <Property Name="Memb_subOrg_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Tbl_MembStatus">
+    <Key>
+      <PropertyRef Name="MembStatus_ID" />
+    </Key>
+    <Property Name="MembStatus_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MembStatus_Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Organization">
+    <Key>
+      <PropertyRef Name="Org_ID" />
+    </Key>
+    <Property Name="Org_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Org_Name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Reason_Type">
+    <Key>
+      <PropertyRef Name="Reason_ID" />
+    </Key>
+    <Property Name="Reason_ID" Type="int" Nullable="false" />
+    <Property Name="Reason_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Association.dbo.Tbl_Relation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Tbl_Relation">
+    <Key>
+      <PropertyRef Name="Relation_Name" />
+      <PropertyRef Name="Mem_ID" />
+      <PropertyRef Name="Relation_Birthdate" />
+      <PropertyRef Name="Sex_ID" />
+      <PropertyRef Name="kinship_ID" />
+      <PropertyRef Name="Relation_Image" />
+    </Key>
+    <Property Name="Relation_ID" Type="int" />
+    <Property Name="Relation_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Mem_ID" Type="int" Nullable="false" />
+    <Property Name="Relation_Birthdate" Type="date" Nullable="false" />
+    <Property Name="Sex_ID" Type="int" Nullable="false" />
+    <Property Name="kinship_ID" Type="int" Nullable="false" />
+    <Property Name="Relation_Image" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_Social">
+    <Key>
+      <PropertyRef Name="Social_ID" />
+    </Key>
+    <Property Name="Social_ID" Type="int" Nullable="false" />
+    <Property Name="Social_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Tbl_SubOrg">
+    <Key>
+      <PropertyRef Name="SubOrg_ID" />
+    </Key>
+    <Property Name="SubOrg_ID" Type="int" Nullable="false" />
+    <Property Name="SubOrg_Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Org_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Subscribes">
+    <Key>
+      <PropertyRef Name="Subscribe_ID" />
+      <PropertyRef Name="Sub_Date" />
+    </Key>
+    <Property Name="Subscribe_ID" Type="int" Nullable="false" />
+    <Property Name="Sub_Date" Type="datetime" Nullable="false" />
+    <Property Name="Mem_ID" Type="int" />
+    <Property Name="Mem_EmpID" Type="int" />
+    <Property Name="Mem_EmpName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sub_Paied" Type="int" />
+  </EntityType>
+  <Association Name="FK_RS_Transaction_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Store.Tbl_Member_Registration" Multiplicity="0..1" />
+    <End Role="RS_Transaction" Type="AssociationModel.Store.RS_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="RS_Transaction">
+        <PropertyRef Name="Memb_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Transaction_Tbl_MembStatus">
+    <End Role="Tbl_MembStatus" Type="AssociationModel.Store.Tbl_MembStatus" Multiplicity="0..1" />
+    <End Role="RS_Transaction" Type="AssociationModel.Store.RS_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_MembStatus">
+        <PropertyRef Name="MembStatus_ID" />
+      </Principal>
+      <Dependent Role="RS_Transaction">
+        <PropertyRef Name="MembStatus_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Transaction_Tbl_Reason_Type">
+    <End Role="Tbl_Reason_Type" Type="AssociationModel.Store.Tbl_Reason_Type" Multiplicity="0..1" />
+    <End Role="RS_Transaction" Type="AssociationModel.Store.RS_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Reason_Type">
+        <PropertyRef Name="Reason_ID" />
+      </Principal>
+      <Dependent Role="RS_Transaction">
+        <PropertyRef Name="Reason_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ExpCheck_Tbl_ExpCheck_Type_Value">
+    <End Role="Tbl_ExpCheck_Type_Value" Type="AssociationModel.Store.Tbl_ExpCheck_Type_Value" Multiplicity="0..1" />
+    <End Role="Tbl_ExpCheck" Type="AssociationModel.Store.Tbl_ExpCheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_ExpCheck_Type_Value">
+        <PropertyRef Name="ExpCheck_Type_ID" />
+        <PropertyRef Name="ExpCheck_Type_Date_Value" />
+      </Principal>
+      <Dependent Role="Tbl_ExpCheck">
+        <PropertyRef Name="ExpCheck_Type_ID" />
+        <PropertyRef Name="ExpCheck_Type_Date_Value" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ExpCheck_Type_Tbl_CheckType">
+    <End Role="Tbl_CheckType" Type="AssociationModel.Store.Tbl_CheckType" Multiplicity="0..1" />
+    <End Role="Tbl_ExpCheck_Type" Type="AssociationModel.Store.Tbl_ExpCheck_Type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_CheckType">
+        <PropertyRef Name="Check_TypeID" />
+      </Principal>
+      <Dependent Role="Tbl_ExpCheck_Type">
+        <PropertyRef Name="Check_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ExpCheck_Type_Value_Tbl_ExpCheck_Type">
+    <End Role="Tbl_ExpCheck_Type" Type="AssociationModel.Store.Tbl_ExpCheck_Type" Multiplicity="1" />
+    <End Role="Tbl_ExpCheck_Type_Value" Type="AssociationModel.Store.Tbl_ExpCheck_Type_Value" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_ExpCheck_Type">
+        <PropertyRef Name="ExpCheck_Type_ID" />
+      </Principal>
+      <Dependent Role="Tbl_ExpCheck_Type_Value">
+        <PropertyRef Name="ExpCheck_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Import_Check_Tbl_CheckType">
+    <End Role="Tbl_CheckType" Type="AssociationModel.Store.Tbl_CheckType" Multiplicity="1" />
+    <End Role="Tbl_Import_Check" Type="AssociationModel.Store.Tbl_Import_Check" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_CheckType">
+        <PropertyRef Name="Check_TypeID" />
+      </Principal>
+      <Dependent Role="Tbl_Import_Check">
+        <PropertyRef Name="ImpCheck_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Insurance_Tbl_insurance_Type">
+    <End Role="Tbl_Insurance_Type" Type="AssociationModel.Store.Tbl_Insurance_Type" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Insurance" Type="AssociationModel.Store.Tbl_Member_Insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Insurance_Type">
+        <PropertyRef Name="Insurance_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Insurance">
+        <PropertyRef Name="insurance_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Insurance_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Store.Tbl_Member_Registration" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Insurance" Type="AssociationModel.Store.Tbl_Member_Insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Insurance">
+        <PropertyRef Name="Memb_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Gender_Type">
+    <End Role="Tbl_Gender_Type" Type="AssociationModel.Store.Tbl_Gender_Type" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Store.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Gender_Type">
+        <PropertyRef Name="Gender_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_Gender_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Organization">
+    <End Role="Tbl_Organization" Type="AssociationModel.Store.Tbl_Organization" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Store.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Organization">
+        <PropertyRef Name="Org_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_Org_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Social">
+    <End Role="Tbl_Social" Type="AssociationModel.Store.Tbl_Social" Multiplicity="1" />
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Store.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Social">
+        <PropertyRef Name="Social_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_Social_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_SubOrg">
+    <End Role="Tbl_SubOrg" Type="AssociationModel.Store.Tbl_SubOrg" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Store.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_SubOrg">
+        <PropertyRef Name="SubOrg_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_subOrg_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_SubOrg_Tbl_Organization">
+    <End Role="Tbl_Organization" Type="AssociationModel.Store.Tbl_Organization" Multiplicity="1" />
+    <End Role="Tbl_SubOrg" Type="AssociationModel.Store.Tbl_SubOrg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Organization">
+        <PropertyRef Name="Org_ID" />
+      </Principal>
+      <Dependent Role="Tbl_SubOrg">
+        <PropertyRef Name="Org_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Subscribes_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Store.Tbl_Member_Registration" Multiplicity="0..1" />
+    <End Role="Tbl_Subscribes" Type="AssociationModel.Store.Tbl_Subscribes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Subscribes">
+        <PropertyRef Name="Mem_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,997 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{416FDB1C-F025-4CB8-8088-0E4172F95A0C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Association</RootNamespace>
+    <AssemblyName>Association</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\AjaxControlToolkit.Binary.NET45(1)\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin">
+      <HintPath>..\AjaxControlToolkit.Binary.NET45(1)\AjaxMin.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.4.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>CreatePDF\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa, Version=5.4.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>CreatePDF\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra, Version=5.4.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>CreatePDF\itextsharp.xtra.dll</HintPath>
+    </Reference>
+    <Reference Include="LangTextBox, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>CreatePDF\LangTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker.css" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker.min.css" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker.standalone.css" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker3.css" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker3.min.css" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\js\bootstrap-datepicker.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\js\bootstrap-datepicker.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.en-AU.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.nb.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="chosen\chosen-bootstrap-theme.min.css" />
+    <Content Include="chosen\chosen-sprite%402x.png" />
+    <Content Include="chosen\chosen-sprite.png" />
+    <Content Include="chosen\chosen.css" />
+    <Content Include="chosen\chosen.jquery.js" />
+    <Content Include="chosen\chosen.jquery.min.js" />
+    <Content Include="chosen\chosen.min.css" />
+    <Content Include="chosen\chosen.proto.js" />
+    <Content Include="chosen\chosen.proto.min.js" />
+    <Content Include="chosen\CustomStyleDDL.css" />
+    <Content Include="chosen\index.html" />
+    <Content Include="chosen\index.proto.html" />
+    <Content Include="chosen\options.html" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\highlight.pack.js" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\brown-papersq.png" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\pojoaque.jpg" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\school-book.png" />
+    <Content Include="Content\flatpickr-gh-pages\assets\icons\icons.svg" />
+    <Content Include="Content\flatpickr-gh-pages\assets\js\localizr.js" />
+    <Content Include="Content\flatpickr-gh-pages\assets\js\prettify.js" />
+    <Content Include="Content\flatpickr-gh-pages\assets\js\site.js" />
+    <Content Include="Content\flatpickr-gh-pages\assets\js\table-of-contents.js" />
+    <Content Include="Content\flatpickr-gh-pages\assets\js\themer.js" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style.min.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\flatpickr.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\flatpickr.min.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\flatpickr.min.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\ar.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\bg.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\bn.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\cat.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\cs.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\da.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\de.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\es.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\et.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\fa.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\fi.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\fr.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\he.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\hi.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\hr.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\hu.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\id.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\it.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\ja.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\ko.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\lt.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\ms.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\my.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\nl.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\no.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\pa.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\pl.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\pt.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\ro.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\ru.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\si.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\sq.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\sv.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\tr.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\uk.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\vn.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\l10n\zh.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\rtl\flatpickr.min.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\rtl\themes\airbnb.rtl.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\rtl\themes\base16_flat.rtl.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\rtl\themes\confetti.rtl.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\rtl\themes\dark.rtl.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\rtl\themes\material_blue.rtl.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\rtl\themes\material_green.rtl.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\rtl\themes\material_orange.rtl.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\rtl\themes\material_red.rtl.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\themes\airbnb.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\themes\base16_flat.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\themes\confetti.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\themes\dark.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\themes\material_blue.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\themes\material_green.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\themes\material_orange.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\dist\themes\material_red.css" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\favicon.ico" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\favicon.png" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\flatpickr.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\ar.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\bg.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\bn.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\cat.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\cs.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\da.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\de.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\es.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\et.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\fa.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\fi.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\fr.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\he.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\hi.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\hr.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\hu.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\id.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\it.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\ja.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\ko.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\lt.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\ms.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\my.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\nl.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\no.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\pa.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\pl.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\pt.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\ro.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\ru.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\si.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\sq.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\sv.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\tr.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\uk.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\vn.js" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\l10n\zh.js" />
+    <Content Include="Content\flatpickr-gh-pages\favicon.ico" />
+    <Content Include="Content\flatpickr-gh-pages\favicon.png" />
+    <Content Include="Content\flatpickr-gh-pages\gulpfile.js" />
+    <Content Include="Content\flatpickr-gh-pages\index.html" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="datepicker\bootstrap-datetimepicker-standalone.css" />
+    <Content Include="datepicker\bootstrap-datetimepicker.min.css" />
+    <Content Include="datepicker\bootstrap-datetimepicker.min.js" />
+    <Content Include="datepicker\moment.min.js" />
+    <Content Include="datetimepicker-master\build\jquery.datetimepicker.full.js" />
+    <Content Include="datetimepicker-master\build\jquery.datetimepicker.full.min.js" />
+    <Content Include="datetimepicker-master\build\jquery.datetimepicker.min.css" />
+    <Content Include="datetimepicker-master\build\jquery.datetimepicker.min.js" />
+    <Content Include="datetimepicker-master\index.html" />
+    <Content Include="datetimepicker-master\jquery.datetimepicker.css" />
+    <Content Include="datetimepicker-master\jquery.datetimepicker.js" />
+    <Content Include="datetimepicker-master\jquery.js" />
+    <Content Include="datetimepicker-master\karma.conf.js" />
+    <Content Include="datetimepicker-master\MIT-LICENSE.txt" />
+    <Content Include="datetimepicker-master\screen\1.png" />
+    <Content Include="datetimepicker-master\screen\2.png" />
+    <Content Include="datetimepicker-master\screen\3.1.png" />
+    <Content Include="datetimepicker-master\screen\3.png" />
+    <Content Include="datetimepicker-master\screen\4.png" />
+    <Content Include="datetimepicker-master\screen\5.png" />
+    <Content Include="datetimepicker-master\screen\6.png" />
+    <Content Include="datetimepicker-master\tests\app.css" />
+    <Content Include="datetimepicker-master\tests\index.html" />
+    <Content Include="datetimepicker-master\tests\input_in_container_fixed_to_bottom_of_viewport.html" />
+    <Content Include="datetimepicker-master\tests\input_in_container_fixed_to_top_of_viewport.html" />
+    <Content Include="datetimepicker-master\tests\tests\bootstrap.js" />
+    <Content Include="datetimepicker-master\tests\tests\destroy.js" />
+    <Content Include="datetimepicker-master\tests\tests\events.js" />
+    <Content Include="datetimepicker-master\tests\tests\init.js" />
+    <Content Include="datetimepicker-master\tests\tests\methods.js" />
+    <Content Include="datetimepicker-master\tests\tests\options.js" />
+    <Content Include="html2imag\html2canvas.js" />
+    <Content Include="html2imag\html2canvas.min.js" />
+    <Content Include="html2imag\html2canvas.svg.js" />
+    <Content Include="html2imag\html2canvas.svg.min.js" />
+    <Content Include="images\1.png" />
+    <Content Include="images\2.png" />
+    <Content Include="images\3.png" />
+    <Content Include="images\4.png" />
+    <Content Include="images\5.png" />
+    <Content Include="images\6.png" />
+    <Content Include="images\7.png" />
+    <Content Include="images\8.png" />
+    <Content Include="images\9.png" />
+    <Content Include="images\DE.png" />
+    <Content Include="images\MCIT_LOGO.png" />
+    <Content Include="images\qr-code.png" />
+    <Content Include="Maintenance-ar.aspx" />
+    <Content Include="Scripts\html2canvas.js" />
+    <Content Include="Scripts\html2img.js" />
+    <Content Include="Scripts\jasny-bootstrap\css\jasny-bootstrap.css" />
+    <Content Include="Scripts\jasny-bootstrap\css\jasny-bootstrap.min.css" />
+    <Content Include="Scripts\jasny-bootstrap\js\jasny-bootstrap.js" />
+    <Content Include="Scripts\jasny-bootstrap\js\jasny-bootstrap.min.js" />
+    <Content Include="Scripts\jquery_1.8.3.js" />
+    <Content Include="Scripts\JSHelper.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.0.min.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\blank-page.html" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\bootstrap-elements.html" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\bootstrap-grid.html" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\charts.html" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\css\bootstrap-rtl.css" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\css\bootstrap-rtl.min.css" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\css\bootstrap.css" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\css\bootstrap.min.css" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\css\plugins\morris.css" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\css\plugins\style.css" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\css\sb-admin-rtl.css" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\css\sb-admin.css" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\css\font-awesome.css" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\css\font-awesome.min.css" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\forms.html" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\index-rtl.html" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\index.html" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\bootstrap.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\bootstrap.min.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\jquery.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\plugins\flot\excanvas.min.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\plugins\flot\flot-data.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\plugins\flot\jquery.flot.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\plugins\morris\morris-data.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\plugins\morris\morris.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\plugins\morris\morris.min.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\plugins\morris\raphael.min.js" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\tables.html" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\test.html" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\js\test.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\DAL\Appraisal_Rate_DAL.cs" />
+    <Compile Include="App_Code\DAL\Account_DAL.cs" />
+    <Compile Include="App_Code\DAL\Acc_TypeOfType_DAL.cs" />
+    <Compile Include="App_Code\DAL\Audit_Login_DAL.cs" />
+    <Compile Include="App_Code\DAL\Memb_Sub_Over_DAL.cs" />
+    <Compile Include="App_Code\DAL\Rs_Acc_Transaction_DAL.cs" />
+    <Content Include="App_Code\DAL\Search2_DAL.cs" />
+    <Compile Include="App_Code\DAL\SysUsers_Dal.cs" />
+    <Compile Include="App_Code\DAL\Memb_Transaction_DAL.cs" />
+    <Compile Include="App_Code\DAL\Training_Place_DAL.cs" />
+    <Compile Include="App_Code\DAL\Courses_Funders_DAL.cs" />
+    <Compile Include="App_Code\DAL\Courses_Exam_DAL.cs" />
+    <Compile Include="App_Code\DAL\Courses_Pahse_DAL.cs" />
+    <Compile Include="App_Code\DAL\FunctionalGroup_DAL.cs" />
+    <Compile Include="App_Code\DAL\Old_Appraisail_DAL.cs" />
+    <Compile Include="App_Code\DAL\Search_DAL.cs" />
+    <Compile Include="EntityFramework\Association.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Association.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Association.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Association.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Association.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Get_Login_Info_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Rs_Acc_Transaction.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\RS_Acc_Trans_TypeOfType.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\RS_Memb_Transaction.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\RS_Traning_Process.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SelectAllCheck_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SelectAllCourses_By_MembID_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SelectAllCourses_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SelectAllMembersWithStatusAndReason_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SelectAllMembersWith_AllCourses_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SelectAllMembers_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SelectAllMembers_with_Last_Transaction_By_MembId_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SelectAllMembers_With_Status_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SelectAll_Illegal_Earning_For_MemberID_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SelectAll_TBL_SysUsers_Tbl_IPS_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\SelectAll_Trans_For_MemberID_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\sp_helpdiagrams_Result.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\sysdiagram.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Account.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Acc_TypeOfType.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Appraisail_Rate.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Audit_Login.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Central_Departments.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Courses.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Courses_Funders.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Courses_Status.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Courses_Type.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Course_Exam.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Course_Phase.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Departments.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Education_Qualification.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TBL_Exception.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Funational_Group.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Gender_Type.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Illegal_Earning.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Insurance_Subscripe.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Insurance_Type.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_IPS.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Jobs_Titles.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_kinshipType.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Member_Insurance.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Member_Registration.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_MembStatus.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Memb_Sub_Over.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Military_Service.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Old_Appraisal.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Public_Departments.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Qualitative_Group.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Reason_Type.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Relation.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Sectors.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Social.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Subscribes.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TBL_SysModules.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\TBL_SysUsers.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Training_Place.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_TransactionType.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Trining_Process_History.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Trining_Process_History_Type.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\Tbl_Work_Degree.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\test.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\View_1.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\View_2.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\View_3.cs">
+      <DependentUpon>Association.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Maintenance-ar.aspx.cs">
+      <DependentUpon>Maintenance-ar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maintenance-ar.aspx.designer.cs">
+      <DependentUpon>Maintenance-ar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\DAL\Trining_Process_History_DAL.cs" />
+    <Compile Include="App_Code\DAL\Trining_Process_History_Type_DAL.cs" />
+    <Content Include="App_Code\DAL\Tbl_Qualitative.cs" />
+    <Compile Include="App_Code\DAL\TransactionType_DAL.cs" />
+    <Compile Include="App_Code\GenLstToDt.cs" />
+    <Compile Include="App_Code\HandlingExceptions.cs" />
+    <Compile Include="App_Code\DAL\CheckType_DAL.cs" />
+    <Compile Include="App_Code\DAL\Gender_Type_DAL.cs" />
+    <Compile Include="App_Code\DAL\Insurance_Subscripe_DAL.cs" />
+    <Compile Include="App_Code\DAL\Insurance_Type_DAL.cs" />
+    <Compile Include="App_Code\DAL\Member_Insurance_DAL.cs" />
+    <Compile Include="App_Code\DAL\Member_Registration_DAL.cs" />
+    <Compile Include="App_Code\DAL\MembStatus_DAL.cs" />
+    <Compile Include="App_Code\DAL\Public_Dept_DAL.cs" />
+    <Compile Include="App_Code\DAL\Reason_Type_DAL.cs" />
+    <Compile Include="App_Code\DAL\Social_DAL.cs" />
+    <Compile Include="App_Code\DAL\Central_Dept_DAL.cs" />
+    <Compile Include="App_Code\DAL\Subscribes_DAL.cs" />
+    <Compile Include="App_Code\Assoc_Helper.cs" />
+    <Compile Include="App_Code\Models\SubMemRegModel.cs" />
+    <Compile Include="App_Code\Models\AccModel.cs" />
+    <Compile Include="AssocMaster.Master.cs">
+      <DependentUpon>AssocMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AssocMaster.Master.designer.cs">
+      <DependentUpon>AssocMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\DAL\Courses_DAL.cs" />
+    <Compile Include="App_Code\DAL\Courses_Type_DAL.cs" />
+    <Compile Include="App_Code\DAL\Courses_Status_DAL.cs" />
+    <Compile Include="App_Code\DAL\Departments_DAL.cs" />
+    <Compile Include="App_Code\DAL\Edu_Qualification_DAL.cs" />
+    <Compile Include="App_Code\DAL\Illegal_Earn_DAL.cs" />
+    <Compile Include="App_Code\DAL\Job_Title_DAL.cs" />
+    <Compile Include="App_Code\DAL\Military_Service_DAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App_Code\DAL\QualitiveGroup_DAL.cs" />
+    <Compile Include="App_Code\DAL\Sectors_DAL.cs" />
+    <Compile Include="App_Code\DAL\RS_Traning_Process_DAL.cs" />
+    <Compile Include="App_Code\DAL\Work_Degree_DAL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="AssocMaster.Master" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\bordered-pulled.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\core.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\fixed-width.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\font-awesome.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\icons.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\larger.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\list.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\mixins.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\path.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\rotated-flipped.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\spinning.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\stacked.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\less\variables.less" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\font-awesome.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\_core.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\_icons.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\_larger.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\_list.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\_mixins.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\_path.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\_spinning.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\_stacked.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\font-awesome\scss\_variables.scss" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\LICENSE" />
+    <Content Include="startbootstrap-sb-admin-1.0.4\README.md" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker.css.map" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker.min.css.map" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker.standalone.min.css.map" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker3.css.map" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker3.min.css.map" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="bootstrap-datepicker-1.6.1-dist\css\bootstrap-datepicker3.standalone.min.css.map" />
+    <Content Include="Scripts\jasny-bootstrap\css\jasny-bootstrap.css.map" />
+    <Content Include="Fonts\arabtype.ttf" />
+    <Content Include="Fonts\simpfxo.ttf" />
+    <Content Include="Fonts\tradbdo.ttf" />
+    <Content Include="Fonts\Web.config" />
+    <Content Include="Content\flatpickr-gh-pages\.gitignore" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\CHANGES.md" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\LICENSE" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\README.md" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\README.ru.md" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\agate.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\androidstudio.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\arduino-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\arta.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\ascetic.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-cave-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-cave-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-dune-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-dune-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-estuary-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-estuary-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-forest-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-forest-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-heath-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-heath-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-lakeside-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-lakeside-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-plateau-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-plateau-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-savanna-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-savanna-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-seaside-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-seaside-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-sulphurpool-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atelier-sulphurpool-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atom-one-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\atom-one-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\brown-paper.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\codepen-embed.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\color-brewer.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\darcula.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\darkula.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\default.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\docco.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\dracula.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\far.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\foundation.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\github-gist.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\github.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\googlecode.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\grayscale.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\gruvbox-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\gruvbox-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\hopscotch.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\hybrid.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\idea.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\ir-black.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\kimbie.dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\kimbie.light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\magula.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\mono-blue.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\monokai-sublime.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\monokai.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\obsidian.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\ocean.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\paraiso-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\paraiso-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\pojoaque.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\purebasic.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\qtcreator_dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\qtcreator_light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\railscasts.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\rainbow.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\school-book.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\solarized-dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\solarized-light.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\sunburst.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\tomorrow-night-blue.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\tomorrow-night-bright.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\tomorrow-night-eighties.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\tomorrow-night.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\tomorrow.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\vs.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\xcode.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\xt256.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\highlight\styles\zenburn.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\icons\icons.eot" />
+    <Content Include="Content\flatpickr-gh-pages\assets\icons\icons.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\icons\icons.ttf" />
+    <Content Include="Content\flatpickr-gh-pages\assets\icons\icons.woff" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style\colors.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style\kube\alerts.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style\kube\forms.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style\kube\grid.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style\kube\labels.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style\kube\tables.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style\kube\typography.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style\kube\utils.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style\kube\_kube.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style\prettify.styl" />
+    <Content Include="Content\flatpickr-gh-pages\assets\style\reset.styl" />
+    <Content Include="Content\flatpickr-gh-pages\bower.json" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\.bower.json" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\bower.json" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\CONTRIBUTING.md" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\ISSUE_TEMPLATE.md" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\LICENSE.md" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\package.json" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\README.md" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\style\flatpickr.styl" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\style\flatpickr_base.styl" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\style\themes\airbnb.styl" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\style\themes\base16_flat.styl" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\style\themes\confetti.styl" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\style\themes\dark.styl" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\style\themes\material_blue.styl" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\style\themes\material_green.styl" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\style\themes\material_orange.styl" />
+    <Content Include="Content\flatpickr-gh-pages\bower_components\flatpickr\src\style\themes\material_red.styl" />
+    <Content Include="Content\flatpickr-gh-pages\CONTRIBUTING.md" />
+    <Content Include="Content\flatpickr-gh-pages\package.json" />
+    <Content Include="Content\flatpickr-gh-pages\site\content\API.pug" />
+    <Content Include="Content\flatpickr-gh-pages\site\content\discover.pug" />
+    <Content Include="Content\flatpickr-gh-pages\site\content\events.pug" />
+    <Content Include="Content\flatpickr-gh-pages\site\content\examples.pug" />
+    <Content Include="Content\flatpickr-gh-pages\site\content\format_chars.pug" />
+    <Content Include="Content\flatpickr-gh-pages\site\content\install_use.pug" />
+    <Content Include="Content\flatpickr-gh-pages\site\content\intro.pug" />
+    <Content Include="Content\flatpickr-gh-pages\site\content\localization.pug" />
+    <Content Include="Content\flatpickr-gh-pages\site\content\options.pug" />
+    <Content Include="Content\flatpickr-gh-pages\site\content\themes.pug" />
+    <Content Include="Content\flatpickr-gh-pages\site\forkme.pug" />
+    <Content Include="Content\flatpickr-gh-pages\site\index.pug" />
+    <Content Include="Content\flatpickr-gh-pages\site\sidebar.pug" />
+    <Content Include="chosen\bower.json" />
+    <EntityDeploy Include="EntityFramework\Association.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Association.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="EntityFramework\Association.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Association.edmx</DependentUpon>
+      <LastGenOutput>Association.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EntityFramework\Association.edmx.diagram">
+      <DependentUpon>Association.edmx</DependentUpon>
+    </Content>
+    <Content Include="EntityFramework\Association.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Association.edmx</DependentUpon>
+      <LastGenOutput>Association.cs</LastGenOutput>
+    </Content>
+    <Content Include="datetimepicker-master\.gitignore" />
+    <Content Include="datetimepicker-master\.travis.yml" />
+    <Content Include="datetimepicker-master\bower.json" />
+    <Content Include="datetimepicker-master\datetimepicker.jquery.json" />
+    <Content Include="datetimepicker-master\doc.tpl" />
+    <Content Include="datetimepicker-master\package-lock.json" />
+    <Content Include="datetimepicker-master\package.json" />
+    <Content Include="datetimepicker-master\pull_request_template.md" />
+    <Content Include="datetimepicker-master\README.md" />
+    <Content Include="Fonts\Almarai-Bold.ttf" />
+    <Content Include="Fonts\Almarai-ExtraBold.ttf" />
+    <Content Include="Fonts\Almarai-Light.ttf" />
+    <Content Include="Fonts\Almarai-Regular.ttf" />
+    <None Include="Properties\PublishProfiles\gg.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PDFFiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1466/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

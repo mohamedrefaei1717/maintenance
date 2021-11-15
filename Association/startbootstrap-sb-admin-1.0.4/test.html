@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin - Bootstrap Admin Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="row" id="testdiv">
+        <div class="col-sm-12 text-center">
+            <img src="images/1.png" Width ="50" Height="50" alt="Syndicate of Ministry of Communications" title="syndicate" /> 
+            <span>نموذج إخطار صيانة / تحديث</span>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-2 text-center">
+            <img src="images/2.png" Width ="50" Height="50" alt="Syndicate of Ministry of Communications" title="syndicate" /> 
+            <p><strong>نوع الصيانة</strong></p>
+        </div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-3">
+                    <input id="Checkbox1" type="checkbox" />
+                            <label for="Checkbox1">دورية</label>
+                </div>
+                <div class="col-sm-3">
+                    <input id="Checkbox2" type="checkbox" />
+                            <label for="Checkbox2">تحديث</label>
+                </div>
+                <div class="col-sm-3">
+                    <input id="Checkbox3" type="checkbox" />
+                    <label for="Checkbox3">عطل</label>
+                </div>
+                <div class="col-sm-3">
+                    <input id="Checkbox4" type="checkbox" />
+                    <label for="Checkbox4">استباقة</label>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 text-center">
+            <img src="images/3.png" Width ="50" Height="50" alt="Syndicate of Ministry of Communications" title="syndicate" /> 
+            <p><strong>توقيت الصيانة او التحديث</strong></p>
+        </div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label for="txtMemb_Date_Contract">التاريخ من </label>
+                    <div class="input-group date">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <label for="txtMemb_Date_Contract">التاريخ إلي </label>
+                    <div class="input-group date">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-2 text-center">
+            <img src="images/4.png" Width ="50" Height="50" alt="Syndicate of Ministry of Communications" title="syndicate" /> 
+            <p><strong>الخدمات التي ستتأثر بالتحديث</strong></p>
+        </div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-2">
+                    <input id="Checkbox5" type="checkbox" />
+                        <label for="Checkbox5">Security</label>
+                </div>
+                <div class="col-sm-2">
+                    <input id="Checkbox6" type="checkbox" />
+                    <label for="Checkbox6">Voice</label>
+                </div>
+                <div class="col-sm-2">
+                    <input id="Checkbox7" type="checkbox" />
+                    <label for="Checkbox7">Wireless</label>
+                </div>
+                <div class="col-sm-2">
+                    <input id="Checkbox9" type="checkbox" />
+                    <label for="Checkbox9">Wired</label>
+                </div>
+
+                <div class="col-sm-2">
+                    <input id="Checkbox10" type="checkbox" />
+                        <label for="Checkbox10">Power</label><br />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-2">
+                    <input id="Checkbox11" type="checkbox" />
+                        <label for="Checkbox11">PCs</label>
+                </div>
+                <div class="col-sm-2">
+                    <input id="Checkbox12" type="checkbox" />
+                    <label for="Checkbox12">servers</label>
+                </div>
+                <div class="col-sm-2">
+                    <input id="Checkbox13" type="checkbox" />
+                    <label for="Checkbox13">Applications</label>
+                </div>
+                <div class="col-sm-2">
+                    <input id="Checkbox14" type="checkbox" />
+                    <label for="Checkbox14">E-mails</label>
+                </div>
+
+                <div class="col-sm-2">
+                    <input id="Checkbox15" type="checkbox" />
+                    <label for="Checkbox15">Other</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 text-center">
+            <img src="images/5.png" Width ="50" Height="50" alt="Syndicate of Ministry of Communications" title="syndicate" /> 
+            <p><strong>الوصف</strong></p>
+        </div>
+        <div class="col-sm-10">
+            <div class="col-sm-12">
+               <textarea name="desc" cols="100"></textarea>
+            </div>
+        
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 text-center">
+            <img src="images/6.png" Width ="50" Height="50" alt="Syndicate of Ministry of Communications" title="syndicate" /> 
+            <p><strong>درجة الأهمية</strong></p>
+        </div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-3">
+                    <input id="ChkBox1" type="checkbox" />
+                            <label for="ChkBox1">عالي جدا</label>
+                </div>
+                <div class="col-sm-3">
+                    <input id="ChkBox2" type="checkbox" />
+                    <label for="ChkBox2">عالي</label>
+                </div>
+                <div class="col-sm-3">
+                    <input id="ChkBox3" type="checkbox" />
+                    <label for="ChkBox3">متوسط</label>
+                </div>
+                <div class="col-sm-3">
+                    <input id="ChkBox4" type="checkbox" />
+                    <label for="ChkBox4">منخفض</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 text-center">
+            <img src="images/7.png" Width ="50" Height="50" alt="Syndicate of Ministry of Communications" title="syndicate" /> 
+            <p><strong>سبب الصيانة أو التحديث</strong></p>
+        </div>
+        <div class="col-sm-10">
+            <div class="col-sm-12">
+               <textarea name="reason" cols="100"></textarea>
+            </div>
+        
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm-2 text-center">
+            <img src="images/8.png" Width ="50" Height="50" alt="Syndicate of Ministry of Communications" title="syndicate" /> 
+            
+            <p><strong>المباني التي ستتأثر بالتحديث او الصيانة</strong></p>
+        </div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-3">
+                    <input id="CBox1" type="checkbox" />
+                            <label for="CBox1">مبنى المعادي</label>
+                        </div>
+                <div class="col-sm-3">
+                    <input id="CBox2" type="checkbox" />
+                    <label for="CBox2">مبنى المهندسين</label>
+                </div>
+                <div class="col-sm-3">
+                    <input id="CBox3" type="checkbox" />
+                    <label for="CBox3">B 5</label>
+                </div>
+                <div class="col-sm-3">
+                    <input id="CBox4" type="checkbox" />
+                    <label for="CBox4">B 1</label>
+                </div>
+            </div>
+            
+        
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 text-center">
+            <img src="images/5.png" Width ="50" Height="50" alt="Syndicate of Ministry of Communications" title="syndicate" /> 
+            <p><strong>الإدارة الفنية المسئولة</strong></p>
+        </div>
+        <div class="col-sm-10">
+            <div class="col-sm-12">
+               <input type= "text" name="mng"></textarea>
+            </div>
+        
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 text-center">
+            <img src="images/5.png" Width ="50" Height="50" alt="Syndicate of Ministry of Communications" title="syndicate" /> 
+            <p><strong>التعليقات / الافتراضات / الملاحظات</strong></p>
+        </div>
+        <div class="col-sm-10">
+            <div class="col-sm-12">
+               <textarea name="comment" cols="100"></textarea>
+            </div>
+        
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 text-center">
+            <img src="images/5.png" Width ="50" Height="50" alt="Syndicate of Ministry of Communications" title="syndicate" /> 
+            <p><strong>المرفقات او المراجع</strong></p>
+        </div>
+        <div class="col-sm-10">
+            <div class="col-sm-12">
+               <input type="file" name="attach" ></textarea>
+            </div>
+        
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col text-center">
+            <button id = "load">حفظ</button>
+        </div>
+    </div>
+
+    <canvas id="canvas" width="640" height="360" hidden></canvas>
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+    <script src="js/html2canvas.js"></script>
+
+    <script src="js/domimage.js"></script>
+    <script src="js/test.js"></script>
+</body>
+
+</html>

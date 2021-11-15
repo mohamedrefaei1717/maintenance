@@ -1,0 +1,444 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AssociationModelStoreContainer" CdmEntityContainer="AssociationEntities">
+    <EntitySetMapping Name="RS_Acc_Trans_TypeOfType">
+      <EntityTypeMapping TypeName="AssociationModel.RS_Acc_Trans_TypeOfType">
+        <MappingFragment StoreEntitySet="RS_Acc_Trans_TypeOfType">
+          <ScalarProperty Name="RS_Acc_Trans_TypeOfType_ID" ColumnName="RS_Acc_Trans_TypeOfType_ID" />
+          <ScalarProperty Name="Acc_TypeOfType_ID" ColumnName="Acc_TypeOfType_ID" />
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="Trans_Type_ID" ColumnName="Trans_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rs_Acc_Transaction">
+      <EntityTypeMapping TypeName="AssociationModel.Rs_Acc_Transaction">
+        <MappingFragment StoreEntitySet="Rs_Acc_Transaction">
+          <ScalarProperty Name="Rs_Acc_Transaction_ID" ColumnName="Rs_Acc_Transaction_ID" />
+          <ScalarProperty Name="RS_Acc_Transaction_Date" ColumnName="RS_Acc_Transaction_Date" />
+          <ScalarProperty Name="RS_Acc_Trans_TypeOfType_ID" ColumnName="RS_Acc_Trans_TypeOfType_ID" />
+          <ScalarProperty Name="Rs_Acc_Transaction_Value" ColumnName="Rs_Acc_Transaction_Value" />
+          <ScalarProperty Name="Rs_Acc_Transaction_Check_No" ColumnName="Rs_Acc_Transaction_Check_No" />
+          <ScalarProperty Name="Rs_Acc_Transaction_Member_ID" ColumnName="Rs_Acc_Transaction_Member_ID" />
+          <ScalarProperty Name="Rs_Acc_Transaction_Notes" ColumnName="Rs_Acc_Transaction_Notes" />
+          <ScalarProperty Name="Rs_Acc_Transaction_Image" ColumnName="Rs_Acc_Transaction_Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RS_Memb_Transaction">
+      <EntityTypeMapping TypeName="AssociationModel.RS_Memb_Transaction">
+        <MappingFragment StoreEntitySet="RS_Memb_Transaction">
+          <ScalarProperty Name="Transaction_ID" ColumnName="Transaction_ID" />
+          <ScalarProperty Name="Memb_ID" ColumnName="Memb_ID" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="MembStatus_ID" ColumnName="MembStatus_ID" />
+          <ScalarProperty Name="Reason_ID" ColumnName="Reason_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Acc_TypeOfType">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Acc_TypeOfType">
+        <MappingFragment StoreEntitySet="Tbl_Acc_TypeOfType">
+          <ScalarProperty Name="Acc_TypeOfType_ID" ColumnName="Acc_TypeOfType_ID" />
+          <ScalarProperty Name="Acc_TypeOfType_Name" ColumnName="Acc_TypeOfType_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Account">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Account">
+        <MappingFragment StoreEntitySet="Tbl_Account">
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="Account_Name" ColumnName="Account_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Audit_Login">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Audit_Login">
+        <MappingFragment StoreEntitySet="Tbl_Audit_Login">
+          <ScalarProperty Name="Audit_ID" ColumnName="Audit_ID" />
+          <ScalarProperty Name="Audit_IP" ColumnName="Audit_IP" />
+          <ScalarProperty Name="Audit_DateTime" ColumnName="Audit_DateTime" />
+          <ScalarProperty Name="Audit_UserName" ColumnName="Audit_UserName" />
+          <ScalarProperty Name="Audit_Password" ColumnName="Audit_Password" />
+          <ScalarProperty Name="Audit_Status" ColumnName="Audit_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Departement">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Departement">
+        <MappingFragment StoreEntitySet="Tbl_Departement">
+          <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+          <ScalarProperty Name="Dept_Name" ColumnName="Dept_Name" />
+          <ScalarProperty Name="Manag_ID" ColumnName="Manag_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Exception">
+      <EntityTypeMapping TypeName="AssociationModel.TBL_Exception">
+        <MappingFragment StoreEntitySet="TBL_Exception">
+          <ScalarProperty Name="Excep_ID" ColumnName="Excep_ID" />
+          <ScalarProperty Name="Excep_ErrorNumber" ColumnName="Excep_ErrorNumber" />
+          <ScalarProperty Name="Excep_ErrorCode" ColumnName="Excep_ErrorCode" />
+          <ScalarProperty Name="Excep_Type" ColumnName="Excep_Type" />
+          <ScalarProperty Name="Excep_Message" ColumnName="Excep_Message" />
+          <ScalarProperty Name="Excep_DateTime" ColumnName="Excep_DateTime" />
+          <ScalarProperty Name="EntityMess" ColumnName="EntityMess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Gender_Type">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Gender_Type">
+        <MappingFragment StoreEntitySet="Tbl_Gender_Type">
+          <ScalarProperty Name="Gender_ID" ColumnName="Gender_ID" />
+          <ScalarProperty Name="Gender_Type" ColumnName="Gender_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Insurance_Subscripe">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Insurance_Subscripe">
+        <MappingFragment StoreEntitySet="Tbl_Insurance_Subscripe">
+          <ScalarProperty Name="Insur_ID" ColumnName="Insur_ID" />
+          <ScalarProperty Name="Insur_Sub_Date" ColumnName="Insur_Sub_Date" />
+          <ScalarProperty Name="Mem_ID" ColumnName="Mem_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Insurance_Type">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Insurance_Type">
+        <MappingFragment StoreEntitySet="Tbl_Insurance_Type">
+          <ScalarProperty Name="Insurance_ID" ColumnName="Insurance_ID" />
+          <ScalarProperty Name="Insurance_Type_Name" ColumnName="Insurance_Type_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_IPS">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_IPS">
+        <MappingFragment StoreEntitySet="Tbl_IPS">
+          <ScalarProperty Name="IPS_ID" ColumnName="IPS_ID" />
+          <ScalarProperty Name="IPS_Usr_ID" ColumnName="IPS_Usr_ID" />
+          <ScalarProperty Name="IPS_Usr_IP" ColumnName="IPS_Usr_IP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_kinshipType">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_kinshipType">
+        <MappingFragment StoreEntitySet="Tbl_kinshipType">
+          <ScalarProperty Name="kinship_ID" ColumnName="kinship_ID" />
+          <ScalarProperty Name="kinship_Type" ColumnName="kinship_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Management">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Management">
+        <MappingFragment StoreEntitySet="Tbl_Management">
+          <ScalarProperty Name="Manag_ID" ColumnName="Manag_ID" />
+          <ScalarProperty Name="Manag_Name" ColumnName="Manag_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Memb_Sub_Over">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Memb_Sub_Over">
+        <MappingFragment StoreEntitySet="Tbl_Memb_Sub_Over">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Memb_EmpId" ColumnName="Memb_EmpId" />
+          <ScalarProperty Name="Memb_Name" ColumnName="Memb_Name" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Member_Insurance">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Member_Insurance">
+        <MappingFragment StoreEntitySet="Tbl_Member_Insurance">
+          <ScalarProperty Name="Inssur_ID" ColumnName="Inssur_ID" />
+          <ScalarProperty Name="Memb_ID" ColumnName="Memb_ID" />
+          <ScalarProperty Name="insur_Date" ColumnName="insur_Date" />
+          <ScalarProperty Name="insurance_Type_ID" ColumnName="insurance_Type_ID" />
+          <ScalarProperty Name="Insur_Value" ColumnName="Insur_Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Member_Registration">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Member_Registration">
+        <MappingFragment StoreEntitySet="Tbl_Member_Registration">
+          <ScalarProperty Name="Memb_ID" ColumnName="Memb_ID" />
+          <ScalarProperty Name="Memb_SysDate" ColumnName="Memb_SysDate" />
+          <ScalarProperty Name="Memb_Date" ColumnName="Memb_Date" />
+          <ScalarProperty Name="Memb_EmpID" ColumnName="Memb_EmpID" />
+          <ScalarProperty Name="Memb_Name" ColumnName="Memb_Name" />
+          <ScalarProperty Name="Memb_Birthdate" ColumnName="Memb_Birthdate" />
+          <ScalarProperty Name="Memb_Social_ID" ColumnName="Memb_Social_ID" />
+          <ScalarProperty Name="Memb_Children_Number" ColumnName="Memb_Children_Number" />
+          <ScalarProperty Name="Memb_Image" ColumnName="Memb_Image" />
+          <ScalarProperty Name="Memb_Gender_ID" ColumnName="Memb_Gender_ID" />
+          <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="Mobil" ColumnName="Mobil" />
+          <ScalarProperty Name="National_ID" ColumnName="National_ID" />
+          <ScalarProperty Name="NationalID_Home" ColumnName="NationalID_Home" />
+          <ScalarProperty Name="BirthHome" ColumnName="BirthHome" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_MembStatus">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_MembStatus">
+        <MappingFragment StoreEntitySet="Tbl_MembStatus">
+          <ScalarProperty Name="MembStatus_ID" ColumnName="MembStatus_ID" />
+          <ScalarProperty Name="MembStatus_Name" ColumnName="MembStatus_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Reason_Type">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Reason_Type">
+        <MappingFragment StoreEntitySet="Tbl_Reason_Type">
+          <ScalarProperty Name="Reason_ID" ColumnName="Reason_ID" />
+          <ScalarProperty Name="Reason_Name" ColumnName="Reason_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Relation">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Relation">
+        <MappingFragment StoreEntitySet="Tbl_Relation">
+          <ScalarProperty Name="Relation_ID" ColumnName="Relation_ID" />
+          <ScalarProperty Name="Relation_Name" ColumnName="Relation_Name" />
+          <ScalarProperty Name="Mem_ID" ColumnName="Mem_ID" />
+          <ScalarProperty Name="Relation_Birthdate" ColumnName="Relation_Birthdate" />
+          <ScalarProperty Name="Gender_ID" ColumnName="Gender_ID" />
+          <ScalarProperty Name="kinship_ID" ColumnName="kinship_ID" />
+          <ScalarProperty Name="Relation_Image" ColumnName="Relation_Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Social">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Social">
+        <MappingFragment StoreEntitySet="Tbl_Social">
+          <ScalarProperty Name="Social_ID" ColumnName="Social_ID" />
+          <ScalarProperty Name="Social_Name" ColumnName="Social_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Subscribes">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Subscribes">
+        <MappingFragment StoreEntitySet="Tbl_Subscribes">
+          <ScalarProperty Name="Sub_Year" ColumnName="Sub_Year" />
+          <ScalarProperty Name="Mem_ID" ColumnName="Mem_ID" />
+          <ScalarProperty Name="Jan" ColumnName="Jan" />
+          <ScalarProperty Name="Feb" ColumnName="Feb" />
+          <ScalarProperty Name="Mar" ColumnName="Mar" />
+          <ScalarProperty Name="Apr" ColumnName="Apr" />
+          <ScalarProperty Name="May" ColumnName="May" />
+          <ScalarProperty Name="June" ColumnName="June" />
+          <ScalarProperty Name="July" ColumnName="July" />
+          <ScalarProperty Name="August" ColumnName="August" />
+          <ScalarProperty Name="Sep" ColumnName="Sep" />
+          <ScalarProperty Name="Oct" ColumnName="Oct" />
+          <ScalarProperty Name="Nov" ColumnName="Nov" />
+          <ScalarProperty Name="Dec" ColumnName="Dec" />
+          <ScalarProperty Name="Sub_Paied" ColumnName="Sub_Paied" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_SysModules">
+      <EntityTypeMapping TypeName="AssociationModel.TBL_SysModules">
+        <MappingFragment StoreEntitySet="TBL_SysModules">
+          <ScalarProperty Name="Mod_ID" ColumnName="Mod_ID" />
+          <ScalarProperty Name="Module_Name" ColumnName="Module_Name" />
+          <ScalarProperty Name="Module_English_Name" ColumnName="Module_English_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_SysUsers">
+      <EntityTypeMapping TypeName="AssociationModel.TBL_SysUsers">
+        <MappingFragment StoreEntitySet="TBL_SysUsers">
+          <ScalarProperty Name="Usr_ID" ColumnName="Usr_ID" />
+          <ScalarProperty Name="Usr_firstname" ColumnName="Usr_firstname" />
+          <ScalarProperty Name="Usr_familyname" ColumnName="Usr_familyname" />
+          <ScalarProperty Name="Usr_IP" ColumnName="Usr_IP" />
+          <ScalarProperty Name="Usr_email" ColumnName="Usr_email" />
+          <ScalarProperty Name="Usr_mobnum" ColumnName="Usr_mobnum" />
+          <ScalarProperty Name="Usr_address" ColumnName="Usr_address" />
+          <ScalarProperty Name="Usr_img" ColumnName="Usr_img" />
+          <ScalarProperty Name="Usr_Name" ColumnName="Usr_Name" />
+          <ScalarProperty Name="Usr_Pass" ColumnName="Usr_Pass" />
+          <ScalarProperty Name="Usr_ModID" ColumnName="Usr_ModID" />
+          <ScalarProperty Name="Usr_IsActive" ColumnName="Usr_IsActive" />
+          <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_TransactionType">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_TransactionType">
+        <MappingFragment StoreEntitySet="Tbl_TransactionType">
+          <ScalarProperty Name="Trans_Type_ID" ColumnName="Trans_Type_ID" />
+          <ScalarProperty Name="Trans_Type_Name" ColumnName="Trans_Type_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tests">
+      <EntityTypeMapping TypeName="AssociationModel.test">
+        <MappingFragment StoreEntitySet="test">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id_n" ColumnName="id_n" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_1">
+      <EntityTypeMapping TypeName="AssociationModel.View_1">
+        <MappingFragment StoreEntitySet="View_1">
+          <ScalarProperty Name="Memb_ID" ColumnName="Memb_ID" />
+          <ScalarProperty Name="Memb_SysDate" ColumnName="Memb_SysDate" />
+          <ScalarProperty Name="Memb_Date" ColumnName="Memb_Date" />
+          <ScalarProperty Name="Memb_EmpID" ColumnName="Memb_EmpID" />
+          <ScalarProperty Name="Memb_Name" ColumnName="Memb_Name" />
+          <ScalarProperty Name="Memb_Birthdate" ColumnName="Memb_Birthdate" />
+          <ScalarProperty Name="Memb_Social_ID" ColumnName="Memb_Social_ID" />
+          <ScalarProperty Name="Memb_Children_Number" ColumnName="Memb_Children_Number" />
+          <ScalarProperty Name="Memb_Image" ColumnName="Memb_Image" />
+          <ScalarProperty Name="Memb_Gender_ID" ColumnName="Memb_Gender_ID" />
+          <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+          <ScalarProperty Name="Reason_Name" ColumnName="Reason_Name" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="MembStatus_Name" ColumnName="MembStatus_Name" />
+          <ScalarProperty Name="Reason_ID" ColumnName="Reason_ID" />
+          <ScalarProperty Name="MembStatus_ID" ColumnName="MembStatus_ID" />
+          <ScalarProperty Name="Social_ID" ColumnName="Social_ID" />
+          <ScalarProperty Name="Social_Name" ColumnName="Social_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_2">
+      <EntityTypeMapping TypeName="AssociationModel.View_2">
+        <MappingFragment StoreEntitySet="View_2">
+          <ScalarProperty Name="Trans_Type_Name" ColumnName="Trans_Type_Name" />
+          <ScalarProperty Name="Account_Name" ColumnName="Account_Name" />
+          <ScalarProperty Name="Acc_TypeOfType_Name" ColumnName="Acc_TypeOfType_Name" />
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="Trans_Type_ID" ColumnName="Trans_Type_ID" />
+          <ScalarProperty Name="Acc_TypeOfType_ID" ColumnName="Acc_TypeOfType_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_3">
+      <EntityTypeMapping TypeName="AssociationModel.View_3">
+        <MappingFragment StoreEntitySet="View_3">
+          <ScalarProperty Name="Acc_TypeOfType_ID" ColumnName="Acc_TypeOfType_ID" />
+          <ScalarProperty Name="Acc_TypeOfType_Name" ColumnName="Acc_TypeOfType_Name" />
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="Account_Name" ColumnName="Account_Name" />
+          <ScalarProperty Name="Trans_Type_ID" ColumnName="Trans_Type_ID" />
+          <ScalarProperty Name="Trans_Type_Name" ColumnName="Trans_Type_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Get_Login_Info" FunctionName="AssociationModel.Store.Get_Login_Info">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AssociationModel.Get_Login_Info_Result">
+          <ScalarProperty Name="Usr_Name" ColumnName="Usr_Name" />
+          <ScalarProperty Name="Usr_Pass" ColumnName="Usr_Pass" />
+          <ScalarProperty Name="Usr_ModID" ColumnName="Usr_ModID" />
+          <ScalarProperty Name="Usr_IsActive" ColumnName="Usr_IsActive" />
+          <ScalarProperty Name="IPS_Usr_IP" ColumnName="IPS_Usr_IP" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAll_TBL_SysUsers_Tbl_IPS" FunctionName="AssociationModel.Store.SelectAll_TBL_SysUsers_Tbl_IPS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AssociationModel.SelectAll_TBL_SysUsers_Tbl_IPS_Result">
+          <ScalarProperty Name="Usr_Name" ColumnName="Usr_Name" />
+          <ScalarProperty Name="Usr_Pass" ColumnName="Usr_Pass" />
+          <ScalarProperty Name="Usr_ModID" ColumnName="Usr_ModID" />
+          <ScalarProperty Name="Usr_IsActive" ColumnName="Usr_IsActive" />
+          <ScalarProperty Name="IPS_Usr_IP" ColumnName="IPS_Usr_IP" />
+          <ScalarProperty Name="Usr_ID" ColumnName="Usr_ID" />
+          <ScalarProperty Name="Usr_firstname" ColumnName="Usr_firstname" />
+          <ScalarProperty Name="Usr_familyname" ColumnName="Usr_familyname" />
+          <ScalarProperty Name="Mod_ID" ColumnName="Mod_ID" />
+          <ScalarProperty Name="Module_Name" ColumnName="Module_Name" />
+          <ScalarProperty Name="IPS_ID" ColumnName="IPS_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAll_Trans_For_MemberID" FunctionName="AssociationModel.Store.SelectAll_Trans_For_MemberID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AssociationModel.SelectAll_Trans_For_MemberID_Result">
+          <ScalarProperty Name="Reason_Name" ColumnName="Reason_Name" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="MembStatus_Name" ColumnName="MembStatus_Name" />
+          <ScalarProperty Name="Reason_ID" ColumnName="Reason_ID" />
+          <ScalarProperty Name="MembStatus_ID" ColumnName="MembStatus_ID" />
+          <ScalarProperty Name="Transaction_ID" ColumnName="Transaction_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAllCheck" FunctionName="AssociationModel.Store.SelectAllCheck">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AssociationModel.SelectAllCheck_Result">
+          <ScalarProperty Name="Rs_Acc_Transaction_ID" ColumnName="Rs_Acc_Transaction_ID" />
+          <ScalarProperty Name="RS_Acc_Transaction_Date" ColumnName="RS_Acc_Transaction_Date" />
+          <ScalarProperty Name="RS_Acc_Trans_TypeOfType_ID" ColumnName="RS_Acc_Trans_TypeOfType_ID" />
+          <ScalarProperty Name="Rs_Acc_Transaction_Value" ColumnName="Rs_Acc_Transaction_Value" />
+          <ScalarProperty Name="Rs_Acc_Transaction_Check_No" ColumnName="Rs_Acc_Transaction_Check_No" />
+          <ScalarProperty Name="Rs_Acc_Transaction_Member_ID" ColumnName="Rs_Acc_Transaction_Member_ID" />
+          <ScalarProperty Name="Rs_Acc_Transaction_Notes" ColumnName="Rs_Acc_Transaction_Notes" />
+          <ScalarProperty Name="Rs_Acc_Transaction_Image" ColumnName="Rs_Acc_Transaction_Image" />
+          <ScalarProperty Name="Acc_TypeOfType_Name" ColumnName="Acc_TypeOfType_Name" />
+          <ScalarProperty Name="Account_Name" ColumnName="Account_Name" />
+          <ScalarProperty Name="Trans_Type_Name" ColumnName="Trans_Type_Name" />
+          <ScalarProperty Name="Trans_Type_ID" ColumnName="Trans_Type_ID" />
+          <ScalarProperty Name="Account_ID" ColumnName="Account_ID" />
+          <ScalarProperty Name="Acc_TypeOfType_ID" ColumnName="Acc_TypeOfType_ID" />
+          <ScalarProperty Name="Memb_Name" ColumnName="Memb_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAllMembers" FunctionName="AssociationModel.Store.SelectAllMembers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AssociationModel.SelectAllMembers_Result">
+          <ScalarProperty Name="Memb_ID" ColumnName="Memb_ID" />
+          <ScalarProperty Name="Memb_SysDate" ColumnName="Memb_SysDate" />
+          <ScalarProperty Name="Memb_Date" ColumnName="Memb_Date" />
+          <ScalarProperty Name="Memb_EmpID" ColumnName="Memb_EmpID" />
+          <ScalarProperty Name="Memb_Name" ColumnName="Memb_Name" />
+          <ScalarProperty Name="Memb_Birthdate" ColumnName="Memb_Birthdate" />
+          <ScalarProperty Name="Memb_Social_ID" ColumnName="Memb_Social_ID" />
+          <ScalarProperty Name="Memb_Children_Number" ColumnName="Memb_Children_Number" />
+          <ScalarProperty Name="Memb_Image" ColumnName="Memb_Image" />
+          <ScalarProperty Name="Memb_Gender_ID" ColumnName="Memb_Gender_ID" />
+          <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+          <ScalarProperty Name="Social_ID" ColumnName="Social_ID" />
+          <ScalarProperty Name="Social_Name" ColumnName="Social_Name" />
+          <ScalarProperty Name="Gender_Type" ColumnName="Gender_Type" />
+          <ScalarProperty Name="Dept_Name" ColumnName="Dept_Name" />
+          <ScalarProperty Name="Manag_Name" ColumnName="Manag_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SelectAllMembersWithStatusAndReason" FunctionName="AssociationModel.Store.SelectAllMembersWithStatusAndReason">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="AssociationModel.SelectAllMembersWithStatusAndReason_Result">
+          <ScalarProperty Name="Memb_ID" ColumnName="Memb_ID" />
+          <ScalarProperty Name="Memb_SysDate" ColumnName="Memb_SysDate" />
+          <ScalarProperty Name="Memb_Date" ColumnName="Memb_Date" />
+          <ScalarProperty Name="Memb_EmpID" ColumnName="Memb_EmpID" />
+          <ScalarProperty Name="Memb_Name" ColumnName="Memb_Name" />
+          <ScalarProperty Name="Memb_Birthdate" ColumnName="Memb_Birthdate" />
+          <ScalarProperty Name="Memb_Social_ID" ColumnName="Memb_Social_ID" />
+          <ScalarProperty Name="Memb_Children_Number" ColumnName="Memb_Children_Number" />
+          <ScalarProperty Name="Memb_Image" ColumnName="Memb_Image" />
+          <ScalarProperty Name="Memb_Gender_ID" ColumnName="Memb_Gender_ID" />
+          <ScalarProperty Name="Dept_ID" ColumnName="Dept_ID" />
+          <ScalarProperty Name="Reason_Name" ColumnName="Reason_Name" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="MembStatus_Name" ColumnName="MembStatus_Name" />
+          <ScalarProperty Name="Reason_ID" ColumnName="Reason_ID" />
+          <ScalarProperty Name="MembStatus_ID" ColumnName="MembStatus_ID" />
+          <ScalarProperty Name="Social_ID" ColumnName="Social_ID" />
+          <ScalarProperty Name="Social_Name" ColumnName="Social_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

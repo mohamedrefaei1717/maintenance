@@ -1,0 +1,487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AssociationModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AssociationEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="RS_Transaction" EntityType="AssociationModel.RS_Transaction" />
+    <EntitySet Name="Tbl_CheckType" EntityType="AssociationModel.Tbl_CheckType" />
+    <EntitySet Name="TBL_Exception" EntityType="AssociationModel.TBL_Exception" />
+    <EntitySet Name="Tbl_ExpCheck" EntityType="AssociationModel.Tbl_ExpCheck" />
+    <EntitySet Name="Tbl_ExpCheck_Type" EntityType="AssociationModel.Tbl_ExpCheck_Type" />
+    <EntitySet Name="Tbl_ExpCheck_Type_Value" EntityType="AssociationModel.Tbl_ExpCheck_Type_Value" />
+    <EntitySet Name="Tbl_Gender_Type" EntityType="AssociationModel.Tbl_Gender_Type" />
+    <EntitySet Name="Tbl_Import_Check" EntityType="AssociationModel.Tbl_Import_Check" />
+    <EntitySet Name="Tbl_Insurance_Subscripe" EntityType="AssociationModel.Tbl_Insurance_Subscripe" />
+    <EntitySet Name="Tbl_Insurance_Type" EntityType="AssociationModel.Tbl_Insurance_Type" />
+    <EntitySet Name="Tbl_kinshipType" EntityType="AssociationModel.Tbl_kinshipType" />
+    <EntitySet Name="Tbl_Member_Insurance" EntityType="AssociationModel.Tbl_Member_Insurance" />
+    <EntitySet Name="Tbl_Member_Registration" EntityType="AssociationModel.Tbl_Member_Registration" />
+    <EntitySet Name="Tbl_MembStatus" EntityType="AssociationModel.Tbl_MembStatus" />
+    <EntitySet Name="Tbl_Organization" EntityType="AssociationModel.Tbl_Organization" />
+    <EntitySet Name="Tbl_Reason_Type" EntityType="AssociationModel.Tbl_Reason_Type" />
+    <EntitySet Name="Tbl_Relation" EntityType="AssociationModel.Tbl_Relation" />
+    <EntitySet Name="Tbl_Social" EntityType="AssociationModel.Tbl_Social" />
+    <EntitySet Name="Tbl_SubOrg" EntityType="AssociationModel.Tbl_SubOrg" />
+    <EntitySet Name="Tbl_Subscribes" EntityType="AssociationModel.Tbl_Subscribes" />
+    <AssociationSet Name="FK_RS_Transaction_Tbl_Member_Registration" Association="AssociationModel.FK_RS_Transaction_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="RS_Transaction" EntitySet="RS_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Transaction_Tbl_MembStatus" Association="AssociationModel.FK_RS_Transaction_Tbl_MembStatus">
+      <End Role="Tbl_MembStatus" EntitySet="Tbl_MembStatus" />
+      <End Role="RS_Transaction" EntitySet="RS_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RS_Transaction_Tbl_Reason_Type" Association="AssociationModel.FK_RS_Transaction_Tbl_Reason_Type">
+      <End Role="Tbl_Reason_Type" EntitySet="Tbl_Reason_Type" />
+      <End Role="RS_Transaction" EntitySet="RS_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ExpCheck_Type_Tbl_CheckType" Association="AssociationModel.FK_Tbl_ExpCheck_Type_Tbl_CheckType">
+      <End Role="Tbl_CheckType" EntitySet="Tbl_CheckType" />
+      <End Role="Tbl_ExpCheck_Type" EntitySet="Tbl_ExpCheck_Type" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Import_Check_Tbl_CheckType" Association="AssociationModel.FK_Tbl_Import_Check_Tbl_CheckType">
+      <End Role="Tbl_CheckType" EntitySet="Tbl_CheckType" />
+      <End Role="Tbl_Import_Check" EntitySet="Tbl_Import_Check" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ExpCheck_Tbl_ExpCheck_Type_Value" Association="AssociationModel.FK_Tbl_ExpCheck_Tbl_ExpCheck_Type_Value">
+      <End Role="Tbl_ExpCheck_Type_Value" EntitySet="Tbl_ExpCheck_Type_Value" />
+      <End Role="Tbl_ExpCheck" EntitySet="Tbl_ExpCheck" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_ExpCheck_Type_Value_Tbl_ExpCheck_Type" Association="AssociationModel.FK_Tbl_ExpCheck_Type_Value_Tbl_ExpCheck_Type">
+      <End Role="Tbl_ExpCheck_Type" EntitySet="Tbl_ExpCheck_Type" />
+      <End Role="Tbl_ExpCheck_Type_Value" EntitySet="Tbl_ExpCheck_Type_Value" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Gender_Type" Association="AssociationModel.FK_Tbl_Member_Registration_Tbl_Gender_Type">
+      <End Role="Tbl_Gender_Type" EntitySet="Tbl_Gender_Type" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Insurance_Tbl_insurance_Type" Association="AssociationModel.FK_Tbl_Member_Insurance_Tbl_insurance_Type">
+      <End Role="Tbl_Insurance_Type" EntitySet="Tbl_Insurance_Type" />
+      <End Role="Tbl_Member_Insurance" EntitySet="Tbl_Member_Insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Insurance_Tbl_Member_Registration" Association="AssociationModel.FK_Tbl_Member_Insurance_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="Tbl_Member_Insurance" EntitySet="Tbl_Member_Insurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Organization" Association="AssociationModel.FK_Tbl_Member_Registration_Tbl_Organization">
+      <End Role="Tbl_Organization" EntitySet="Tbl_Organization" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_Social" Association="AssociationModel.FK_Tbl_Member_Registration_Tbl_Social">
+      <End Role="Tbl_Social" EntitySet="Tbl_Social" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Member_Registration_Tbl_SubOrg" Association="AssociationModel.FK_Tbl_Member_Registration_Tbl_SubOrg">
+      <End Role="Tbl_SubOrg" EntitySet="Tbl_SubOrg" />
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_Subscribes_Tbl_Member_Registration" Association="AssociationModel.FK_Tbl_Subscribes_Tbl_Member_Registration">
+      <End Role="Tbl_Member_Registration" EntitySet="Tbl_Member_Registration" />
+      <End Role="Tbl_Subscribes" EntitySet="Tbl_Subscribes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tbl_SubOrg_Tbl_Organization" Association="AssociationModel.FK_Tbl_SubOrg_Tbl_Organization">
+      <End Role="Tbl_Organization" EntitySet="Tbl_Organization" />
+      <End Role="Tbl_SubOrg" EntitySet="Tbl_SubOrg" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="RS_Transaction">
+    <Key>
+      <PropertyRef Name="Transaction_ID" />
+    </Key>
+    <Property Name="Transaction_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Memb_ID" Type="Int32" />
+    <Property Name="TransDate" Type="DateTime" Precision="3" />
+    <Property Name="MembStatus_ID" Type="Int32" />
+    <Property Name="Reason_ID" Type="Int32" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="AssociationModel.FK_RS_Transaction_Tbl_Member_Registration" FromRole="RS_Transaction" ToRole="Tbl_Member_Registration" />
+    <NavigationProperty Name="Tbl_MembStatus" Relationship="AssociationModel.FK_RS_Transaction_Tbl_MembStatus" FromRole="RS_Transaction" ToRole="Tbl_MembStatus" />
+    <NavigationProperty Name="Tbl_Reason_Type" Relationship="AssociationModel.FK_RS_Transaction_Tbl_Reason_Type" FromRole="RS_Transaction" ToRole="Tbl_Reason_Type" />
+  </EntityType>
+  <EntityType Name="Tbl_CheckType">
+    <Key>
+      <PropertyRef Name="Check_TypeID" />
+    </Key>
+    <Property Name="Check_TypeID" Type="Int32" Nullable="false" />
+    <Property Name="Check_TypeName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Tbl_ExpCheck_Type" Relationship="AssociationModel.FK_Tbl_ExpCheck_Type_Tbl_CheckType" FromRole="Tbl_CheckType" ToRole="Tbl_ExpCheck_Type" />
+    <NavigationProperty Name="Tbl_Import_Check" Relationship="AssociationModel.FK_Tbl_Import_Check_Tbl_CheckType" FromRole="Tbl_CheckType" ToRole="Tbl_Import_Check" />
+  </EntityType>
+  <EntityType Name="TBL_Exception">
+    <Key>
+      <PropertyRef Name="Excep_ID" />
+    </Key>
+    <Property Name="Excep_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Excep_ErrorNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Excep_ErrorCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Excep_Type" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="Excep_Message" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+    <Property Name="Excep_DateTime" Type="DateTime" Precision="3" />
+    <Property Name="EntityMess" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tbl_ExpCheck">
+    <Key>
+      <PropertyRef Name="ExpCheck_ID" />
+    </Key>
+    <Property Name="ExpCheck_ID" Type="Int32" Nullable="false" />
+    <Property Name="ExpCheck_Num" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ExpCheck_Type_ID" Type="Int32" />
+    <Property Name="ExpCheck_Type_Date_Value" Type="DateTime" Precision="3" />
+    <Property Name="ExpCheck_Pdf" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ExpCheck_Date" Type="DateTime" Precision="3" />
+    <Property Name="Mem_ID" Type="Int32" />
+    <NavigationProperty Name="Tbl_ExpCheck_Type_Value" Relationship="AssociationModel.FK_Tbl_ExpCheck_Tbl_ExpCheck_Type_Value" FromRole="Tbl_ExpCheck" ToRole="Tbl_ExpCheck_Type_Value" />
+  </EntityType>
+  <EntityType Name="Tbl_ExpCheck_Type">
+    <Key>
+      <PropertyRef Name="ExpCheck_Type_ID" />
+    </Key>
+    <Property Name="ExpCheck_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="ExpCheck_Type_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Check_Type_ID" Type="Int32" />
+    <NavigationProperty Name="Tbl_CheckType" Relationship="AssociationModel.FK_Tbl_ExpCheck_Type_Tbl_CheckType" FromRole="Tbl_ExpCheck_Type" ToRole="Tbl_CheckType" />
+    <NavigationProperty Name="Tbl_ExpCheck_Type_Value" Relationship="AssociationModel.FK_Tbl_ExpCheck_Type_Value_Tbl_ExpCheck_Type" FromRole="Tbl_ExpCheck_Type" ToRole="Tbl_ExpCheck_Type_Value" />
+  </EntityType>
+  <EntityType Name="Tbl_ExpCheck_Type_Value">
+    <Key>
+      <PropertyRef Name="ExpCheck_Type_ID" />
+      <PropertyRef Name="ExpCheck_Type_Date_Value" />
+    </Key>
+    <Property Name="ExpCheck_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="ExpCheck_Type_Date_Value" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ExpCheck_Value" Type="Int32" />
+    <NavigationProperty Name="Tbl_ExpCheck" Relationship="AssociationModel.FK_Tbl_ExpCheck_Tbl_ExpCheck_Type_Value" FromRole="Tbl_ExpCheck_Type_Value" ToRole="Tbl_ExpCheck" />
+    <NavigationProperty Name="Tbl_ExpCheck_Type" Relationship="AssociationModel.FK_Tbl_ExpCheck_Type_Value_Tbl_ExpCheck_Type" FromRole="Tbl_ExpCheck_Type_Value" ToRole="Tbl_ExpCheck_Type" />
+  </EntityType>
+  <EntityType Name="Tbl_Gender_Type">
+    <Key>
+      <PropertyRef Name="Gender_ID" />
+    </Key>
+    <Property Name="Gender_ID" Type="Int32" Nullable="false" />
+    <Property Name="Gender_Type" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="AssociationModel.FK_Tbl_Member_Registration_Tbl_Gender_Type" FromRole="Tbl_Gender_Type" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_Import_Check">
+    <Key>
+      <PropertyRef Name="ImpCheck_ID" />
+    </Key>
+    <Property Name="ImpCheck_ID" Type="Int32" Nullable="false" />
+    <Property Name="ImpCheck_Num" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ImpCheck_Type_ID" Type="Int32" Nullable="false" />
+    <Property Name="ImpCheck_Money" Type="Int32" Nullable="false" />
+    <Property Name="ImpCheck_Date" Type="DateTime" Precision="3" />
+    <Property Name="ImpCheck_Pdf" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Tbl_CheckType" Relationship="AssociationModel.FK_Tbl_Import_Check_Tbl_CheckType" FromRole="Tbl_Import_Check" ToRole="Tbl_CheckType" />
+  </EntityType>
+  <EntityType Name="Tbl_Insurance_Subscripe">
+    <Key>
+      <PropertyRef Name="Insur_ID" />
+      <PropertyRef Name="Insur_Sub_Date" />
+    </Key>
+    <Property Name="Insur_ID" Type="Int32" Nullable="false" />
+    <Property Name="Mem_ID" Type="Int32" />
+    <Property Name="Insur_Sub_Date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Tbl_Insurance_Type">
+    <Key>
+      <PropertyRef Name="Insurance_ID" />
+    </Key>
+    <Property Name="Insurance_ID" Type="Int32" Nullable="false" />
+    <Property Name="Insurance_Type_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Tbl_Member_Insurance" Relationship="AssociationModel.FK_Tbl_Member_Insurance_Tbl_insurance_Type" FromRole="Tbl_Insurance_Type" ToRole="Tbl_Member_Insurance" />
+  </EntityType>
+  <EntityType Name="Tbl_kinshipType">
+    <Key>
+      <PropertyRef Name="kinship_Type" />
+    </Key>
+    <Property Name="kinship_ID" Type="Int32" />
+    <Property Name="kinship_Type" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Member_Insurance">
+    <Key>
+      <PropertyRef Name="Inssur_ID" />
+    </Key>
+    <Property Name="Inssur_ID" Type="Int32" Nullable="false" />
+    <Property Name="Memb_ID" Type="Int32" />
+    <Property Name="insur_Date" Type="DateTime" Precision="3" />
+    <Property Name="insurance_Type_ID" Type="Int32" />
+    <Property Name="Insur_Value" Type="Int32" />
+    <NavigationProperty Name="Tbl_Insurance_Type" Relationship="AssociationModel.FK_Tbl_Member_Insurance_Tbl_insurance_Type" FromRole="Tbl_Member_Insurance" ToRole="Tbl_Insurance_Type" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="AssociationModel.FK_Tbl_Member_Insurance_Tbl_Member_Registration" FromRole="Tbl_Member_Insurance" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_Member_Registration">
+    <Key>
+      <PropertyRef Name="Memb_ID" />
+    </Key>
+    <Property Name="Memb_ID" Type="Int32" Nullable="false" />
+    <Property Name="Memb_EmpID" Type="Int32" Nullable="false" />
+    <Property Name="Memb_Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Memb_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Memb_Birthdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Memb_Social_ID" Type="Int32" Nullable="false" />
+    <Property Name="Memb_Children_Number" Type="Int32" Nullable="false" />
+    <Property Name="Memb_Imge" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Memb_Gender_ID" Type="Int32" />
+    <Property Name="Memb_Org_ID" Type="Int32" />
+    <Property Name="Memb_subOrg_ID" Type="Int32" />
+    <NavigationProperty Name="RS_Transaction" Relationship="AssociationModel.FK_RS_Transaction_Tbl_Member_Registration" FromRole="Tbl_Member_Registration" ToRole="RS_Transaction" />
+    <NavigationProperty Name="Tbl_Gender_Type" Relationship="AssociationModel.FK_Tbl_Member_Registration_Tbl_Gender_Type" FromRole="Tbl_Member_Registration" ToRole="Tbl_Gender_Type" />
+    <NavigationProperty Name="Tbl_Member_Insurance" Relationship="AssociationModel.FK_Tbl_Member_Insurance_Tbl_Member_Registration" FromRole="Tbl_Member_Registration" ToRole="Tbl_Member_Insurance" />
+    <NavigationProperty Name="Tbl_Organization" Relationship="AssociationModel.FK_Tbl_Member_Registration_Tbl_Organization" FromRole="Tbl_Member_Registration" ToRole="Tbl_Organization" />
+    <NavigationProperty Name="Tbl_Social" Relationship="AssociationModel.FK_Tbl_Member_Registration_Tbl_Social" FromRole="Tbl_Member_Registration" ToRole="Tbl_Social" />
+    <NavigationProperty Name="Tbl_SubOrg" Relationship="AssociationModel.FK_Tbl_Member_Registration_Tbl_SubOrg" FromRole="Tbl_Member_Registration" ToRole="Tbl_SubOrg" />
+    <NavigationProperty Name="Tbl_Subscribes" Relationship="AssociationModel.FK_Tbl_Subscribes_Tbl_Member_Registration" FromRole="Tbl_Member_Registration" ToRole="Tbl_Subscribes" />
+  </EntityType>
+  <EntityType Name="Tbl_MembStatus">
+    <Key>
+      <PropertyRef Name="MembStatus_ID" />
+    </Key>
+    <Property Name="MembStatus_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="MembStatus_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="RS_Transaction" Relationship="AssociationModel.FK_RS_Transaction_Tbl_MembStatus" FromRole="Tbl_MembStatus" ToRole="RS_Transaction" />
+  </EntityType>
+  <EntityType Name="Tbl_Organization">
+    <Key>
+      <PropertyRef Name="Org_ID" />
+    </Key>
+    <Property Name="Org_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Org_Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="AssociationModel.FK_Tbl_Member_Registration_Tbl_Organization" FromRole="Tbl_Organization" ToRole="Tbl_Member_Registration" />
+    <NavigationProperty Name="Tbl_SubOrg" Relationship="AssociationModel.FK_Tbl_SubOrg_Tbl_Organization" FromRole="Tbl_Organization" ToRole="Tbl_SubOrg" />
+  </EntityType>
+  <EntityType Name="Tbl_Reason_Type">
+    <Key>
+      <PropertyRef Name="Reason_ID" />
+    </Key>
+    <Property Name="Reason_ID" Type="Int32" Nullable="false" />
+    <Property Name="Reason_Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="RS_Transaction" Relationship="AssociationModel.FK_RS_Transaction_Tbl_Reason_Type" FromRole="Tbl_Reason_Type" ToRole="RS_Transaction" />
+  </EntityType>
+  <EntityType Name="Tbl_Relation">
+    <Key>
+      <PropertyRef Name="Relation_Name" />
+      <PropertyRef Name="Mem_ID" />
+      <PropertyRef Name="Relation_Birthdate" />
+      <PropertyRef Name="Sex_ID" />
+      <PropertyRef Name="kinship_ID" />
+      <PropertyRef Name="Relation_Image" />
+    </Key>
+    <Property Name="Relation_ID" Type="Int32" />
+    <Property Name="Relation_Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Mem_ID" Type="Int32" Nullable="false" />
+    <Property Name="Relation_Birthdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Sex_ID" Type="Int32" Nullable="false" />
+    <Property Name="kinship_ID" Type="Int32" Nullable="false" />
+    <Property Name="Relation_Image" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Social">
+    <Key>
+      <PropertyRef Name="Social_ID" />
+    </Key>
+    <Property Name="Social_ID" Type="Int32" Nullable="false" />
+    <Property Name="Social_Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="AssociationModel.FK_Tbl_Member_Registration_Tbl_Social" FromRole="Tbl_Social" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <EntityType Name="Tbl_SubOrg">
+    <Key>
+      <PropertyRef Name="SubOrg_ID" />
+    </Key>
+    <Property Name="SubOrg_ID" Type="Int32" Nullable="false" />
+    <Property Name="SubOrg_Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Org_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="AssociationModel.FK_Tbl_Member_Registration_Tbl_SubOrg" FromRole="Tbl_SubOrg" ToRole="Tbl_Member_Registration" />
+    <NavigationProperty Name="Tbl_Organization" Relationship="AssociationModel.FK_Tbl_SubOrg_Tbl_Organization" FromRole="Tbl_SubOrg" ToRole="Tbl_Organization" />
+  </EntityType>
+  <EntityType Name="Tbl_Subscribes">
+    <Key>
+      <PropertyRef Name="Subscribe_ID" />
+      <PropertyRef Name="Sub_Date" />
+    </Key>
+    <Property Name="Subscribe_ID" Type="Int32" Nullable="false" />
+    <Property Name="Sub_Date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mem_ID" Type="Int32" />
+    <Property Name="Mem_EmpID" Type="Int32" />
+    <Property Name="Mem_EmpName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Sub_Paied" Type="Int32" />
+    <NavigationProperty Name="Tbl_Member_Registration" Relationship="AssociationModel.FK_Tbl_Subscribes_Tbl_Member_Registration" FromRole="Tbl_Subscribes" ToRole="Tbl_Member_Registration" />
+  </EntityType>
+  <Association Name="FK_RS_Transaction_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Tbl_Member_Registration" Multiplicity="0..1" />
+    <End Role="RS_Transaction" Type="AssociationModel.RS_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="RS_Transaction">
+        <PropertyRef Name="Memb_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Transaction_Tbl_MembStatus">
+    <End Role="Tbl_MembStatus" Type="AssociationModel.Tbl_MembStatus" Multiplicity="0..1" />
+    <End Role="RS_Transaction" Type="AssociationModel.RS_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_MembStatus">
+        <PropertyRef Name="MembStatus_ID" />
+      </Principal>
+      <Dependent Role="RS_Transaction">
+        <PropertyRef Name="MembStatus_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RS_Transaction_Tbl_Reason_Type">
+    <End Role="Tbl_Reason_Type" Type="AssociationModel.Tbl_Reason_Type" Multiplicity="0..1" />
+    <End Role="RS_Transaction" Type="AssociationModel.RS_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Reason_Type">
+        <PropertyRef Name="Reason_ID" />
+      </Principal>
+      <Dependent Role="RS_Transaction">
+        <PropertyRef Name="Reason_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ExpCheck_Type_Tbl_CheckType">
+    <End Role="Tbl_CheckType" Type="AssociationModel.Tbl_CheckType" Multiplicity="0..1" />
+    <End Role="Tbl_ExpCheck_Type" Type="AssociationModel.Tbl_ExpCheck_Type" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_CheckType">
+        <PropertyRef Name="Check_TypeID" />
+      </Principal>
+      <Dependent Role="Tbl_ExpCheck_Type">
+        <PropertyRef Name="Check_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Import_Check_Tbl_CheckType">
+    <End Role="Tbl_CheckType" Type="AssociationModel.Tbl_CheckType" Multiplicity="1" />
+    <End Role="Tbl_Import_Check" Type="AssociationModel.Tbl_Import_Check" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_CheckType">
+        <PropertyRef Name="Check_TypeID" />
+      </Principal>
+      <Dependent Role="Tbl_Import_Check">
+        <PropertyRef Name="ImpCheck_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ExpCheck_Tbl_ExpCheck_Type_Value">
+    <End Role="Tbl_ExpCheck_Type_Value" Type="AssociationModel.Tbl_ExpCheck_Type_Value" Multiplicity="0..1" />
+    <End Role="Tbl_ExpCheck" Type="AssociationModel.Tbl_ExpCheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_ExpCheck_Type_Value">
+        <PropertyRef Name="ExpCheck_Type_ID" />
+        <PropertyRef Name="ExpCheck_Type_Date_Value" />
+      </Principal>
+      <Dependent Role="Tbl_ExpCheck">
+        <PropertyRef Name="ExpCheck_Type_ID" />
+        <PropertyRef Name="ExpCheck_Type_Date_Value" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_ExpCheck_Type_Value_Tbl_ExpCheck_Type">
+    <End Role="Tbl_ExpCheck_Type" Type="AssociationModel.Tbl_ExpCheck_Type" Multiplicity="1" />
+    <End Role="Tbl_ExpCheck_Type_Value" Type="AssociationModel.Tbl_ExpCheck_Type_Value" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_ExpCheck_Type">
+        <PropertyRef Name="ExpCheck_Type_ID" />
+      </Principal>
+      <Dependent Role="Tbl_ExpCheck_Type_Value">
+        <PropertyRef Name="ExpCheck_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Gender_Type">
+    <End Role="Tbl_Gender_Type" Type="AssociationModel.Tbl_Gender_Type" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Gender_Type">
+        <PropertyRef Name="Gender_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_Gender_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Insurance_Tbl_insurance_Type">
+    <End Role="Tbl_Insurance_Type" Type="AssociationModel.Tbl_Insurance_Type" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Insurance" Type="AssociationModel.Tbl_Member_Insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Insurance_Type">
+        <PropertyRef Name="Insurance_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Insurance">
+        <PropertyRef Name="insurance_Type_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Insurance_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Tbl_Member_Registration" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Insurance" Type="AssociationModel.Tbl_Member_Insurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Insurance">
+        <PropertyRef Name="Memb_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Organization">
+    <End Role="Tbl_Organization" Type="AssociationModel.Tbl_Organization" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Organization">
+        <PropertyRef Name="Org_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_Org_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_Social">
+    <End Role="Tbl_Social" Type="AssociationModel.Tbl_Social" Multiplicity="1" />
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Social">
+        <PropertyRef Name="Social_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_Social_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Member_Registration_Tbl_SubOrg">
+    <End Role="Tbl_SubOrg" Type="AssociationModel.Tbl_SubOrg" Multiplicity="0..1" />
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Tbl_Member_Registration" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_SubOrg">
+        <PropertyRef Name="SubOrg_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_subOrg_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_Subscribes_Tbl_Member_Registration">
+    <End Role="Tbl_Member_Registration" Type="AssociationModel.Tbl_Member_Registration" Multiplicity="0..1" />
+    <End Role="Tbl_Subscribes" Type="AssociationModel.Tbl_Subscribes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Member_Registration">
+        <PropertyRef Name="Memb_ID" />
+      </Principal>
+      <Dependent Role="Tbl_Subscribes">
+        <PropertyRef Name="Mem_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tbl_SubOrg_Tbl_Organization">
+    <End Role="Tbl_Organization" Type="AssociationModel.Tbl_Organization" Multiplicity="1" />
+    <End Role="Tbl_SubOrg" Type="AssociationModel.Tbl_SubOrg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tbl_Organization">
+        <PropertyRef Name="Org_ID" />
+      </Principal>
+      <Dependent Role="Tbl_SubOrg">
+        <PropertyRef Name="Org_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

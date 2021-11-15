@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3e6cb239af9d44c2aaad6ace472436ea" Name="Diagram1">
+        <EntityTypeShape EntityType="AssociationModel.RS_Acc_Trans_TypeOfType" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Rs_Acc_Transaction" Width="1.5" PointX="5.25" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.RS_Memb_Transaction" Width="1.5" PointX="8.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.RS_Traning_Process" Width="1.5" PointX="11" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.sysdiagram" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Acc_TypeOfType" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Account" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Appraisail_Rate" Width="1.5" PointX="6" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Audit_Login" Width="1.5" PointX="15.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Central_Departments" Width="1.5" PointX="16" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Course_Exam" Width="1.5" PointX="8.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Course_Phase" Width="1.5" PointX="8.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Courses" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Courses_Funders" Width="1.5" PointX="8.75" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Courses_Status" Width="1.5" PointX="8.75" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Courses_Type" Width="1.5" PointX="8.75" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Departments" Width="1.5" PointX="20.5" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Education_Qualification" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.TBL_Exception" Width="1.5" PointX="15.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Funational_Group" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Gender_Type" Width="1.5" PointX="0.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Illegal_Earning" Width="1.5" PointX="5.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Insurance_Subscripe" Width="1.5" PointX="5.25" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Insurance_Type" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_IPS" Width="1.5" PointX="15.25" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Jobs_Titles" Width="1.5" PointX="0.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_kinshipType" Width="1.5" PointX="6" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Memb_Sub_Over" Width="1.5" PointX="10.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Member_Insurance" Width="1.5" PointX="5.25" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Member_Registration" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_MembStatus" Width="1.5" PointX="6" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Military_Service" Width="1.5" PointX="0.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Old_Appraisal" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Public_Departments" Width="1.5" PointX="18.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Qualitative_Group" Width="1.5" PointX="0.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Reason_Type" Width="1.5" PointX="6" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Relation" Width="1.5" PointX="8.25" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Sectors" Width="1.5" PointX="13.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Social" Width="1.5" PointX="0.75" PointY="26" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Subscribes" Width="1.5" PointX="5.25" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.TBL_SysModules" Width="1.5" PointX="10.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.TBL_SysUsers" Width="1.5" PointX="13" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Training_Place" Width="1.5" PointX="8.75" PointY="32.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_TransactionType" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Trining_Process_History" Width="1.5" PointX="13.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Trining_Process_History_Type" Width="1.5" PointX="11" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.Tbl_Work_Degree" Width="1.5" PointX="0.75" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.test" Width="1.5" PointX="12.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.View_1" Width="1.5" PointX="15.75" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.View_2" Width="1.5" PointX="17.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AssociationModel.View_3" Width="1.5" PointX="17.75" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Acc_Trans_TypeOfType_Tbl_Acc_TypeOfType" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Acc_Trans_TypeOfType_Tbl_Account" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Acc_Trans_TypeOfType_Tbl_TransactionType" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Rs_Acc_Transaction_RS_Acc_Trans_TypeOfType" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Rs_Acc_Transaction_Tbl_Member_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Transaction_Tbl_Member_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Transaction_Tbl_MembStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Transaction_Tbl_Reason_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Traning_Process_Tbl_Course_Exam" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Traning_Process_Tbl_Course_Phase" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Traning_Process_Tbl_Courses" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Traning_Process_Tbl_Courses__Status" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Traning_Process_Tbl_Courses_Funders" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Traning_Process_Tbl_Courses_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_RS_Traning_Process_Tbl_Training_Place" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Trining_Process_History_RS_Traning_Process1" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Old_Appraisal_Appraisail_Rate" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Central_Departments_Tbl_Sectors" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Public_Departments_Tbl_Central_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Departments_Tbl_Public_Departments" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Member_Registration_Tbl_Education_Qualification" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Member_Registration_Tbl_Funational_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Member_Registration_Tbl_Gender_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Relation_Tbl_Gender_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Illegal_Earning_Tbl_Member_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Insurance_Subscripe_Tbl_Member_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Member_Insurance_Tbl_insurance_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_IPS_TBL_SysUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Member_Registration_Tbl_Jobs_Titles" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Relation_Tbl_kinshipType" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Member_Insurance_Tbl_Member_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Member_Registration_Qualitative_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Member_Registration_Tbl_Military_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Member_Registration_Tbl_Social" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Member_Registration_Tbl_Work_Degree" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Old_Appraisal_Tbl_Member_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Relation_Tbl_Member_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Subscribes_Tbl_Member_Registration" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_TBL_SysUsers_TBL_SysModules" ManuallyRouted="false" />
+        <AssociationConnector Association="AssociationModel.FK_Tbl_Trining_Process_History_Tbl_Trining_Process_History_Type" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

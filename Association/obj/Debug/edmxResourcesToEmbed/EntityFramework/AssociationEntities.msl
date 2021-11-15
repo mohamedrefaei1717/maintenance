@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AssociationModelStoreContainer" CdmEntityContainer="AssociationEntities">
+    <EntitySetMapping Name="RS_Transaction">
+      <EntityTypeMapping TypeName="AssociationModel.RS_Transaction">
+        <MappingFragment StoreEntitySet="RS_Transaction">
+          <ScalarProperty Name="Transaction_ID" ColumnName="Transaction_ID" />
+          <ScalarProperty Name="Memb_ID" ColumnName="Memb_ID" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="MembStatus_ID" ColumnName="MembStatus_ID" />
+          <ScalarProperty Name="Reason_ID" ColumnName="Reason_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_CheckType">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_CheckType">
+        <MappingFragment StoreEntitySet="Tbl_CheckType">
+          <ScalarProperty Name="Check_TypeID" ColumnName="Check_TypeID" />
+          <ScalarProperty Name="Check_TypeName" ColumnName="Check_TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Exception">
+      <EntityTypeMapping TypeName="AssociationModel.TBL_Exception">
+        <MappingFragment StoreEntitySet="TBL_Exception">
+          <ScalarProperty Name="Excep_ID" ColumnName="Excep_ID" />
+          <ScalarProperty Name="Excep_ErrorNumber" ColumnName="Excep_ErrorNumber" />
+          <ScalarProperty Name="Excep_ErrorCode" ColumnName="Excep_ErrorCode" />
+          <ScalarProperty Name="Excep_Type" ColumnName="Excep_Type" />
+          <ScalarProperty Name="Excep_Message" ColumnName="Excep_Message" />
+          <ScalarProperty Name="Excep_DateTime" ColumnName="Excep_DateTime" />
+          <ScalarProperty Name="EntityMess" ColumnName="EntityMess" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_ExpCheck">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_ExpCheck">
+        <MappingFragment StoreEntitySet="Tbl_ExpCheck">
+          <ScalarProperty Name="ExpCheck_ID" ColumnName="ExpCheck_ID" />
+          <ScalarProperty Name="ExpCheck_Num" ColumnName="ExpCheck_Num" />
+          <ScalarProperty Name="ExpCheck_Type_ID" ColumnName="ExpCheck_Type_ID" />
+          <ScalarProperty Name="ExpCheck_Type_Date_Value" ColumnName="ExpCheck_Type_Date_Value" />
+          <ScalarProperty Name="ExpCheck_Pdf" ColumnName="ExpCheck_Pdf" />
+          <ScalarProperty Name="ExpCheck_Date" ColumnName="ExpCheck_Date" />
+          <ScalarProperty Name="Mem_ID" ColumnName="Mem_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_ExpCheck_Type">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_ExpCheck_Type">
+        <MappingFragment StoreEntitySet="Tbl_ExpCheck_Type">
+          <ScalarProperty Name="ExpCheck_Type_ID" ColumnName="ExpCheck_Type_ID" />
+          <ScalarProperty Name="ExpCheck_Type_Name" ColumnName="ExpCheck_Type_Name" />
+          <ScalarProperty Name="Check_Type_ID" ColumnName="Check_Type_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_ExpCheck_Type_Value">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_ExpCheck_Type_Value">
+        <MappingFragment StoreEntitySet="Tbl_ExpCheck_Type_Value">
+          <ScalarProperty Name="ExpCheck_Type_ID" ColumnName="ExpCheck_Type_ID" />
+          <ScalarProperty Name="ExpCheck_Type_Date_Value" ColumnName="ExpCheck_Type_Date_Value" />
+          <ScalarProperty Name="ExpCheck_Value" ColumnName="ExpCheck_Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Gender_Type">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Gender_Type">
+        <MappingFragment StoreEntitySet="Tbl_Gender_Type">
+          <ScalarProperty Name="Gender_ID" ColumnName="Gender_ID" />
+          <ScalarProperty Name="Gender_Type" ColumnName="Gender_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Import_Check">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Import_Check">
+        <MappingFragment StoreEntitySet="Tbl_Import_Check">
+          <ScalarProperty Name="ImpCheck_ID" ColumnName="ImpCheck_ID" />
+          <ScalarProperty Name="ImpCheck_Num" ColumnName="ImpCheck_Num" />
+          <ScalarProperty Name="ImpCheck_Type_ID" ColumnName="ImpCheck_Type_ID" />
+          <ScalarProperty Name="ImpCheck_Money" ColumnName="ImpCheck_Money" />
+          <ScalarProperty Name="ImpCheck_Date" ColumnName="ImpCheck_Date" />
+          <ScalarProperty Name="ImpCheck_Pdf" ColumnName="ImpCheck_Pdf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Insurance_Subscripe">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Insurance_Subscripe">
+        <MappingFragment StoreEntitySet="Tbl_Insurance_Subscripe">
+          <ScalarProperty Name="Insur_ID" ColumnName="Insur_ID" />
+          <ScalarProperty Name="Mem_ID" ColumnName="Mem_ID" />
+          <ScalarProperty Name="Insur_Sub_Date" ColumnName="Insur_Sub_Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Insurance_Type">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Insurance_Type">
+        <MappingFragment StoreEntitySet="Tbl_Insurance_Type">
+          <ScalarProperty Name="Insurance_ID" ColumnName="Insurance_ID" />
+          <ScalarProperty Name="Insurance_Type_Name" ColumnName="Insurance_Type_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_kinshipType">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_kinshipType">
+        <MappingFragment StoreEntitySet="Tbl_kinshipType">
+          <ScalarProperty Name="kinship_ID" ColumnName="kinship_ID" />
+          <ScalarProperty Name="kinship_Type" ColumnName="kinship_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Member_Insurance">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Member_Insurance">
+        <MappingFragment StoreEntitySet="Tbl_Member_Insurance">
+          <ScalarProperty Name="Inssur_ID" ColumnName="Inssur_ID" />
+          <ScalarProperty Name="Memb_ID" ColumnName="Memb_ID" />
+          <ScalarProperty Name="insur_Date" ColumnName="insur_Date" />
+          <ScalarProperty Name="insurance_Type_ID" ColumnName="insurance_Type_ID" />
+          <ScalarProperty Name="Insur_Value" ColumnName="Insur_Value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Member_Registration">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Member_Registration">
+        <MappingFragment StoreEntitySet="Tbl_Member_Registration">
+          <ScalarProperty Name="Memb_ID" ColumnName="Memb_ID" />
+          <ScalarProperty Name="Memb_EmpID" ColumnName="Memb_EmpID" />
+          <ScalarProperty Name="Memb_Name" ColumnName="Memb_Name" />
+          <ScalarProperty Name="Memb_Date" ColumnName="Memb_Date" />
+          <ScalarProperty Name="Memb_Birthdate" ColumnName="Memb_Birthdate" />
+          <ScalarProperty Name="Memb_Social_ID" ColumnName="Memb_Social_ID" />
+          <ScalarProperty Name="Memb_Children_Number" ColumnName="Memb_Children_Number" />
+          <ScalarProperty Name="Memb_Imge" ColumnName="Memb_Imge" />
+          <ScalarProperty Name="Memb_Gender_ID" ColumnName="Memb_Gender_ID" />
+          <ScalarProperty Name="Memb_Org_ID" ColumnName="Memb_Org_ID" />
+          <ScalarProperty Name="Memb_subOrg_ID" ColumnName="Memb_subOrg_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_MembStatus">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_MembStatus">
+        <MappingFragment StoreEntitySet="Tbl_MembStatus">
+          <ScalarProperty Name="MembStatus_ID" ColumnName="MembStatus_ID" />
+          <ScalarProperty Name="MembStatus_Name" ColumnName="MembStatus_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Organization">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Organization">
+        <MappingFragment StoreEntitySet="Tbl_Organization">
+          <ScalarProperty Name="Org_ID" ColumnName="Org_ID" />
+          <ScalarProperty Name="Org_Name" ColumnName="Org_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Reason_Type">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Reason_Type">
+        <MappingFragment StoreEntitySet="Tbl_Reason_Type">
+          <ScalarProperty Name="Reason_ID" ColumnName="Reason_ID" />
+          <ScalarProperty Name="Reason_Name" ColumnName="Reason_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Relation">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Relation">
+        <MappingFragment StoreEntitySet="Tbl_Relation">
+          <ScalarProperty Name="Relation_ID" ColumnName="Relation_ID" />
+          <ScalarProperty Name="Relation_Name" ColumnName="Relation_Name" />
+          <ScalarProperty Name="Mem_ID" ColumnName="Mem_ID" />
+          <ScalarProperty Name="Relation_Birthdate" ColumnName="Relation_Birthdate" />
+          <ScalarProperty Name="Sex_ID" ColumnName="Sex_ID" />
+          <ScalarProperty Name="kinship_ID" ColumnName="kinship_ID" />
+          <ScalarProperty Name="Relation_Image" ColumnName="Relation_Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Social">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Social">
+        <MappingFragment StoreEntitySet="Tbl_Social">
+          <ScalarProperty Name="Social_ID" ColumnName="Social_ID" />
+          <ScalarProperty Name="Social_Name" ColumnName="Social_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_SubOrg">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_SubOrg">
+        <MappingFragment StoreEntitySet="Tbl_SubOrg">
+          <ScalarProperty Name="SubOrg_ID" ColumnName="SubOrg_ID" />
+          <ScalarProperty Name="SubOrg_Name" ColumnName="SubOrg_Name" />
+          <ScalarProperty Name="Org_ID" ColumnName="Org_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Subscribes">
+      <EntityTypeMapping TypeName="AssociationModel.Tbl_Subscribes">
+        <MappingFragment StoreEntitySet="Tbl_Subscribes">
+          <ScalarProperty Name="Subscribe_ID" ColumnName="Subscribe_ID" />
+          <ScalarProperty Name="Sub_Date" ColumnName="Sub_Date" />
+          <ScalarProperty Name="Mem_ID" ColumnName="Mem_ID" />
+          <ScalarProperty Name="Mem_EmpID" ColumnName="Mem_EmpID" />
+          <ScalarProperty Name="Mem_EmpName" ColumnName="Mem_EmpName" />
+          <ScalarProperty Name="Sub_Paied" ColumnName="Sub_Paied" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
